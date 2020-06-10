@@ -3,7 +3,7 @@
 # Langara College WMDD Term 3 Project
 # Built on ReactJS and NodeJS
 
-******* Team Showcase *******
+******* Team Tiger Shark *******
 
 1. Rakesh,                  Project Manager | Developer    
 2. Dalbir Singh,            Lead Developer | Front-end UI
