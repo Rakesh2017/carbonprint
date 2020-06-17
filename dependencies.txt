@@ -1,0 +1,5 @@
+These dependencies are required to be installed.
+
+1. npm i npm i @material-ui/core
+2. npm i react-router-dom
+3. npm i node-sass
