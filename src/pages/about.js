@@ -25,7 +25,7 @@ const About = () => {
                 {/* image container */}
                 <div>
                     {/* apply image here, then delete this comment */}
-                    <img />
+                    {/* <img /> */}
                 </div>
             </div>
 
@@ -34,7 +34,7 @@ const About = () => {
                 {/* image container */}
                 <div>
                     {/* apply image here, then delete this comment */}
-                    <img />
+                    {/* <img /> */}
                 </div>
                 {/* text container */}
                 <div>
@@ -51,56 +51,56 @@ const About = () => {
 
                 {/* Rakesh */}
                 <div className="team-tile-container project-manager">
-                    <img />
+                    {/* <img /> */}
                     <h3 className="member-name">Rakesh</h3>
                     <p className="member-designation">Project Manager | Developer | DA</p>
                 </div>
 
                 {/* dalbir */}
                 <div className="team-tile-container lead-developer">
-                    <img />
+                    {/* <img /> */}
                     <h3 className="member-name">Dalbir Singh</h3>
                     <p className="member-designation">Lead Developer</p>
                 </div>
 
                 {/* Palak */}
                 <div className="team-tile-container developer quality-assurance">
-                    <img />
+                    {/* <img /> */}
                     <h3 className="member-name">Palakdeep Kaur</h3>
                     <p className="member-designation">Developer | Quality Assurance</p>
                 </div>
 
                 {/* Lalit */}
                 <div className="team-tile-container lead-designer designer">
-                    <img />
+                    {/* <img /> */}
                     <h3 className="member-name">Lalit Kumar</h3>
                     <p className="member-designation">Lead Designer</p>
                 </div>
 
                 {/* Neha */}
                 <div className="team-tile-container designer">
-                    <img />
+                    {/* <img /> */}
                     <h3 className="member-name">Neha Verma</h3>
                     <p className="member-designation">Designer</p>
                 </div>
 
                 {/* Aanchal */}
                 <div className="team-tile-container designer">
-                    <img />
+                    {/* <img /> */}
                     <h3 className="member-name">Aanchal Arora</h3>
                     <p className="member-designation">Designer</p>
                 </div>
 
                 {/* Arsh */}
                 <div className="team-tile-container designer">
-                    <img />
+                    {/* <img /> */}
                     <h3 className="member-name">Arshdeep</h3>
                     <p className="member-designation">Designer</p>
                 </div>
 
                 {/* Hiril */}
                 <div className="team-tile-container designer">
-                    <img />
+                    {/* <img /> */}
                     <h3 className="member-name">Hiril</h3>
                     <p className="member-designation">Designer</p>
                 </div>
