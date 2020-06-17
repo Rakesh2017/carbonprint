@@ -1,44 +1,31 @@
 import React from 'react';
 
 import {
-    AppBar,
-    Toolbar,
-    Typography,
-    withStyles,
+    Container,
 } from '@material-ui/core';
-import {
-    Link
-} from "react-router-dom";
 
+import AppFooterLogo from "./AppFooter/AppFooterLogo";
+import AppFooterNav1 from "./AppFooter/AppFooterNav1";
+import AppFooterNav2 from "./AppFooter/AppFooterNav2";
 
-const styles = {
-    flex: {
-        flex: 1
-    },
-};
-
-
-const AppHeader = ({ classes }) => (    
-    <AppBar position="static">
-        <Toolbar>
-            <Typography variant="h6" color="inherit">
-                My React AppBar
-            </Typography>
-            <div className={classes.flex} />
-                <div>
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/about">About</Link>
-                            </li>
-                        </ul>
-                    </nav>
+const AppFooter = () => (    
+    <footer className="site-footer" >
+        <Container>
+            <div className="site-footer-container">
+                <div className="site-footer-col-1">
+                    <AppFooterLogo />
                 </div>
-        </Toolbar>
-    </AppBar>
+                
+                <div className="site-footer-col-2">
+                    <AppFooterNav1 />
+                </div>
+
+                <div className="site-footer-col-3">
+                    <AppFooterNav2 />
+                </div>
+            </div>
+        </Container>
+    </footer>
 );
 
-export default withStyles(styles)(AppHeader);
+export default (AppFooter);

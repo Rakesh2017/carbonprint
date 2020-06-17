@@ -1,0 +1,52 @@
+/********* Author: Dalbir Singh  **************/
+/**********************************************/
+// css for header bar container 
+// to place logo and navigation
+/**********************************************/
+header {
+    border-bottom: 3px solid green;
+}
+.site-header-container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .site-logo {
+        flex-grow: 0;
+    }
+
+
+
+    .site-main-nav {
+        
+        align-items: flex-end;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: none;
+        }
+
+        li {
+            margin-left: .5rem;
+            margin-right: .5rem;
+            padding: 0.3rem;
+        }
+
+        @media screen and (min-width: 800px) {
+            ul {
+                display: flex;
+            }
+
+            .main-nav-button {
+                display: none;
+            }
+        }
+    }
+}
+
+/*****************************************/
+// end of .site-header-container container
+/*****************************************/  

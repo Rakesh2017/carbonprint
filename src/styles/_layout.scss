@@ -1,0 +1,12 @@
+#root {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+main {
+    min-height: 75vh;
+
+    &>div {
+        padding: 1rem;
+    }
+}
