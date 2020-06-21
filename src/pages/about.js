@@ -1,6 +1,61 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import baseUrl from '../database-secrets/secrets.js';
 
 const About = () => {
+
+    /* global variables */
+    const teamUrl = baseUrl + "/team"
+
+    function getTeam() {
+        // GET request using fetch with set headers
+        const headers = { 'Content-Type': 'application/json' }
+        fetch(teamUrl, { headers })
+            .then(response => response.json())
+            .then(data => {
+                let result
+                data.forEach(element => {
+                    result = element.result
+                });
+                result.forEach(element => {
+                    /* Set Team Info */
+                    if(element.identity == 1){
+                        setTeamInfo("manager-name", element.name)
+                        setTeamInfo("manager-designation", element.designation)
+                        // document.getElementById("image1").src = image;
+                    } else if(element.identity == 2){
+                        setTeamInfo("lead-developer-name", element.name)
+                        setTeamInfo("lead-developer-designation", element.designation)
+                    } else if(element.identity == 3){
+                        setTeamInfo("qa-name", element.name)
+                        setTeamInfo("qa-designation", element.designation)
+                    } else if(element.identity == 4){
+                        setTeamInfo("lead-designer-name", element.name)
+                        setTeamInfo("lead-designer-designation", element.designation)
+                    } else if(element.identity == 51){  
+                        setTeamInfo("designer-1-name", element.name)
+                        setTeamInfo("designer-1-designation", element.designation)
+                    } else if(element.identity == 52){  
+                        setTeamInfo("designer-2-name", element.name)
+                        setTeamInfo("designer-2-designation", element.designation)
+                    } else if(element.identity == 53){  
+                        setTeamInfo("designer-3-name", element.name)
+                        setTeamInfo("designer-3-designation", element.designation)
+                    } else if(element.identity == 54){  
+                        setTeamInfo("designer-4-name", element.name)
+                        setTeamInfo("designer-4-designation", element.designation)
+                    }
+                });
+            })
+    }
+
+    useEffect(()=> {
+        getTeam();
+    })
+    
+    /* Set Team Info */
+    function setTeamInfo(id, value) {
+        document.getElementById(id).innerHTML = value
+    }
 
     return (
         // main container
@@ -32,6 +87,7 @@ const About = () => {
             {/* our-values-container starts  */}
             <div className="our-values-container">
                 {/* image container */}
+                
                 <div>
                     {/* apply image here, then delete this comment */}
                     {/* <img /> */}
@@ -52,57 +108,57 @@ const About = () => {
                 {/* Rakesh */}
                 <div className="team-tile-container project-manager">
                     {/* <img /> */}
-                    <h3 className="member-name">Rakesh</h3>
-                    <p className="member-designation">Project Manager | Developer | DA</p>
+                    <h3 className="member-name" id="manager-name"></h3>
+                    <p className="member-designation" id="manager-designation"></p>
                 </div>
 
                 {/* dalbir */}
                 <div className="team-tile-container lead-developer">
                     {/* <img /> */}
-                    <h3 className="member-name">Dalbir Singh</h3>
-                    <p className="member-designation">Lead Developer</p>
+                    <h3 className="member-name" id="lead-developer-name"></h3>
+                    <p className="member-designation" id="lead-developer-designation"></p>
                 </div>
 
                 {/* Palak */}
                 <div className="team-tile-container developer quality-assurance">
                     {/* <img /> */}
-                    <h3 className="member-name">Palakdeep Kaur</h3>
-                    <p className="member-designation">Developer | Quality Assurance</p>
+                    <h3 className="member-name" id="qa-name"></h3>
+                    <p className="member-designation" id="qa-designation"></p>
                 </div>
 
                 {/* Lalit */}
                 <div className="team-tile-container lead-designer designer">
                     {/* <img /> */}
-                    <h3 className="member-name">Lalit Kumar</h3>
-                    <p className="member-designation">Lead Designer</p>
+                    <h3 className="member-name" id="lead-designer-name"></h3>
+                    <p className="member-designation" id="lead-designer-designation"></p>
                 </div>
 
                 {/* Neha */}
                 <div className="team-tile-container designer">
                     {/* <img /> */}
-                    <h3 className="member-name">Neha Verma</h3>
-                    <p className="member-designation">Designer</p>
+                    <h3 className="member-name" id="designer-1-name"></h3>
+                    <p className="member-designation" id="designer-1-designation"></p>
                 </div>
 
                 {/* Aanchal */}
                 <div className="team-tile-container designer">
                     {/* <img /> */}
-                    <h3 className="member-name">Aanchal Arora</h3>
-                    <p className="member-designation">Designer</p>
+                    <h3 className="member-name" id="designer-2-name"></h3>
+                    <p className="member-designation" id="designer-2-designation"></p>
                 </div>
 
                 {/* Arsh */}
                 <div className="team-tile-container designer">
                     {/* <img /> */}
-                    <h3 className="member-name">Arshdeep</h3>
-                    <p className="member-designation">Designer</p>
+                    <h3 className="member-name" id="designer-3-name"></h3>
+                    <p className="member-designation" id="designer-3-designation"></p>
                 </div>
 
                 {/* Hiril */}
                 <div className="team-tile-container designer">
                     {/* <img /> */}
-                    <h3 className="member-name">Hiril</h3>
-                    <p className="member-designation">Designer</p>
+                    <h3 className="member-name" id="designer-4-name"></h3>
+                    <p className="member-designation" id="designer-4-designation"></p>
                 </div>
 
             </div>
