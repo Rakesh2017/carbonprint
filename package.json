@@ -13,9 +13,12 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropdown-select": "^4.4.2",
+    "react-google-charts": "^3.0.15",
     "react-rounded-image": "^2.0.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-super-select": "^1.0.23"
   },
   "scripts": {
     "start": "react-scripts start",

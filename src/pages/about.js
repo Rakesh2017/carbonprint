@@ -6,6 +6,7 @@ const About = () => {
     /* global variables */
     const teamUrl = baseUrl + "/team"
 
+    /* Fetch Team Data */
     function getTeam() {
         // GET request using fetch with set headers
         const headers = { 'Content-Type': 'application/json' }
@@ -18,29 +19,29 @@ const About = () => {
                 });
                 result.forEach(element => {
                     /* Set Team Info */
-                    if(element.identity == 1){
+                    if (element.identity === 1) {
                         setTeamInfo("manager-name", element.name)
                         setTeamInfo("manager-designation", element.designation)
                         // document.getElementById("image1").src = image;
-                    } else if(element.identity == 2){
+                    } else if (element.identity === 2) {
                         setTeamInfo("lead-developer-name", element.name)
                         setTeamInfo("lead-developer-designation", element.designation)
-                    } else if(element.identity == 3){
+                    } else if (element.identity === 3) {
                         setTeamInfo("qa-name", element.name)
                         setTeamInfo("qa-designation", element.designation)
-                    } else if(element.identity == 4){
+                    } else if (element.identity === 4) {
                         setTeamInfo("lead-designer-name", element.name)
                         setTeamInfo("lead-designer-designation", element.designation)
-                    } else if(element.identity == 51){  
+                    } else if (element.identity === 51) {
                         setTeamInfo("designer-1-name", element.name)
                         setTeamInfo("designer-1-designation", element.designation)
-                    } else if(element.identity == 52){  
+                    } else if (element.identity === 52) {
                         setTeamInfo("designer-2-name", element.name)
                         setTeamInfo("designer-2-designation", element.designation)
-                    } else if(element.identity == 53){  
+                    } else if (element.identity === 53) {
                         setTeamInfo("designer-3-name", element.name)
                         setTeamInfo("designer-3-designation", element.designation)
-                    } else if(element.identity == 54){  
+                    } else if (element.identity === 54) {
                         setTeamInfo("designer-4-name", element.name)
                         setTeamInfo("designer-4-designation", element.designation)
                     }
@@ -48,10 +49,10 @@ const About = () => {
             })
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         getTeam();
     })
-    
+
     /* Set Team Info */
     function setTeamInfo(id, value) {
         document.getElementById(id).innerHTML = value
@@ -87,7 +88,7 @@ const About = () => {
             {/* our-values-container starts  */}
             <div className="our-values-container">
                 {/* image container */}
-                
+
                 <div>
                     {/* apply image here, then delete this comment */}
                     {/* <img /> */}
