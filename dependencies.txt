@@ -17,3 +17,12 @@ These dependencies are required to be installed.
 
 #circular image dependency
 6. npm i react-rounded-image (Not required)
+
+# drop down list
+7. npm i react-super-select
+
+# google charts
+8. npm i react-google-charts
+
+# canvasJS charts
+9. npm install canvasjs
