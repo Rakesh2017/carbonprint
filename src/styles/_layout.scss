@@ -5,8 +5,48 @@
 
 main {
     min-height: 75vh;
-
-    &>div {
-        padding: 1rem;
-    }
 }
+
+/**************************************************
+// Home page layout *******************************
+// Author: Dalbir Singh ***************************
+***************************************************/
+
+// Hero section
+
+.wrapper-hero {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: $color__green-screen;
+    min-height: 300px;
+    color: $color__green-light2;
+}
+
+.hero-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .hero-text {
+        min-width: 320px;
+    }
+
+    @media screen and (min-width: 900px) {
+        .hero-text {
+            flex-basis: 40%;
+        }
+
+        .hero-image {
+            flex-basis: 56%;
+            flex-grow: 0;
+        }
+    }
+
+
+}
+
+
+/**************************************************
+// Home page layout End ***************************
+/**************************************************/

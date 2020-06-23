@@ -1,9 +1,5 @@
 import React, { Fragment } from 'react';
-import './styles/App.scss';
-import {
-  CssBaseline,
-  Container,
-} from '@material-ui/core';
+import './App.scss';
 
 import {
   BrowserRouter as Router,
@@ -24,22 +20,19 @@ import Food from './pages/food';
 function App() {
   return (
     <Fragment>
-      <CssBaseline />
       <Router>
-          <AppHeader /> 
-          <main>
-            <Container>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/calculator" component={Calculator} />
-                <Route exact path="/carbon-impact" component={CarbonImpact} />
-                <Route exact path="/contact" component={Contact} />
-                <Route exact path="/food" component={Food} />
-              </Switch>
-            </Container>
-          </main>
-          <AppFooter />
+        <AppHeader /> 
+        <main>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/calculator" component={Calculator} />
+            <Route exact path="/carbon-impact" component={CarbonImpact} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/food" component={Food} />
+          </Switch>
+        </main>
+        <AppFooter />
       </Router>
     </Fragment>
   );
