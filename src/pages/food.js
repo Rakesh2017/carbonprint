@@ -1,19 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-dropdown-select';
-import Button from '@material-ui/core/Button';
 import baseUrl from '../database-secrets/secrets.js';
+import FoodCarbonPrint from '../components/show-food-carbon-result.js'
+import foodFrequencyOption from '../global-variables/global-variables.js'
+import FoodBarChart1 from '../components/food-bar-chart-1.js'
+import { Button } from '@material-ui/core';
 
 const Food = () => {
 
     /* variables and hooks declarations */
     const teamUrl = baseUrl + "/food/1"
+    // contains list of all foods
     let [foodProductOption, setFoodProductOption] = useState()
     let tempFoodProductOption = [], temp
+    // contains current food frequency in select options
     let [foodFrequency, setFoodFrequency] = useState()
+    // contains current food product in select options
     let [foodProduct, setFoodProduct] = useState()
+    // contains current food and frequency in select option
+    let [currentFoodProduct, setCurrentFoodProduct] = useState("")
+    let [currentFoodFrequency, setCurrentFoodFrequency] = useState("")
+    // contains list which in actual contains items to preview carbon footprint
+    let [selectedFoodProducts, setSelectedFoodProducts] = useState([])
+    // to check if both select options are selected
+    let [checkPF, setCheckPF] = useState(false)
 
     /* Fetch Carbon footprints to br used for input manipulations */
-    function getFood1() {
+    function getFood_1() {
         // GET request using fetch with set headers
         const headers = { 'Content-Type': 'application/json' }
         fetch(teamUrl, { headers })
@@ -43,60 +56,108 @@ const Food = () => {
 
     useEffect(() => {
         // Should not ever set state during rendering, so do this in useEffect instead.
-        getFood1();
+        getFood_1();
     }, [])
 
     // setting the food frequency on user input (selection from options)
     function playFoodFrequency(event) {
+        setCurrentFoodFrequency(event[0].label)
         setFoodFrequency(foodFrequency = event)
-        showCarbonFootprint()
+        setCheckPF(true)
+        if (checkPF) {
+            document.getElementById("add-food-item").style.display = "block"
+        }
     }
 
     // setting the food product on user input (selection from options)
     function playFoodProduct(event) {
+        setCurrentFoodProduct(event[0].label)
         setFoodProduct(foodProduct = event)
-        showCarbonFootprint()
+        setCheckPF(true)
+        if (checkPF) {
+            document.getElementById("add-food-item").style.display = "block"
+        }
     }
 
-    // show the carbon footprint
-    function showCarbonFootprint() {
-        if (foodFrequency !== undefined && foodProduct !== undefined) {
-            if (foodFrequency[0].value === 1) {
-                setCarbonEmissionUnits(foodProduct[0].once_a_day)
-            } else if (foodFrequency[0].value === 2) {
-                setCarbonEmissionUnits(foodProduct[0].one_to_two_week)
-            } else if (foodFrequency[0].value === 3) {
-                setCarbonEmissionUnits(foodProduct[0].three_to_five_week)
-            } else if (foodFrequency[0].value === 4) {
-                setCarbonEmissionUnits(foodProduct[0].twice_a_day)
-            } else if (foodFrequency[0].value === 5) {
-                document.getElementById("food-carbon-print-kgs-id").innerHTML = `You don't have ${foodProduct[0].label}, but the average consumption ${foodProduct[0].label} in world is ${foodProduct[0].avg_week_person} servings per week. Over an entire year that equals ${foodProduct[0].people_avg_carbon} Kilograms of greenhouse gas emissions.`
-                
-                document.getElementById("food-equivalent-car-id").innerHTML = `That's the equivalent of driving a regular petrol car for ${numberWithCommas((foodProduct[0].people_avg_carbon * 4.33).toFixed(0))} Kilometers.`
+    /* Check if its not a duplicate entry */
+    function checkDuplicate() {
+        let count = 0
+        selectedFoodProducts.forEach(element => {
+            if (element.product === currentFoodProduct) {
+                count = 1
             }
+        });
+
+        if (currentFoodFrequency === "Never") {
+            count = 1
+        }
+
+        if (count === 1) {
+            return true
+        } else return false
+    }
+
+    /* Loop Clicks on dynamic delete entries */
+    function loopClicks() {
+
+        function removeFromList(id) { 
+            
+            selectedFoodProducts.forEach((element, index) => {
+                if (element.product === id) {
+                    console.log("name of fruit is :"+id + index)
+                    selectedFoodProducts.splice(index, 1);
+                    setSelectedFoodProducts(selectedFoodProducts)
+                    // break
+                }
+            });
+         }
+
+        let allButtonElements = document.getElementById("food-dynamic-entries").querySelectorAll(".item-remove-button");
+
+        console.log("this happened")
+        for (var i = 0; i < allButtonElements.length; i++) {
+            allButtonElements[i].onclick = function () {
+                console.log("and this")
+                var element = document.getElementById(this.id+"-container");
+                element.parentNode.removeChild(element);
+                removeFromList(this.id)
+            }
+        }
+    }
+
+
+    // Add foot item as selection for calculating carbon footprint
+    function addItem() {
+        // declaring element to be inserted dynamically
+
+        if (!checkDuplicate()) {
+
+            let temp = []
+            temp = {
+                product: currentFoodProduct,
+                frequency: currentFoodFrequency
+            }
+            selectedFoodProducts.push(temp)
+            setSelectedFoodProducts(selectedFoodProducts)
+            console.log(selectedFoodProducts)
+
+            let parent_container = document.getElementById("food-dynamic-entries")
+            let child_container = document.createElement("dIV")
+            let paragraph = document.createElement("P")
+            let delete_button = document.createElement("BUTTON")
+
+            delete_button.id = currentFoodProduct
+            child_container.id = currentFoodProduct + "-container"
+            delete_button.className = "item-remove-button"
+            delete_button.textContent = "Remove"
+            paragraph.textContent = currentFoodProduct + ", " + currentFoodFrequency
+
+            child_container.appendChild(paragraph)
+            child_container.appendChild(delete_button)
+            parent_container.appendChild(child_container)
         }
 
     }
-
-    /* Set carbon emission in kilograms */
-    function setCarbonEmissionUnits(carbonPrint) {
-        document.getElementById("food-carbon-print-kgs-id").innerHTML = `Over an entire year your consumption of ${foodProduct[0].label} is contributing ${numberWithCommas(carbonPrint)} kilograms to your annual greenhouse gas emissions.`
-
-        document.getElementById("food-equivalent-car-id").innerHTML = `That's the equivalent of driving a regular petrol car for ${numberWithCommas((carbonPrint * 4.33).toFixed(0))} Kilometers.`
-
-    }
-
-    function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    const foodFrequencyOption = [
-        { label: "Once a day", value: 1 },
-        { label: "1-2 times a week", value: 2 },
-        { label: "3-5 times a week", value: 3 },
-        { label: "Twice a day or more", value: 4 },
-        { label: "Never", value: 5 }
-    ];
 
     return (
         <div className="food-main-container">
@@ -111,6 +172,7 @@ const Food = () => {
                     {/* <img /> logo */}
                     <h3>Food</h3>
                 </div>
+
                 {/* input container */}
                 <div className="input-container">
                     {/* input 1 */}
@@ -130,20 +192,22 @@ const Food = () => {
                         onChange={playFoodFrequency}
                     />
                 </div>
-            </div>
 
-            {/* carbon print stats container */}
-            <div className="carbon-print-revealed-container carbon-print-food-revealed-container">
-                {/* carbon print in kgs */}
-                <p className="food-carbon-print-kgs" id="food-carbon-print-kgs-id">
+                {/* Add more */}
+                <Button style={{ display: "none" }} id="add-food-item" variant="contained" color="primary" onClick={addItem}>
+                    Add Item
+                </Button>
 
-                </p>
-                {/* equivalent to car kilometers */}
-                <p className="food-equivalent-car" id="food-equivalent-car-id">
-
-                </p>
+                <div id="food-dynamic-entries" onClick={loopClicks}>
+                </div>
 
             </div>
+
+            {/* Displays the result of calculated carbon footprint */}
+            <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} />
+
+            {/* displays the chart */}
+            <FoodBarChart1 foodProduct={foodProduct} foodFrequency={foodFrequency} foodList={foodProductOption} />
 
         </div>
     )
