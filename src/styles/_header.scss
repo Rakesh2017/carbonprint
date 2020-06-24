@@ -4,7 +4,8 @@
 // to place logo and navigation
 /**********************************************/
 header {
-    border-bottom: 3px solid green;
+    border-bottom: 2px solid $color__green-dark2;
+    box-shadow: 1px 1px 4px #dddddd;
 }
 .site-header-container {
     height: 80px;

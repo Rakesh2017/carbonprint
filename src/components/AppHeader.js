@@ -4,13 +4,12 @@ import AppLogo from './AppHeader/AppLogo';
 import AppNav from './AppHeader/AppNav';
 
 import {
-    AppBar,
     Container,
 } from '@material-ui/core';
 
 
 const AppHeader = () => (    
-    <AppBar position="static" color="transparent">
+    <header>
         {/* .site-header-container main class to structure header area */}
         <Container>
             <div className="site-header-container">
@@ -18,7 +17,7 @@ const AppHeader = () => (
                 <AppNav />
             </div>            
         </Container>
-    </AppBar>
+    </header>
 );
 
 export default (AppHeader);

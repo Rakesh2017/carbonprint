@@ -1,8 +1,12 @@
 import React from 'react';
-import {
-    Typography,
-} from '@material-ui/core';
+import HomeHero from '../components/AppHome/HomeHero';
+import HomeFeatures from '../components/AppHome/HomeFeatures';
 
 export default () => (
-    <Typography variant="h4">Welcome Home!</Typography>
+    <div>
+        <div className="wrapper-hero">
+            <HomeHero />
+        </div>
+        <HomeFeatures />
+    </div>
 );
