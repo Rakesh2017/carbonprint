@@ -1,0 +1,91 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="color"],
+input,
+textarea,
+.input-container .react-dropdown-select {
+	backface-visibility: hidden;
+	background: $color__background-input;
+	border: solid 1px $color__border-input;
+	box-sizing: border-box;
+	outline: none;
+	padding: 0.2rem;
+	-webkit-appearance: none;
+	outline-offset: 0;
+    border-radius: 0.2rem;
+    max-width: 600px;
+
+	&:focus {
+		border-color: $color__border-green;
+		outline: thin solid $color__green-light2;
+		outline-offset: -4px;
+	}
+}
+
+textarea {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	resize: vertical;
+}
+
+form {
+
+	p {
+		margin: 0.5rem 0;
+	}
+
+	margin: 0;
+    padding:0;
+}
+
+label {
+    display: block;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background: $color__background-button;
+	border: none;
+	border-radius: 0.2rem;
+	box-sizing: border-box;
+	color: $color__green-light2;
+	font-family: $font__heading;
+	font-weight: 400;
+	outline: none;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	vertical-align: bottom;
+
+	&:hover {
+		background: $color__background-button-hover;
+		cursor: pointer;
+	}
+
+	&:visited {
+		color: $color__background-button;
+		text-decoration: none;
+	}
+
+	&:focus {
+		background: $color__background-button-hover;
+		outline: thin dotted;
+		outline-offset: -4px;
+	}
+}

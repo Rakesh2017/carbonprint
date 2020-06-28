@@ -5,6 +5,8 @@
 
 main {
     min-height: 75vh;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
 }
 
 /**************************************************
@@ -15,12 +17,17 @@ main {
 // Hero section
 
 .wrapper-hero {
-    margin-top: 3rem;
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    // padding-bottom: 2rem;
     background-color: $color__green-screen;
     min-height: 300px;
     color: $color__green-light2;
+
+    h1,
+    h2,
+    p {
+        color: $color__green-light2;
+    }
 }
 
 .hero-container {
@@ -40,13 +47,37 @@ main {
         .hero-image {
             flex-basis: 56%;
             flex-grow: 0;
+
+            img {
+                display: block;
+            }
         }
     }
-
+ 
+    .hero-button {
+        background-color: $color__green-light2;
+        color: $color__green-dark;
+    }
 
 }
 
 
 /**************************************************
 // Home page layout End ***************************
+/**************************************************/
+
+
+
+
+/**************************************************
+// Food calculator layout Start ***************************
+/**************************************************/
+
+main .food-main-container {
+    max-width: 900px;
+}
+
+
+/**************************************************
+// Food Calculator layout End ***************************
 /**************************************************/

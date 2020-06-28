@@ -1,8 +1,10 @@
 import React from 'react';
 import {
-    Typography,
+    Container,
 } from '@material-ui/core';
 
 export default () => (
-    <Typography variant="h4">Contact Us PAge!</Typography>
+    <Container>
+        <h1>The Contact Us Page !</h1>
+    </Container>
 );

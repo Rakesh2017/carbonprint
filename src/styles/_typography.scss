@@ -11,5 +11,25 @@ h2,
 h3 {
     font-family: $font__heading;
     line-height: $font__line-height-heading;
+    color: $color__green-screen;
 }
 
+a {
+    color: $color__link;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $color__link-hover;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: $color__link-visited;
+}
+
+.site-footer {
+    a {
+        color: $color__text-footer;
+    }
+}
