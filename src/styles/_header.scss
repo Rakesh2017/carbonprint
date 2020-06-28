@@ -4,21 +4,44 @@
 // to place logo and navigation
 /**********************************************/
 header {
+    border-top: 2px solid #67bc3922;
     border-bottom: 2px solid $color__green-dark2;
     box-shadow: 1px 1px 4px #dddddd;
 }
+
 .site-header-container {
-    height: 80px;
+    padding-top:0.2rem;
+    height: 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     .site-logo {
         flex-grow: 0;
+        position: relative;
+
+        img {
+            clip-path: polygon(0% 0%, 25% 0%, 25% 100%, 0% 100%);
+            position: relative;
+            display: block;
+        }
+
+        &:after {
+            content: "Carbon Print";
+            font-family: $font__heading;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+            position: absolute;
+            top: 15px;
+            bottom:0;
+            left: 35px;            
+        }
     }
 
 
-
+// site main navigation
     .site-main-nav {
         
         align-items: flex-end;
@@ -45,7 +68,36 @@ header {
                 display: none;
             }
         }
+
+            
+        a {
+            font-size: 1.15rem;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        a::after {
+            content: "";
+            width: 106%;
+            position: absolute;
+            top: 12px;
+            left: -3%;
+            right: 0;
+            border-bottom: 10px solid #67bc3944;
+        }
+
+        a:hover {
+            color: $color__green-light;
+            // text-decoration:solid underline 3px $color__green-light;
+            text-decoration: none;
+        }
+
+        a:hover::after {
+            border-bottom: none;
+        }
+    
     }
+
 }
 
 /*****************************************/

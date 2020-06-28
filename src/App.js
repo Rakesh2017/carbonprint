@@ -17,7 +17,7 @@ import Contact from './pages/contact';
 import Food from './pages/food';
 
 
-function App() {
+function App(props) {
   return (
     <Fragment>
       <Router>

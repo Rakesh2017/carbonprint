@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import baseUrl from '../database-secrets/secrets.js';
+import { Container, } from '@material-ui/core';
 
 const About = () => {
 
@@ -60,7 +61,7 @@ const About = () => {
 
     return (
         // main container
-        <div className="about-us-container">
+        <Container className="about-us-container">
 
             {/* heading-container may serve as background */}
             {/* heading-container starts */}
@@ -165,7 +166,7 @@ const About = () => {
             </div>
 
 
-        </div>
+        </Container>
         // main container ends
     )
 

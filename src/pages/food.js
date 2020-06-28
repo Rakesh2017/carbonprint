@@ -4,10 +4,12 @@ import baseUrl from '../database-secrets/secrets.js';
 import FoodCarbonPrint from '../components/show-food-carbon-result.js'
 import foodFrequencyOption from '../global-variables/global-variables.js'
 import FoodBarChart1 from '../components/food-bar-chart-1.js'
+import { Container, Button } from '@material-ui/core';
 import FoodUserBarChart from '../components/food-user-bar-chart.js'
 import FoodCarbonPrintUnited from '../components/show-food-carbon-result-united.js'
 import FoodSupplyChainChart from '../components/food-supply-chain-graph.js'
 import { Button } from '@material-ui/core';
+
 
 const Food = () => {
 
@@ -298,7 +300,7 @@ const Food = () => {
     }
 
     return (
-        <div className="food-main-container">
+        <Container className="food-main-container">
             {/* heading */}
             <h1>How do your food choices impact the Environment?</h1>
 
@@ -314,7 +316,7 @@ const Food = () => {
                 {/* input container */}
                 <div className="input-container">
                     {/* input 1 */}
-                    <label>Which food would you like?</label><br />
+                    <label>Which food would you like?</label>
                     <Select
                         placeholder="Select Food"
                         className="select-food"
@@ -322,7 +324,7 @@ const Food = () => {
                         onChange={playFoodProduct}
                     />
                     {/* input 2 */}
-                    <label>How often do you have it?</label><br />
+                    <label>How often do you have it?</label>
                     <Select
                         placeholder="Select how often?"
                         className="select-food"
@@ -355,7 +357,7 @@ const Food = () => {
             {/* it shows the bundling of carbon footprint along the supply chain of food */}
             {/* <FoodSupplyChainChart foodSupplyChainData={foodSupplyChainData} /> */}
 
-        </div>
+        </Container>
     )
 }
 
