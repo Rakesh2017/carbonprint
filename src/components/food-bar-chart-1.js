@@ -2,13 +2,13 @@ import React from 'react';
 import CanvasJSReact from '../assets/canvasjs.react';
 import compareCustomValues from '../global-functions/custom-compare-values.js'
 
-export default function FoodBarChart1({ foodProduct, foodList, foodFrequency }) {
+export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, foodFrequency }) {
 
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
     let tempFoodProductArray = []
     let FoodDataForVisualization = []
-    if (foodProduct !== undefined && foodFrequency !== undefined) {
+    if (foodProduct !== undefined && foodFrequency !== undefined && checkAddBtn) {
         document.getElementById("food-graph-1-chart").style.display = "block"
         foodList.forEach(element => {
             if (element.people_avg_carbon > 10) {
@@ -28,7 +28,8 @@ export default function FoodBarChart1({ foodProduct, foodList, foodFrequency }) 
     const options = {
         animationEnabled: true,
         title: {
-            text: "Carbon Footprints of Various Foods (Kgs)"
+            text: "Carbon Footprints of Various Foods (Kgs)",
+            theme: "light2"
         },
         backgroundColor: "#fff",
         axisY: {
@@ -47,6 +48,8 @@ export default function FoodBarChart1({ foodProduct, foodList, foodFrequency }) 
         data: [
             {
                 type: "bar",
+                showInLegend: true,
+                name: "Average of footprints of different foods per year",
                 dataPoints: FoodDataForVisualization
             }
         ]
