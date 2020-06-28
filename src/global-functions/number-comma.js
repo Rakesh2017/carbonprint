@@ -2,7 +2,10 @@
 
 /* Format the numbers */
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  if (x === undefined) {
+    return x
+  }
+  else return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 
