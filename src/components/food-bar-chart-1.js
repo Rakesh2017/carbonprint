@@ -33,8 +33,7 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
         },
         backgroundColor: "#fff",
         axisY: {
-            title: "Carbon Footprint in Kilograms",
-            padding: 220,
+            title: "Carbon Footprint (Kgs)",
             titleWrap: true,
             margin: 10
         },
@@ -48,16 +47,20 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
         data: [
             {
                 type: "bar",
-                showInLegend: true,
-                name: "Average of footprints of different foods per year",
                 dataPoints: FoodDataForVisualization
             }
         ]
     }
 
     return (
-        <div id="food-graph-1-chart" style={{ display: "none" }}>
+        <div id="food-graph-1-chart" className="chart" style={{ display: "none" }}>
             <CanvasJSChart options={options} />
+            <p id="food-chart-version" id="chart-version">Chart 2.0</p>
+            <p className="food-graph-explain graph-explain">
+             <i>Graph illustrates the average Carbon footprints of different foods per year
+                It contains land use, farming, animal feed, processing, transport, retail and packaging.
+             </i>
+            </p>
         </div>
     )
 }

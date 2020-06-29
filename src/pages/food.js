@@ -24,12 +24,17 @@ const Food = () => {
     // contains current food and frequency in select option
     const [currentFoodProduct, setCurrentFoodProduct] = useState("")
     const [currentFoodFrequency, setCurrentFoodFrequency] = useState("")
+    const [currentFoodType, setCurrentFoodType] = useState("")
     // contains list which in actual contains items to preview carbon footprint
     const [selectedFoodProducts, setSelectedFoodProducts] = useState([])
     // to check if both select options are selected
     const [checkPF, setCheckPF] = useState(false)
     // to check in other components that add item button is clicked
     const [checkAddBtn, setCheckAddBtn] = useState(false)
+    // setting carbon footprint reduce message, derived from diet input of user
+    const [reduceMessage, setReduceMessage] = useState("")
+    // set food types list, as per added items
+    const [foodTypeList, setFoodTypeList] = useState([])
     const [foodSupplyChainData, setFoodSupplyChainData] = useState([])
 
     /* Food supply chain variables */
@@ -48,7 +53,7 @@ const Food = () => {
     let three_to_five_week = "3-5 times a week"
 
     /* Fetch Carbon footprints to be used for input manipulations */
-    function getFood_1 () {
+    function getFood_1() {
         // GET request using fetch with set headers
         const headers = { 'Content-Type': 'application/json' }
         fetch(foodUrl1, { headers })
@@ -68,7 +73,8 @@ const Food = () => {
                         one_to_two_week: element.one_two_week,
                         three_to_five_week: element.three_five_week,
                         avg_week_person: element.avg_week_person,
-                        people_avg_carbon: element.people_avg_carbon
+                        people_avg_carbon: element.people_avg_carbon,
+                        food_type: element.food_type
                     })
                     tempFoodProductOption.push(temp)
                 });
@@ -184,6 +190,7 @@ const Food = () => {
     // setting the food product on select options (selection from options)
     function playFoodProduct(event) {
         setCurrentFoodProduct(event[0].label)
+        setCurrentFoodType(event[0].food_type)
         setFoodProduct(event)
         if (!checkPF) setCheckPF(true) // don't want to render this state again and again
         if (checkPF) {
@@ -214,11 +221,10 @@ const Food = () => {
 
         // delete entry from screen
         let allButtonElements = document.getElementById("food-dynamic-entries").querySelectorAll(".item-remove-button");
-        console.log("clicked: ")
 
         for (var i = 0; i < allButtonElements.length; i++) {
             allButtonElements[i].onclick = function () {
-                console.log("and this")
+
                 var element = document.getElementById(this.id + "-container");
                 element.parentNode.removeChild(element);
                 removeFromList(this.id)
@@ -242,6 +248,37 @@ const Food = () => {
         }
 
     }
+
+    /* calculate percentage of diet type */
+    const calculateDietPercentage = (total, part) => {
+       ( ( total / part ) * 100 ).toFixed(2)
+    }
+
+
+
+    /* count food type to display the contingency results */
+    function countFoodTypes () {
+        let meatCount = 0, vegCount = 0, fruitCount = 0, totalCount = 0, liquidCount = 0
+        // counting food types
+        console.log(selectedFoodProducts)
+        selectedFoodProducts.forEach(element => {
+            if (element.food_type === "meat") {
+                meatCount+=1
+            } else if (element.food_type === "vegetable") {
+                vegCount+=1
+            } else if (element.food_type === "fruit") {
+                fruitCount+=1
+            } else if (element.food_type === "drink") {
+                liquidCount+=1
+            }
+        });
+
+        totalCount = meatCount+vegCount+fruitCount+liquidCount
+
+        // derive message
+        let meatPercentage, vegPercentage, fruitPercentage, liquidPercentage
+        console.log(calculateDietPercentage(totalCount, meatPercentage))
+    } 
 
 
     // Add foot item as selection for calculating carbon footprint
@@ -272,13 +309,12 @@ const Food = () => {
                 product: currentFoodProduct,
                 frequency: currentFoodFrequency,
                 userCarbonPrint: userCarbonPrint,
-                avgCarbonPrint: avgCarbonPrint
+                avgCarbonPrint: avgCarbonPrint,
+                food_type: currentFoodType
             }
-            // selectedFoodProducts.push(temp)
             setSelectedFoodProducts(selectedFoodProducts.concat(temp))
-
+            
             temp = []
-
             let parent_container = document.getElementById("food-dynamic-entries")
             let child_container = document.createElement("dIV")
             let paragraph = document.createElement("P")
@@ -354,6 +390,15 @@ const Food = () => {
 
             {/* it shows the bundling of carbon footprint along the supply chain of food */}
             {/* <FoodSupplyChainChart foodSupplyChainData={foodSupplyChainData} /> */}
+
+            {/* showing result how to reduce food carbon footprint */}
+            {checkAddBtn && selectedFoodProducts.length > 1 ?
+                <div>
+                    <h2>How to reduce food carbon footprint?</h2>
+                </div> : null
+            }
+            {countFoodTypes()}
+
 
         </div>
     )
