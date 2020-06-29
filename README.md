@@ -6,7 +6,7 @@
 
 ******* Team Tiger Shark *******
 
-1. Rakesh,                  Project Manager | Developer    
+1. Rakesh,                  Project Manager | Developer | DA 
 2. Dalbir Singh,            Lead Developer | Front-end UI
 3. Palakdeep Kaur,          Developer | QA
 
