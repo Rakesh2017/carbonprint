@@ -1,8 +1,10 @@
 import React from 'react';
 import {
-    Typography,
+    Container,
 } from '@material-ui/core';
 
 export default () => (
-    <Typography variant="h4">Carbon Impact Page!</Typography>
+    <Container>
+        <h1>The Carbon Impact Page !</h1>
+    </Container>
 );

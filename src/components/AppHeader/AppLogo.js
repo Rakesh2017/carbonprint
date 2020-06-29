@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-// import logo from './logo.svg';
+import Logo from '../../images/Logo.svg';
 
 const AppLogo = () => (
     <div className="site-logo">
-        <Link to="/">Logo CarbonPrint</Link>
+        <Link to="/">
+            <img src={Logo} alt="carbonPrint" height="70px" width="120px" /></Link>
     </div>
 );
 
