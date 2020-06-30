@@ -1,5 +1,5 @@
 import React, {} from 'react';
-import CanvasJSReact from '../assets/canvasjs.react';
+import CanvasJSReact from '../../assets/canvasjs.react';
 
 export default function FoodUserBarChart({ checkAddBtn, foodList }) {
 

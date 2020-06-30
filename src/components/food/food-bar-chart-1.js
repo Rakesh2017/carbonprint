@@ -1,6 +1,6 @@
 import React from 'react';
-import CanvasJSReact from '../assets/canvasjs.react';
-import compareCustomValues from '../global-functions/custom-compare-values.js'
+import CanvasJSReact from '../../assets/canvasjs.react';
+import compareCustomValues from '../../global-functions/custom-compare-values.js'
 
 export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, foodFrequency }) {
 
@@ -29,7 +29,7 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
         animationEnabled: true,
         title: {
             text: "Carbon Footprints of Various Foods (Kgs)",
-            theme: "light2"
+            // theme: "light2"
         },
         backgroundColor: "#fff",
         axisY: {
@@ -55,7 +55,7 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
     return (
         <div id="food-graph-1-chart" className="chart" style={{ display: "none" }}>
             <CanvasJSChart options={options} />
-            <p id="food-chart-version" id="chart-version">Chart 2.0</p>
+            <p id="food-chart-version" className="chart-version">Chart 2.0</p>
             <p className="food-graph-explain graph-explain">
              <i>Graph illustrates the average Carbon footprints of different foods per year
                 It contains land use, farming, animal feed, processing, transport, retail and packaging.

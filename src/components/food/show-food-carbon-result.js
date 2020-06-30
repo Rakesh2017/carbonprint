@@ -1,5 +1,5 @@
 import React from 'react';
-import numberWithCommas from '../global-functions/number-comma.js'
+import numberWithCommas from '../../global-functions/number-comma.js'
 
 function FoodCarbonPrint({ foodFrequency, foodProduct }) {
 
