@@ -54,7 +54,7 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
 
     return (
         <div id="food-graph-1-chart" className="chart" style={{ display: "none" }}>
-            <CanvasJSChart options={options} />
+            {FoodDataForVisualization.length > 1 ? <CanvasJSChart options={options} /> : null}
             <p id="food-chart-version" className="chart-version">Chart 2.0</p>
             <p className="food-graph-explain graph-explain">
              <i>Graph illustrates the average Carbon footprints of different foods per year
