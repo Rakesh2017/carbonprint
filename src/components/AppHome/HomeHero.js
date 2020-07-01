@@ -1,4 +1,5 @@
 import React from 'react';
+import HistoricalCarbonEmissionChart from '../historical-carbon-emission-chart.js'
 import {
     Container,
     Button,
@@ -18,7 +19,8 @@ const homehero = () => (
 
             </div>
             <div className="hero-image">
-                <img src={heroImage} alt="carbonfootprint calculator" />
+                <HistoricalCarbonEmissionChart />
+                {/* <img src={heroImage} alt="carbonfootprint calculator" /> */}
             </div>
         </div>
     </Container>
