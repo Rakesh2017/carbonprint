@@ -26,3 +26,9 @@ These dependencies are required to be installed.
 
 # canvasJS charts  (for customization canvasJS docs:https://canvasjs.com/docs/charts/chart-options/axisx/margin/)
 9. npm install canvasjs
+
+#
+10. npm i react-cool-onclickoutside (https://www.npmjs.com/package/react-radio-buttons)
+
+# google PLACES, GEO-LOCATION services, need API to run (ask for API to admin)
+11. npm install --save use-places-autocomplete
