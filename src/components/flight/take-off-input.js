@@ -50,7 +50,7 @@ const TakeOffInput = ({ parentCallback }) => {
                 sendData(temp, address)
             })
             .catch((error) => {
-                console.log("😱 Error: ", error);
+                console.log("Error: ", error);
             });
     };
 
@@ -62,9 +62,11 @@ const TakeOffInput = ({ parentCallback }) => {
 
         return (
             <li key={id} onClick={handleSelect(suggestion)}>
+                {/* ! need styling here */}
                 <strong>{main_text}</strong> <small>{secondary_text}</small>
             </li>
         );
+
     });
 
 

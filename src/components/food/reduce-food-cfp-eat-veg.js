@@ -22,8 +22,8 @@ const ReduceFoodCfpEatVeg = () => {
                    
                     temp = [
                         { label: "Meat Lovers", y: element.meat_lover },
-                        { label: "Non_Veg", y: element.average },
-                        { label: "Np-Beef", y: element.no_beef },
+                        { label: "Non-Veg", y: element.average },
+                        { label: "No-Beef", y: element.no_beef },
                         { label: "Vegetarian", y: element.vegetarian },
                         { label: "Vegan", y: element.vegan }
                     ]

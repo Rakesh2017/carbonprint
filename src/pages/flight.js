@@ -15,7 +15,7 @@ const Flight = () => {
     const [destinationAddress, setDestinationAddress] = useState("")
     const [classType, setClassType] = useState()
     const [trip, setTrip] = useState() //by default 0 = "one way trip"
-    const [resultLoader, setResultLoader] = useState(false) //by default 0 = "one way trip"
+    const [resultLoader, setResultLoader] = useState(false) 
     const [flightClassOption, setFlightClassOption] = useState([]) 
 
 
