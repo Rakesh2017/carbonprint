@@ -7,6 +7,7 @@ const HistoricalCarbonEmissionChart = () => {
     const historicalCarbonUrl = baseUrl + "/carbon-historical-data"
     const historicalTemperatureUrl = baseUrl + "/temperature-historical-data"
     let temp = [], tempArr = []
+    let temp1 = [], tempArr1 = []
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
     const [chartData, setChartData] = useState([])
     const [chartTemperatureData, setChartTemperatureData] = useState([])
@@ -20,13 +21,16 @@ const HistoricalCarbonEmissionChart = () => {
                 response.json())
             .then(data => {
 
+                let count = 0, next_year = 0, last_value
                 data[1].result.forEach(element => {
 
                     temp = ({
-                        x: new Date(element.year),
+                        x: element.year,
                         y: element.carbon_emission
                     })
+
                     tempArr.push(temp)
+
                 });
                 setChartData(tempArr)
 
@@ -36,7 +40,6 @@ const HistoricalCarbonEmissionChart = () => {
     /* fetching data */
     function getTemperatureCFP() {
         // GET request using fetch with set headers
-        let tempArr1 = [], temp1
         const headers = { 'Content-Type': 'application/json' }
         fetch(historicalTemperatureUrl, { headers })
             .then(response =>
@@ -46,17 +49,14 @@ const HistoricalCarbonEmissionChart = () => {
                 data[1].result.forEach(element => {
 
                     temp1 = ({
-                        x: new Date(element.year),
-                        y: element.temperature
+                        x: element.year,
+                        y: element.temperature,
                     })
+
                     tempArr1.push(temp1)
                 });
-               // setChartTemperatureData(tempArr)
-                //console.log("getTemperatureCFP -> tempArr", tempArr)
-                console.log("getTemperatureCFP -> tempArr1", tempArr1)
-                return [tempArr1]
+                setChartTemperatureData(tempArr1)
             })
-        
     }
 
     const options = {
@@ -74,10 +74,25 @@ const HistoricalCarbonEmissionChart = () => {
             fontColor: "white"
         },
         axisX: {
+            stripLines: [
+                {
+                    value: 1980,
+                    opacity: 0.3,
+                    label: "Technology Boom (1980)",
+                    labelPlacement: "inside",
+                    labelAlign: "near",
+                    thickness: 2,
+                    labelFontColor: "white",
+                    color: "white",
+                    showOnTop: true,
+                    lineDashType: "dot"
+                }
+            ],
             title: "Years",
+            valueFormatString:"####",
             titleFontColor: "white",
-            interval: 15,
-            intervalType: "year",
+            interval: 16,
+            // intervalType: "year",
             labelAngle: 90,
             crosshair: {
                 enabled: true
@@ -106,13 +121,8 @@ const HistoricalCarbonEmissionChart = () => {
         },
         axisY2: {
             title: "temperature increase",
-            titleFontColor: "#51CDA0",
-            // interval: 20,
-            suffix: " c",
-            lineColor: "#51CDA0",
-            labelFontColor: "#51CDA0",
-            tickColor: "#51CDA0",
-            includeZero: true
+            suffix: " °C",
+            // includeZero: true,
         },
         data: [
             {
@@ -122,11 +132,11 @@ const HistoricalCarbonEmissionChart = () => {
                 dataPoints: chartData
             },
             {
-                type: "splineArea",
+                type: "column",
                 axisYType: "secondary",
                 showInLegend: true,
                 legendText: "Average temperature increase",
-                dataPoints: getTemperatureCFP() 
+                dataPoints: chartTemperatureData
 
             }
         ]
@@ -134,14 +144,18 @@ const HistoricalCarbonEmissionChart = () => {
 
     useEffect(() => {
         getLocalCFP()
-        //getTemperatureCFP()
+    }, [])
+
+    useEffect(() => {
+        getTemperatureCFP()
     }, [])
 
 
+    const opitions1 = {}
+
     return (
         <div>
-            {console.log("HistoricalCarbonEmissionChart -> chartData", chartData)}
-            {chartData.length > 2 ? <CanvasJSChart options={options} /> : null}
+            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <CanvasJSChart options={options} /> : null}
         </div>
     );
 }

@@ -14,7 +14,7 @@ const RadioTripChoice = ({parentCallback}) => {
                     One Way Trip
                 </RadioButton>
                 <RadioButton value="1">
-                    Return Trip
+                    Round Trip
                 </RadioButton>
             </RadioGroup>
         </div>
