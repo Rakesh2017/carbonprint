@@ -1,5 +1,5 @@
 import React from 'react';
-import HistoricalCarbonEmissionChart from '../historical-carbon-emission-chart.js'
+import HistoricalCarbonEmissionChart from '../home/historical-carbon-emission-chart.js'
 import {
     Container,
     Button,

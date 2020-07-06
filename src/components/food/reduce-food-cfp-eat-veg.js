@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import baseUrl from '../../database-secrets/secrets.js';
 import CanvasJSReact from '../../assets/canvasjs.react';
+import ChartDescription from '../reusable/chart-description.js';
+import Fact from '../reusable/facts.js';
 
 const ReduceFoodCfpEatVeg = () => {
 
@@ -8,6 +10,10 @@ const ReduceFoodCfpEatVeg = () => {
     let temp = []
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
     const [chartData, setChartData] = useState([])
+
+    const chartVersion = "Chart 4.0"
+    const chartInfo = "Graph illustrates the average release of carbon in tonnes by diet type of a person in one year."
+
 
     /* fetching data */
     function getDietCFP() {
@@ -17,9 +23,9 @@ const ReduceFoodCfpEatVeg = () => {
             .then(response =>
                 response.json())
             .then(data => {
-               
+
                 data[1].result.forEach(element => {
-                   
+
                     temp = [
                         { label: "Meat Lovers", y: element.meat_lover },
                         { label: "Non-Veg", y: element.average },
@@ -29,7 +35,7 @@ const ReduceFoodCfpEatVeg = () => {
                     ]
                 });
                 setChartData(temp)
-     
+
             })
 
         // [fetch ends here]    
@@ -63,16 +69,11 @@ const ReduceFoodCfpEatVeg = () => {
         <div className="reduce-food-cfp-container reduce-food-cfp-container-eat-veg">
             <h1>Eat Vegetarian</h1>
             <CanvasJSChart options={options} />
-            <p className="chart-version">Chart 3.0</p>
-            <p className="food-graph-explain graph-explain">
-                <i>
-                    Graph illustrates the average release of carbon in tonnes by diet type of a person in one year.
-             </i>
-            </p>
+            {/* chart container */}
+            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
             <div className="explanation-container">
-                <p className="fact-container">
-                    Livestock farming produces from 20% to 50% of all man-made greenhouse gas emissions.
-                </p>
+                {/* Fact container */}
+                <Fact message="Livestock farming produces from 20% to 50% of all man-made greenhouse gas emissions." />
                 <p>
                     Graph 3.0 chart shows that a meat lover has the highest carbon footprint at 3.3 tons of greenhouse gas emissions. A vegan diet has the lowest carbon footprint at just 1.5 tons carbon. You can reduce your food carbon footprint by a quarter just by cutting down on red meats such as beef and lamb. While, The carbon footprint of a vegetarian diet is about half that of a meat-lover’s diet.
                 </p>

@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import baseUrl from '../database-secrets/secrets.js';
-import CanvasJSReact from '../assets/canvasjs.react';
+import baseUrl from '../../database-secrets/secrets.js';
+import CanvasJSReact from '../../assets/canvasjs.react';
+import ChartDescription from '../reusable/chart-description.js'
+import LoadingIndicator from '../loading/loading.js'
+import Toaster from '../toast/toaster.js'
+import { trackPromise } from 'react-promise-tracker'
+import { ToastContainer } from 'react-toastify';
 
 const HistoricalCarbonEmissionChart = () => {
 
@@ -12,6 +17,9 @@ const HistoricalCarbonEmissionChart = () => {
     const [chartData, setChartData] = useState([])
     const [chartTemperatureData, setChartTemperatureData] = useState([])
 
+    const chartVersion = "Chart 2.0"
+    const chartInfo = "Chart description goes here"
+
     /* fetching data */
     function getLocalCFP() {
         // GET request using fetch with set headers
@@ -21,7 +29,6 @@ const HistoricalCarbonEmissionChart = () => {
                 response.json())
             .then(data => {
 
-                let count = 0, next_year = 0, last_value
                 data[1].result.forEach(element => {
 
                     temp = ({
@@ -41,22 +48,25 @@ const HistoricalCarbonEmissionChart = () => {
     function getTemperatureCFP() {
         // GET request using fetch with set headers
         const headers = { 'Content-Type': 'application/json' }
-        fetch(historicalTemperatureUrl, { headers })
-            .then(response =>
-                response.json())
-            .then(data => {
+        trackPromise(
+            fetch(historicalTemperatureUrl, { headers })
+                .then(response =>
+                    response.json())
+                .then(data => {
 
-                data[1].result.forEach(element => {
+                    data[1].result.forEach(element => {
 
-                    temp1 = ({
-                        x: element.year,
-                        y: element.temperature,
-                    })
+                        temp1 = ({
+                            x: element.year,
+                            y: element.temperature,
+                        })
 
-                    tempArr1.push(temp1)
-                });
-                setChartTemperatureData(tempArr1)
-            })
+                        tempArr1.push(temp1)
+                    });
+                    setChartTemperatureData(tempArr1)
+                }).catch((err) =>
+                    Toaster()
+                ))
     }
 
     const options = {
@@ -89,7 +99,7 @@ const HistoricalCarbonEmissionChart = () => {
                 }
             ],
             title: "Years",
-            valueFormatString:"####",
+            valueFormatString: "####",
             titleFontColor: "white",
             interval: 16,
             // intervalType: "year",
@@ -151,13 +161,17 @@ const HistoricalCarbonEmissionChart = () => {
     }, [])
 
 
-    const opitions1 = {}
-
     return (
         <div>
+            {/* loading */}
+            <LoadingIndicator />
+            <ToastContainer />
             {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <CanvasJSChart options={options} /> : null}
+            {/* chart container */}
+            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} /> : null}
         </div>
     );
 }
 
 export default HistoricalCarbonEmissionChart;
+

@@ -5,6 +5,8 @@ import DestinationInput from '../components/flight/destination-input.js'
 import ClassDropdown from '../components/flight/class-dropdown.js'
 import RadioTripChoice from '../components/flight/radio-trip-choice.js'
 import Result from '../components/flight/result.js'
+import baseUrl from '../database-secrets/secrets.js';
+import WorldAverages from '../components/flight/world-averages.js'
 
 const Flight = () => {
 
@@ -15,8 +17,42 @@ const Flight = () => {
     const [destinationAddress, setDestinationAddress] = useState("")
     const [classType, setClassType] = useState()
     const [trip, setTrip] = useState() //by default 0 = "one way trip"
-    const [resultLoader, setResultLoader] = useState(false) 
-    const [flightClassOption, setFlightClassOption] = useState([]) 
+    const [resultLoader, setResultLoader] = useState(false)
+    const [flightClassOption, setFlightClassOption] = useState([])
+    const worldCFPUrl = baseUrl + "/world-flight-carbon-footprints"
+    let temp = [], tempArr = []
+    const [worldChartData, setWorldChartData] = useState()
+    const [personAvgData, setPersonAvgData] = useState()
+
+    /* fetching data */
+    function getWorldCarbonFootprint() {
+        // GET request using fetch with set headers
+        const headers = { 'Content-Type': 'application/json' }
+        fetch(worldCFPUrl, { headers })
+            .then(response =>
+                response.json())
+            .then(data => {
+                // inserting world data
+                data[1].result.forEach(element => {
+                    temp = ({
+                        label: element.country,
+                        y: element.world
+                    })
+                    tempArr.push(temp)
+                });
+                setWorldChartData(tempArr)
+                temp = tempArr = []
+                // inserting person data
+                data[1].result.forEach(element => {
+                    temp = ({
+                        label: element.country,
+                        y: element.people
+                    })
+                    tempArr.push(temp)
+                });
+                setPersonAvgData(tempArr)
+            })
+    }
 
 
     // calculate carbon footprint
@@ -32,6 +68,13 @@ const Flight = () => {
             // cleanup
         };
     }, [takeOff, destination, classType, trip]);
+
+    useEffect(() => {
+        getWorldCarbonFootprint()
+        return () => {
+            // cleanup
+        };
+    }, []);
 
     // callback from take off to set lat lng
     const handleTakeOffCallback = (data, address) => {
@@ -85,8 +128,11 @@ const Flight = () => {
                 <RadioTripChoice parentCallback={handleTripChoiceCallback} />
 
                 {/* show result */}
-                {resultLoader ? <Result takeOff={takeOff} destination={destination} takeOffAddress={takeOffAddress} destinationAddress={destinationAddress} classType={classType} trip={trip} flightClassOption={flightClassOption} /> : null }
-
+                {resultLoader ? <Result takeOff={takeOff} destination={destination} takeOffAddress={takeOffAddress} destinationAddress={destinationAddress} classType={classType} trip={trip} flightClassOption={flightClassOption} /> : null}
+                
+                {/* show world averages */}
+    { worldChartData!==undefined && personAvgData!==undefined ? <WorldAverages worldChartData={worldChartData} personAvgData={personAvgData} /> : null}
+                
             </div>
 
         </Container>
