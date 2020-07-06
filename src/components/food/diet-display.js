@@ -1,9 +1,13 @@
 import React from 'react';
 import CanvasJSReact from '../../assets/canvasjs.react';
+import ChartDescription from '../reusable/chart-description.js';
 
 const DietDisplay = ({ reduceMessage, meatPercentage, fruitPercentage, vegPercentage, liquidPercentage }) => {
 
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+    const chartVersion = "Chart 3.0"
+    const chartInfo = "Graph illustrates the distribution of food types of your food diet"
+
 
     const options = {
         exportEnabled: true,
@@ -34,6 +38,8 @@ const DietDisplay = ({ reduceMessage, meatPercentage, fruitPercentage, vegPercen
                 {reduceMessage}
             </p>
             <CanvasJSChart options={options} />
+            {/* chart container */}
+            <ChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
         </div>
     );
 }

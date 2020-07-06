@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import baseUrl from '../../database-secrets/secrets.js';
 import CanvasJSReact from '../../assets/canvasjs.react';
+import ChartDescription from '../reusable/chart-description.js';
 
 const ReduceFoodCfpEatLocal = () => {
 
@@ -8,6 +9,10 @@ const ReduceFoodCfpEatLocal = () => {
     let temp = []
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
     const [chartData, setChartData] = useState([])
+
+    const chartVersion = "Chart 5.0"
+    const chartInfo = " Graph shows the share of process involved in food supply chain."
+
 
     /* fetching data */
     function getLocalCFP() {
@@ -56,12 +61,8 @@ const ReduceFoodCfpEatLocal = () => {
         <div className="reduce-food-cfp-container reduce-food-cfp-container-eat-local">
             <h2>Eat Locally Produced Food</h2>
             <CanvasJSChart options={options} />
-            <p className="chart-version">Chart 3.0</p>
-            <p className="food-graph-explain graph-explain">
-                <i>
-                    Graph shows the share of process involved in food supply chain.
-                </i>
-            </p>
+            {/* chart container */}
+            <ChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
             <div className="explanation-container">
                 <p>
                     You can easily reduce the carbon footprint of your food by up to 7% by eating locally. Food miles are only a small part of our food’s carbon emissions, so to devise the best strategy to cut its carbon footprint.
