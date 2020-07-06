@@ -27,10 +27,10 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
 
     const options = {
         animationEnabled: true,
-        title: {
-            text: "Carbon Footprints of Various Foods (Kgs)",
-            // theme: "light2"
-        },
+        // title: {
+        //     text: "Carbon Footprints of Various Foods (Kgs)",
+        //     // theme: "light2"
+        // },
         backgroundColor: "#fff",
         axisY: {
             title: "Carbon Footprint (Kgs)",
@@ -54,6 +54,7 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
 
     return (
         <div id="food-graph-1-chart" className="chart" style={{ display: "none" }}>
+            <h2>Carbon Footprints of Various Foods (Kgs)</h2>
             {FoodDataForVisualization.length > 1 ? <CanvasJSChart options={options} /> : null}
             <p id="food-chart-version" className="chart-version">Chart 2.0</p>
             <p className="food-graph-explain graph-explain">

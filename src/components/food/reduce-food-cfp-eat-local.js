@@ -54,7 +54,7 @@ const ReduceFoodCfpEatLocal = () => {
 
     return (
         <div className="reduce-food-cfp-container reduce-food-cfp-container-eat-local">
-            <h1>Eat Locally Produced Food</h1>
+            <h2>Eat Locally Produced Food</h2>
             <CanvasJSChart options={options} />
             <p className="chart-version">Chart 3.0</p>
             <p className="food-graph-explain graph-explain">

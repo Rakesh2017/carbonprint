@@ -14,8 +14,8 @@ import About from './pages/about';
 import Calculator from './pages/calculator';
 import CarbonImpact from './pages/carbon-impact';
 import Contact from './pages/contact';
-import Food from './pages/food';
-import Flight from './pages/flight';
+// import Food from './pages/food';
+// import Flight from './pages/flight';
 
 
 function App(props) {
@@ -30,8 +30,8 @@ function App(props) {
             <Route exact path="/calculator" component={Calculator} />
             <Route exact path="/carbon-impact" component={CarbonImpact} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/food" component={Food} />
-            <Route exact path="/flight" component={Flight} />
+            {/* <Route exact path="/food" component={Food} /> */}
+            {/* <Route exact path="/flight" component={Flight} /> */}
           </Switch>
         </main>
         <AppFooter />

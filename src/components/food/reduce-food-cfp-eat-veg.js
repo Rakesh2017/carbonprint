@@ -61,7 +61,7 @@ const ReduceFoodCfpEatVeg = () => {
 
     return (
         <div className="reduce-food-cfp-container reduce-food-cfp-container-eat-veg">
-            <h1>Eat Vegetarian</h1>
+            <h2>Eat Vegetarian</h2>
             <CanvasJSChart options={options} />
             <p className="chart-version">Chart 3.0</p>
             <p className="food-graph-explain graph-explain">

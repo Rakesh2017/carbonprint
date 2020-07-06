@@ -25,12 +25,6 @@ const AppNav = () => (
             <li>
                 <Link to="/contact">Contact Us</Link>
             </li>
-            <li>
-                <Link to="/food">Food</Link>
-            </li>
-            <li>
-                <Link to="/flight">Flight</Link>
-            </li>
         </ul>
     </nav>
 

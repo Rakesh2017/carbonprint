@@ -1,12 +1,7 @@
-#root {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
 main {
     min-height: 75vh;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 /**************************************************
@@ -70,14 +65,204 @@ main {
 
 
 /**************************************************
-// Food calculator layout Start ***************************
+// calculator layout Start ***************************
+// Author: Dalbir Singh ***************************
 /**************************************************/
 
-main .food-main-container {
-    max-width: 900px;
+// Tab Panel *******************************
+
+.carbon-calculator { 
+
+}
+
+.tab-panel {
+
+    h3 {
+        text-align: center;
+        margin: 0;
+    }
+    
+    .tab-nav {
+        // border: 1px solid $color__green-dark;
+        border-radius: 0.25rem;
+        display: block;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+
+
+
+        div:first-of-type,
+        div:last-of-type {
+            cursor: pointer;
+            padding: 0.4rem;
+            height: 2rem;
+
+            @media screen and (min-width: 850px) {
+                display: none;
+            }
+        }
+        
+        .tab-slider {
+            overflow-x: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        ul {
+            // position: absolute;        
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            justify-items: center;
+
+            transform: translateX(0);
+        }
+    
+        li {
+            cursor: pointer;
+            display: block;
+            flex: 0 0 auto;
+            text-align: center;
+            background-color: #dddddd;
+            border-radius: .3rem;
+            min-width: 100px;
+            width: 20%;
+            padding: 0.5rem;
+            margin: 0.25rem;
+
+            &:last-of-type {
+                min-width: 200px;
+            }
+        }
+    } 
+    
+    .tab-container > div {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+
 }
 
 
+
+
+.tab-container > div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border: 1px solid #dddddd;
+    border-radius: 0.25rem;
+
+            
+    #section-heading {
+        background-color: transparent;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+
+        h2 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+}
+
+
+
+.input-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.item-remove-button {
+    padding: 0.1rem 0.5rem;
+    background-color: transparent;
+    border: 1px solid $color__green-dark;
+    line-height: 1;
+    height: 1.8rem;
+    color: $color__green-dark;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    &:hover {
+        background-color: red;
+        color: $color__green-light2;
+    }
+}
+
+
+
+// Food Section ****************************
+.tab-container {
+
+    .food-main-container {
+
+        &>div {
+            // border:1px solid $color__green-dark;
+            border-radius: 0.5rem;
+            background-color: #f8f8f8;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            height: calc(100% - 1rem);
+
+            h2 {
+                margin-top: 0;
+            }
+        }
+    
+        @media screen and (min-width: 1000px) {
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: start;
+            align-content: stretch;
+        
+            #section-heading,
+            .carbon-print-revealed-container,
+            #food-graph-1-chart,
+            .how-to-reduce {
+                grid-column: span 2;
+            }
+
+        }
+        
+    }
+
+    #food-dynamic-entries > div {
+        display: flex;
+        align-items: center;
+
+        p {
+            width: 250px;
+            border-left: 0.3rem solid $color__green-light;
+            background-color: $color__green-light2;
+            padding: 3px;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+    }
+    
+}
+
+
+
+
+// Flight Section
+
+
+
+
 /**************************************************
-// Food Calculator layout End ***************************
+// Calculator layout End ***************************
 /**************************************************/
