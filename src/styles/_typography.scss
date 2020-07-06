@@ -6,6 +6,18 @@ body {
     color: $color__text-main;
 }
 
+h1 {
+    font-size: $font__size_xxl;
+}
+
+h2 {
+    font-size: $font__size_xl;
+}
+
+h3 {
+    font-size: $font__size_lg;
+}
+
 h1,
 h2,
 h3 {

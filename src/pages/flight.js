@@ -59,16 +59,18 @@ const Flight = () => {
 
     return (
         <Container className="flight-main-container">
-            {/* heading */}
-            <h1>How do your Air Flight Travel impact the Environment?</h1>
-
+            <div id="section-heading">
+                {/* heading */}
+                <h2>How do your Air Flight Travel impact the Environment?</h2>
+            </div>
+            
             {/* logo+input container  */}
             <div className="logo+input-container">
                 {/* Logo Container */}
                 <div className="logo-container">
                     {/* flight logo */}
                     {/* <img /> logo */}
-                    <h3>Air Flight</h3>
+                    {/* <h3>Air Flight</h3> */}
                 </div>
 
                 {/* input container */}

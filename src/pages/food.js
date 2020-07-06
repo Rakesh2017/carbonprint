@@ -356,16 +356,19 @@ const Food = () => {
 
     return (
         <Container className="food-main-container">
-            {/* heading */}
-            <h1>How do your food choices impact the Environment?</h1>
 
+            <div id="section-heading">
+                {/* heading */}
+                <h2>How do your food choices impact the Environment?</h2>
+            </div>
+            
             {/* logo+input container  */}
             <div className="logo+input-container">
                 {/* Logo Container */}
                 <div className="logo-container">
                     {/* food logo */}
                     {/* <img /> logo */}
-                    <h3>Food</h3>
+                    {/* <h3>Food</h3> */}
                 </div>
 
                 {/* input container */}
@@ -389,19 +392,23 @@ const Food = () => {
                 </div>
 
                 {/* Add more */}
-                <Button style={{ display: "none" }} id="add-food-item" variant="contained" color="primary" onClick={addItem}>
+                <Button style={{ display: "none" }} id="add-food-item" variant="contained" onClick={addItem}>
                     Add Item
                 </Button>
 
+
+                <div id="food-dynamic-entries" onClick={loopClicks}></div>
+
+                
+                {/* Displays the result of calculated carbon footprint */}
+                <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} foodList={selectedFoodProducts} />  
+            
             </div>
 
-            {/* Displays the result of calculated carbon footprint */}
-            <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} foodList={selectedFoodProducts} />
-
-            <div id="food-dynamic-entries" onClick={loopClicks}></div>
-
-            {/* displays user carbon foot print chart of selected foods  */}
+            
+                {/* displays user carbon foot print chart of selected foods  */}
             <FoodUserBarChart checkAddBtn={checkAddBtn} foodList={selectedFoodProducts} />
+
 
             {/* Displays the result of Accumulated calculated carbon footprint */}
             <FoodCarbonPrintUnited checkAddBtn={checkAddBtn} foodList={selectedFoodProducts} />
@@ -415,7 +422,7 @@ const Food = () => {
             {/* showing result how to reduce food carbon footprint */}
             {countFoodTypes()}
             {checkAddBtn && selectedFoodProducts.length >= 1 ?
-                <div>
+                <div className="how-to-reduce">
                     <h2>How to reduce food carbon footprint?</h2>
                     <DietDisplay reduceMessage={message} meatPercentage={meatPercentage} fruitPercentage={fruitPercentage} vegPercentage={vegPercentage} liquidPercentage={liquidPercentage} />
                 </div> : null
