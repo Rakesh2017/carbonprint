@@ -44,7 +44,7 @@ const ClassDropDown = ({parentCallback}) => {
 
     return (
         <div className="class-flight-drop-down-container">
-            <label>What type of trip it is?</label>
+            <label>What type of Flight Class Type it is?</label>
             <Select
                 placeholder="Select Flight Class Type"
                 className="select-flight"

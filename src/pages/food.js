@@ -421,6 +421,7 @@ const Food = () => {
 
             {/* showing result how to reduce food carbon footprint */}
             {countFoodTypes()}
+            
             {checkAddBtn && selectedFoodProducts.length >= 1 ?
                 <div className="how-to-reduce">
                     <h2>How to reduce food carbon footprint?</h2>

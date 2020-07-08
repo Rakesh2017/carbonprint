@@ -19,11 +19,17 @@ const WorldAverages = ({ worldChartData, personAvgData }) => {
         axisY: {
             title: "Carbon footprint",
             includeZero: false,
-            suffix: " M"
+            suffix: " MT",
+            interlacedColor: "#F8F1E4",
         },
         axisX: {
             title: "Country Name",
             labelAngle: 90
+        },
+        toolTip: {
+            enabled: true,      
+            animationEnabled: true,
+            content: "{label} : <strong>{y} MT</strong>" 
         },
         data: [
             {

@@ -7,6 +7,9 @@ import RadioTripChoice from '../components/flight/radio-trip-choice.js'
 import Result from '../components/flight/result.js'
 import baseUrl from '../database-secrets/secrets.js';
 import WorldAverages from '../components/flight/world-averages.js'
+import NonStopFlight from '../components/flight/reduce-carbon-footprint/non-stop-flight.js'
+import EconomyClassFlight from '../components/flight/reduce-carbon-footprint/economy-class-flight.js'
+import RadioConnectingFlight from '../components/flight/radio-connecting-flight.js'
 
 const Flight = () => {
 
@@ -17,6 +20,7 @@ const Flight = () => {
     const [destinationAddress, setDestinationAddress] = useState("")
     const [classType, setClassType] = useState()
     const [trip, setTrip] = useState() //by default 0 = "one way trip"
+    const [connectingFlight, setConnectingFlight] = useState() //by default 0 = "no"
     const [resultLoader, setResultLoader] = useState(false)
     const [flightClassOption, setFlightClassOption] = useState([])
     const worldCFPUrl = baseUrl + "/world-flight-carbon-footprints"
@@ -57,7 +61,7 @@ const Flight = () => {
 
     // calculate carbon footprint
     const calculateCarbonFootPrint = () => {
-        if (takeOff !== undefined && destination !== undefined && classType !== undefined && trip !== undefined) {
+        if (takeOff !== undefined && destination !== undefined && classType !== undefined && trip !== undefined && connectingFlight !== undefined) {
             setResultLoader(true)
         }
     }
@@ -99,6 +103,11 @@ const Flight = () => {
         setTrip(data)
     }
 
+    // callback from trip choice (one way ur return)
+    const handleConnectingFlightCallback = (data) => {
+        setConnectingFlight(data)
+    }
+
 
     return (
         <Container className="flight-main-container">
@@ -106,7 +115,7 @@ const Flight = () => {
                 {/* heading */}
                 <h2>How do your Air Flight Travel impact the Environment?</h2>
             </div>
-            
+
             {/* logo+input container  */}
             <div className="logo+input-container">
                 {/* Logo Container */}
@@ -124,17 +133,31 @@ const Flight = () => {
                     <DestinationInput parentCallback={handleDestinationCallback} />
                 </div>
 
+                {/* trip choice */}
+                <RadioConnectingFlight parentCallback={handleConnectingFlightCallback} />
+
                 {/* flight class choice  */}
                 <ClassDropdown parentCallback={handleDropDownCallback} />
                 {/* trip choice */}
                 <RadioTripChoice parentCallback={handleTripChoiceCallback} />
 
                 {/* show result */}
-                {resultLoader ? <Result takeOff={takeOff} destination={destination} takeOffAddress={takeOffAddress} destinationAddress={destinationAddress} classType={classType} trip={trip} flightClassOption={flightClassOption} /> : null}
-                
+                {resultLoader && <Result takeOff={takeOff} destination={destination} takeOffAddress={takeOffAddress} destinationAddress={destinationAddress} classType={classType} trip={trip} flightClassOption={flightClassOption} connectingFlight={connectingFlight} />}
+
                 {/* show world averages */}
-    { worldChartData!==undefined && personAvgData!==undefined ? <WorldAverages worldChartData={worldChartData} personAvgData={personAvgData} /> : null}
-                
+                {resultLoader && worldChartData !== undefined && personAvgData !== undefined && <WorldAverages worldChartData={worldChartData} personAvgData={personAvgData} />}
+
+                {/* reduce carbon footprint */}
+
+                {resultLoader && <div className="how-to-reduce">
+                    <h2>How to reduce Flight carbon footprint?</h2>
+                </div>}
+
+                {/* reduce method 1 */}
+                {resultLoader && <NonStopFlight />}
+                {/* reduce method 2 */}
+                {resultLoader && <EconomyClassFlight />}
+
             </div>
 
         </Container>
