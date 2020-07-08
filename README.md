@@ -2,7 +2,7 @@
 # CARBONPRINT
 
 # Langara College WMDD Term 3 Project
-# Built on ReactJS and NodeJS
+# Built on ReactJS and NodeJS with ExpressJS Server
 
 ******* Team Tiger Shark *******
 
