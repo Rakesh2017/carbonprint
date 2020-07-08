@@ -109,7 +109,7 @@ const HistoricalCarbonEmissionChart = () => {
             },
         },
         axisY: {
-            title: "Carbon in Parts per million (PPM)",
+            title: "Carbon in Parts per million",
             titleFontColor: "white",
             interval: 50,
             suffix: " ppm",

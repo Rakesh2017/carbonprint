@@ -27,8 +27,6 @@ export default () => {
         const tabContainers = document.querySelectorAll('.tab-container > div');
         
         tabs.forEach((tab) => {
-            console.log(tab.tabIndex);
-            
             tab.addEventListener('click', function() {
                 tabs.forEach((item) => {
                     item.style.backgroundColor= "#eeeeee";
@@ -41,7 +39,7 @@ export default () => {
                 tabContainers[tab.tabIndex].classList.add("active");
             })
         }) 
-    });
+    }, []);
 
 
     return (
