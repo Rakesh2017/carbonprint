@@ -1,3 +1,5 @@
+![GitHub Logo](/src/images/github/website_logo.png)
+Format: ![Alt Text](url)
 
 # CARBONPRINT
 

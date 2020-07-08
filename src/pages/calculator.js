@@ -2,7 +2,7 @@ import { Container } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import Food from './food';
 import Flight from './flight';
-import Travel from './flight';
+import Travel from './travel';
 import Result from './flight';
 
 
@@ -57,7 +57,7 @@ export default () => {
                         <ul>
                             <li tabIndex="0">Food</li>
                             <li tabIndex="1">Flight</li>
-                            <li tabIndex="2">Car</li>
+                            <li tabIndex="2">Travel</li>
                             <li tabIndex="3">Your Total Carbon Emission</li>
                         </ul>
                     </div>

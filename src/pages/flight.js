@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Button } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import TakeOffInput from '../components/flight/take-off-input.js'
 import DestinationInput from '../components/flight/destination-input.js'
 import ClassDropdown from '../components/flight/class-dropdown.js'
