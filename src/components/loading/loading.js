@@ -5,7 +5,6 @@ import React from 'react';
 /* can use props for styling */
 const LoadingIndicator = ({ styling }) => {
     const { promiseInProgress } = usePromiseTracker();
-    console.log("promiseInProgress", promiseInProgress)
     return (
         promiseInProgress && <div
             style={{

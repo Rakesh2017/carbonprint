@@ -1,11 +1,21 @@
-import React from 'react';
-import { Container } from '@material-ui/core';
+import React, { useState } from 'react';
 import Input from '../components/travel/car/input.js'
+import { Container } from '@material-ui/core';
+import Result from '../components/travel/car/result.js'
+
 
 const Travel = () => {
 
-    function handleCarTypeCallback () {
+    const [type, setType] = useState()
+    const [average, setAverage] = useState()
+    const [distance, setDistance] = useState()
+    const [checker, setChecker] = useState(false)
 
+    function handleCarTypeCallback(type, average, distance) {
+        setType(type)
+        setAverage(average)
+        setDistance(distance)
+        setChecker(true)
     }
 
     return (
@@ -27,8 +37,11 @@ const Travel = () => {
                 {/* input container */}
                 <div className="input-container">
                     {/* car type */}
-                <Input parentCallback={handleCarTypeCallback} />
+                    <Input parentCallback={handleCarTypeCallback} />
                 </div>
+
+                {/* result */}
+                {checker && <Result type={type} average={average} distance={distance} />}
 
             </div>
 
