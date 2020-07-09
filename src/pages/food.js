@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Select from 'react-dropdown-select';
 import baseUrl from '../database-secrets/secrets.js';
 import FoodCarbonPrint from '../components/food/show-food-carbon-result.js'
-import foodFrequencyOption from '../global-variables/global-variables.js'
+import foodFrequencyOption from '../global-variables/food-frequency-option.js'
 import FoodBarChart1 from '../components/food/food-bar-chart-1.js'
 import { Container, Button } from '@material-ui/core';
 import FoodUserBarChart from '../components/food/food-user-bar-chart.js'
