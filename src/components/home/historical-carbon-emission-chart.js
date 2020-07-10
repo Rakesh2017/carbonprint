@@ -65,7 +65,7 @@ const HistoricalCarbonEmissionChart = () => {
                     });
                     setChartTemperatureData(tempArr1)
                 }).catch((err) =>
-                    Toaster()
+                    Toaster("cannot load charts", false)
                 ))
     }
 
@@ -175,15 +175,16 @@ const HistoricalCarbonEmissionChart = () => {
         getTemperatureCFP()
     }, [])
 
-
     return (
         <div class="chart" id="historical-chart">
             {/* loading */}
             <LoadingIndicator />
             <ToastContainer />
-            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <CanvasJSChart options={options} /> : null}
+            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 && <CanvasJSChart options={options} />}
             {/* chart container */}
+
             {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Years"} axisY={"Carbon in Parts per million"} axisY2={"Temperature Increase"} /> : null}
+
         </div>
     );
 }

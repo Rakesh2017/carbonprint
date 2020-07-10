@@ -14,8 +14,9 @@ const Result = ({ type, average, distance }) => {
     const resultMTS = (resultKgs / 1000).toFixed(2)
 
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-
+    
     const options = {
+        animationEnabled : true,
         title: {
             // text: ""
         },

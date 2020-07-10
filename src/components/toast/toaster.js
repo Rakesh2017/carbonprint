@@ -1,10 +1,10 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Toaster = () => {
-    toast.error('Unable to Load Charts', {
+const Toaster = (message, value) => {
+    toast.error(message, {
         position: "top-right",
-        autoClose: false,
+        autoClose: value,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
