@@ -39,7 +39,7 @@ const NonStopFlight = () => {
                 It may cost a little extra, but flying nonstop is better for the environment. Not only does it save you valuable time by sparing you a connection, but one flight uses less energy than two. Planes use around 25% of fuel during takeoff and are much more fuel-efficient once cruising altitude is reached.
             </p>
             {/* Fact container */}
-            <Fact message="Trips under 600 miles are more energy efficient with a train, bus, or driving." />
+            <Fact message="Driving your family from San Francisco to Los Angeles emits fewer carbon than flying. To tip the balance further, take-off and landing use more fuel than cruising does, so shorter flights like this one end up being even less efficient than a cross-country route" />
            
             <div>
                 <CanvasJSChart options={connectingOptions} />

@@ -284,3 +284,150 @@ main {
 /**************************************************
 // Calculator layout End ***************************
 /**************************************************/
+
+
+
+
+/**************************************************
+// About Us layout Start **************************
+/**************************************************/
+
+.about-us-container{
+    
+    padding: 0;
+    margin: 0;
+    .heading-container{
+        h1{
+            margin: 0;
+            padding: 0.5rem;
+            text-align: center;
+            background-color: $color__green-light;
+        }
+    }
+
+
+    p{
+        margin: 0;
+    }
+
+
+    .who-we-are-container, .our-values-container{
+
+        margin: 1rem 0;
+
+        h2{
+            color: $color__green-dark;
+            text-align: center;
+            margin: 0;
+        }
+    }
+
+    .about-us-container .heading-container ,
+    .our-team-container{
+        h1{
+            color: $color__green-dark;
+            // text-align: center;
+        }
+    }
+
+    .our-team-container{
+        text-align: center;
+        h3{
+            margin: 0;
+        }
+
+        .team-tile-container{
+            margin: 1.5rem 0;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+
+        .our-team-container{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+
+            .project-manager{
+                flex-basis: 100%;
+            }
+
+            .lead-developer, .quality-assurance, .lead-designer {
+                flex-basis: 33%;
+            }
+
+            .designer{
+                flex-basis: 25%;
+            }
+        }
+    }
+
+
+}
+
+/**************************************************
+// About Us layout End ****************************
+/**************************************************/
+
+
+
+/**************************************************
+// Contact Us layout Start ************************
+/**************************************************/
+
+.contact-us-container{
+
+    h1{
+        text-align: center;
+        padding: 0.5rem 0;
+        background-color: $color__green-light;
+    }
+
+    .heroImage{
+        margin: 0 0.5rem;
+    }
+
+    .address , .phoneNumber  , .email {
+       text-align: center;
+       margin: 1rem;
+
+       img{
+            margin: 0.5rem;
+            border-radius: 50%;
+       }
+
+       p{
+            margin: 0;
+            text-align: center;
+            font-family: $font__body;
+        }
+    } 
+}
+
+
+@media screen and (min-width: 600px) {
+    .contact-us-container {
+        display: flex;
+        flex-flow: row wrap;
+
+        h1{
+            flex-basis: 100%;
+        }
+
+        .heroImage{
+            flex-basis: 100%;
+        }
+
+        .address , .phoneNumber , .email{
+            flex-basis: 28%;
+        }
+
+
+    }   
+    
+}
+
+
+/**************************************************
+// Contact Us layout End **************************
+/**************************************************/

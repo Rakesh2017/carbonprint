@@ -54,24 +54,25 @@ export default function FoodUserBarChart({ checkAddBtn, foodList }) {
             margin: 10
         },
         axisX: {
-            title: "food name",
+            title: "Food name",
             titleWrap: true,
             margin: 10,
             labelAngle: 0,
-            interval: 1
+            interval: 1,
+            padding: 10
         },
         data: [{
             type: "bar",
             showInLegend: true,
             name: "Your Carbon Footprint",
-            color: "#8FAABB", // corn flower blue
+            // color: "#8FAABB", // corn flower blue
             dataPoints: userCarbonArray
         },
         {
             type: "bar",
             showInLegend: true,
             name: "Average Carbon footprint of world",
-            color: "#FFB6C1", //light pink
+            // color: "#FFB6C1", //light pink
             dataPoints: avgCarbonArray
         },
         {

@@ -1,6 +1,7 @@
 import React from 'react';
 import CanvasJSReact from '../../../assets/canvasjs.react';
 import ChartDescription from '../../reusable/chart-description.js';
+import Fact from '../../reusable/facts.js'
 
 const EconomyClassFlight = () => {
 
@@ -42,6 +43,8 @@ const EconomyClassFlight = () => {
                 In business class and first class, seats are bigger, so fewer people are being moved by the same amount of fuel. The study estimates that a first-class seat could have a carbon footprint as much as nine times as big as an economy one.
                 At last, coach passengers have something to be happy about: smaller carbon footprints.
             </p>
+            {/* Fact container */}
+            <Fact message="Airline emissions make up a little more than three per cent of total emissions in Canada. The total carbon impact of a single flight is so high that avoiding just one trip can be equivalent to going (gasoline) car-free for a year." />
 
             <div>
                 <CanvasJSChart options={connectingOptions} />
