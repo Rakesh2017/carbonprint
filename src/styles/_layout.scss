@@ -1,6 +1,6 @@
 main {
     min-height: 75vh;
-    padding-top: 1rem;
+    padding-top: 6rem;
     padding-bottom: 1rem;
 }
 
@@ -12,13 +12,13 @@ main {
 // Hero section
 
 .wrapper-hero {
-    margin-top: -1rem;
-    padding-top: 1rem;
+    position: relative;
+    margin-top: -6rem;
+    padding-top: 5rem;
     padding-bottom: 5rem;
     background-image: url(../images/john-silliman.jpg);  
-    // <span>Photo by <a href="https://unsplash.com/@john_silliman?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">John Silliman</a> on <a href="https://unsplash.com/s/photos/mountian-green?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-
-    background-position: center;
+    // <span>Photo by <a href="https://unsplash.com/@idahosam?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Stephen Meyers</a> on <a href="https://unsplash.com/images/nature/mountain?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+    background-position: top;
     background-size: cover;
     background-blend-mode: multiply;
     backdrop-filter: blur(3px);
@@ -28,7 +28,7 @@ main {
     clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 50% 100%, 0% 95%);
 
     @media screen and (min-width: 800px) { 
-        padding-top: 4rem;
+        padding-top: 8rem;
         padding-bottom: 5rem;
     }
 
