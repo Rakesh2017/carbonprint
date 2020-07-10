@@ -48,13 +48,13 @@ export default function FoodUserBarChart({ checkAddBtn, foodList }) {
         // },
         backgroundColor: "#fff",
         axisY: {
-            title: "Carbon Footprint (Kgs)",
+            // title: "Carbon Footprint (Kgs)",
             padding: 220,
             titleWrap: true,
             margin: 10
         },
         axisX: {
-            title: "Food name",
+            // title: "Food name",
             titleWrap: true,
             margin: 10,
             labelAngle: 0,
@@ -89,7 +89,7 @@ export default function FoodUserBarChart({ checkAddBtn, foodList }) {
             <h2>Your Carbon Footprint vs World Average Carbon Footprint</h2>
             {userCarbonArray.length >= 1 ? <CanvasJSChart options={options} /> : null} 
             {/* chart container */}
-            <ChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
+            <ChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} axisX = {"Food Name"} axisY = {"Carbon Footprint in Kg/Year"}/>
         </div>
     )
 }

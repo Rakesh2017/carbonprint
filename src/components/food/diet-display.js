@@ -12,9 +12,9 @@ const DietDisplay = ({ reduceMessage, meatPercentage, fruitPercentage, vegPercen
     const options = {
         exportEnabled: true,
         animationEnabled: true,
-        title: {
-            text: "Your Food Diet"
-        },
+        // title: {
+        //     text: "Your Food Diet"
+        // },
         data: [{
             type: "pie",
             startAngle: 75,
@@ -34,12 +34,13 @@ const DietDisplay = ({ reduceMessage, meatPercentage, fruitPercentage, vegPercen
 
     return (
         <div className="diet-display-container">
+            <h2>Your Food Diet</h2>
             <p>
                 {reduceMessage}
             </p>
             <CanvasJSChart options={options} />
             {/* chart container */}
-            <ChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
+            <pieChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
         </div>
     );
 }

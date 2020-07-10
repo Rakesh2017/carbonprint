@@ -42,15 +42,15 @@ const ReduceFoodCfpEatVeg = () => {
     }
 
     const options = {
-        title: {
-            text: "Food Carbon footprints by diet type (tonnes/person)"
-        },
-        axisX: {
-            title: "Diet Type"
-        },
-        axisY: {
-            title: "Carbon emission in tonnes"
-        },
+        // title: {
+        //     text: "Food Carbon footprints by diet type (tonnes/person)"
+        // },
+        // axisX: {
+        //     title: "Diet Type"
+        // },
+        // axisY: {
+        //     title: "Carbon emission in tonnes"
+        // },
         data: [
             {
                 // Change type to "doughnut", "line", "splineArea", etc.
@@ -66,11 +66,12 @@ const ReduceFoodCfpEatVeg = () => {
 
 
     return (
-        <div className="reduce-food-cfp-container reduce-food-cfp-container-eat-veg">
+        <div className="reduce-food-cfp-container reduce-food-cfp-container-eat-veg chart">
             <h2>Eat Vegetarian</h2>
+            <h3>Food Carbon footprints by diet type (tonnes/person)</h3>
             <CanvasJSChart options={options} />
             {/* chart container */}
-            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
+            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX = {"Diet Type"} axisY = {"Carbon emission in tonnes"} />
             <div className="explanation-container">
                 {/* Fact container */}
                 <Fact message="Livestock farming produces from 20% to 50% of all man-made greenhouse gas emissions." />

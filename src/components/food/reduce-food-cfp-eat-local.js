@@ -40,9 +40,9 @@ const ReduceFoodCfpEatLocal = () => {
 
     const options = {
         animationEnabled: true,
-        title: {
-            text: "Percentages of factors involved in food"
-        },
+        // title: {
+        //     text: "Percentages of factors involved in food"
+        // },
         data: [{
             type: "doughnut",
             showInLegend: true,
@@ -58,8 +58,9 @@ const ReduceFoodCfpEatLocal = () => {
 
 
     return (
-        <div className="reduce-food-cfp-container reduce-food-cfp-container-eat-local">
+        <div className="reduce-food-cfp-container reduce-food-cfp-container-eat-local chart">
             <h2>Eat Locally Produced Food</h2>
+            <h3>Percentages of factors involved in food</h3>
             <CanvasJSChart options={options} />
             {/* chart container */}
             <ChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
