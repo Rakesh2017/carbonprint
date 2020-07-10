@@ -76,8 +76,8 @@ const HistoricalCarbonEmissionChart = () => {
         theme: "dark1",
         lineDashType: "dash",
         legend: {
-            horizontalAlign: "right", // "center" , "right"
-            verticalAlign: "top",  // "top" , "bottom"
+            horizontalAlign: "center", // "center" , "right"
+            verticalAlign: "bottom",  // "top" , "bottom"
         },
         title: {
             text: "Atmospheric Carbon Concentration",
@@ -98,10 +98,19 @@ const HistoricalCarbonEmissionChart = () => {
                     lineDashType: "dot"
                 }
             ],
-            title: "Years",
+            // title: "ab",
+            // title: "Years",
+            titleFontSize: 15,
+            margin: 20,
             valueFormatString: "####",
             titleFontColor: "white",
             interval: 16,
+            labelFontSize: 12,
+            labelMaxWidth: 50,
+            labelWrap: false,
+            tickLength: 5,
+            prefix: "\t " ,
+            suffix: "   ",
             // intervalType: "year",
             labelAngle: 90,
             crosshair: {
@@ -109,10 +118,13 @@ const HistoricalCarbonEmissionChart = () => {
             },
         },
         axisY: {
-            title: "Carbon in Parts per million",
+            // title: "Carbon in Parts per million",
             titleFontColor: "white",
             interval: 50,
+            prefix: "",
             suffix: " ppm",
+            titleFontSize: 15,
+            labelFontSize:12,
             crosshair: {
                 enabled: true
             },
@@ -130,8 +142,11 @@ const HistoricalCarbonEmissionChart = () => {
             includeZero: true
         },
         axisY2: {
-            title: "temperature increase",
+            // title: "temperature increase",
             suffix: " °C",
+            labelFontSize: 12,
+            titleFontSize: 15,
+            thickness: 4  
             // includeZero: true,
         },
         data: [
@@ -149,6 +164,7 @@ const HistoricalCarbonEmissionChart = () => {
                 dataPoints: chartTemperatureData
 
             }
+
         ]
     }
 
@@ -168,7 +184,7 @@ const HistoricalCarbonEmissionChart = () => {
             <ToastContainer />
             {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <CanvasJSChart options={options} /> : null}
             {/* chart container */}
-            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} /> : null}
+            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"dfd"} axisY={"dfdsf"} /> : null}
         </div>
     );
 }
