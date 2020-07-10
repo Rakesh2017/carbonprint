@@ -75,6 +75,21 @@ main {
     box-shadow: 0 0 6px #333333dd;
 }
 
+#historical-chart{
+    .chart-container{
+        .axis-titles{
+            color: white;
+            text-align: center;
+            flex-basis: 50%;
+        }
+
+        .y2-axis{
+            display: initial;
+        }
+    }
+}
+
+
 /**************************************************
 // Home page layout End ***************************
 /**************************************************/
@@ -273,6 +288,45 @@ main {
     
 }
 
+.chart {
+    .chart-container {
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+
+        .axis-titles{
+            flex-basis: 30%;
+            text-align: center;
+            font-weight: bold;
+            font-family: $font__heading;
+            color: $color__green-dark;
+            // margin: 0.5rem 0;
+        }
+
+        .y2-axis{
+            display: none;
+        }
+
+        .chart-info{
+            font-family: $font__body;
+            font-size: 1rem;
+            // font-style: normal;
+        }
+    }
+}
+
+
+.diet-display-container h2 , .reduce-food-cfp-container h3{    
+    font-size: 1.2rem;
+    text-align: left;    
+}
+
+.reduce-food-cfp-container-eat-local {
+    .axis{
+        display: none;
+    }
+}
 
 
 
@@ -348,12 +402,12 @@ main {
             flex-flow: row wrap;
             justify-content: center;
 
-            .project-manager{
+            h1{
                 flex-basis: 100%;
             }
 
-            .lead-developer, .quality-assurance, .lead-designer {
-                flex-basis: 33%;
+            .project-manager , .lead-developer, .quality-assurance, .lead-designer{
+                flex-basis: 25%;
             }
 
             .designer{

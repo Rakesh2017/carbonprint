@@ -18,7 +18,7 @@ const HistoricalCarbonEmissionChart = () => {
     const [chartTemperatureData, setChartTemperatureData] = useState([])
 
     const chartVersion = "Chart 2.0"
-    const chartInfo = "Chart description goes here"
+    const chartInfo = "This chart illustrates the increase in Earth's temperature in relation with the atmospheric carbon concentration between the years 1856-2016."
 
     /* fetching data */
     function getLocalCFP() {
@@ -98,8 +98,7 @@ const HistoricalCarbonEmissionChart = () => {
                     lineDashType: "dot"
                 }
             ],
-            // title: "ab",
-            // title: "Years",
+        
             titleFontSize: 15,
             margin: 20,
             valueFormatString: "####",
@@ -178,13 +177,13 @@ const HistoricalCarbonEmissionChart = () => {
 
 
     return (
-        <div>
+        <div class="chart" id="historical-chart">
             {/* loading */}
             <LoadingIndicator />
             <ToastContainer />
             {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <CanvasJSChart options={options} /> : null}
             {/* chart container */}
-            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"dfd"} axisY={"dfdsf"} /> : null}
+            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Years"} axisY={"Carbon in Parts per million"} axisY2={"Temperature Increase"} /> : null}
         </div>
     );
 }
