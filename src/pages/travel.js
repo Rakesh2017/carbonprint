@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Input from '../components/travel/car/input.js'
 import { Container } from '@material-ui/core';
 import Result from '../components/travel/car/result.js'
+import GreenVehicle from '../components/travel/car/reduce-carbon-footprint/green-vehicle.js'
+import DriveBetter from '../components/travel/car/reduce-carbon-footprint/drive-better.js'
 
 
 const Travel = () => {
@@ -42,6 +44,15 @@ const Travel = () => {
 
                 {/* result */}
                 {checker && <Result type={type} average={average} distance={distance} />}
+
+                {/* how to reduce carbon footprint */}
+                {checker && <div className="how-to-reduce">
+                    <h2>How to reduce Car carbon footprint?</h2>
+                </div>}
+                {/* 1. green vehicles */}
+                {checker && <GreenVehicle />}
+                {/* 2. drive better */}
+                {checker && <DriveBetter />}
 
             </div>
 
