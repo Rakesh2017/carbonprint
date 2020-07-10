@@ -1,6 +1,6 @@
 main {
     min-height: 75vh;
-    padding-top: 1rem;
+    padding-top: 6rem;
     padding-bottom: 1rem;
 }
 
@@ -12,13 +12,13 @@ main {
 // Hero section
 
 .wrapper-hero {
-    margin-top: -1rem;
-    padding-top: 1rem;
+    position: relative;
+    margin-top: -6rem;
+    padding-top: 5rem;
     padding-bottom: 5rem;
     background-image: url(../images/john-silliman.jpg);  
-    // <span>Photo by <a href="https://unsplash.com/@john_silliman?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">John Silliman</a> on <a href="https://unsplash.com/s/photos/mountian-green?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-
-    background-position: center;
+    // <span>Photo by <a href="https://unsplash.com/@idahosam?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Stephen Meyers</a> on <a href="https://unsplash.com/images/nature/mountain?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+    background-position: top;
     background-size: cover;
     background-blend-mode: multiply;
     backdrop-filter: blur(3px);
@@ -28,7 +28,7 @@ main {
     clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 50% 100%, 0% 95%);
 
     @media screen and (min-width: 800px) { 
-        padding-top: 4rem;
+        padding-top: 8rem;
         padding-bottom: 5rem;
     }
 
@@ -74,6 +74,21 @@ main {
     border-radius: 0.5rem;
     box-shadow: 0 0 6px #333333dd;
 }
+
+#historical-chart{
+    .chart-container{
+        .axis-titles{
+            color: white;
+            text-align: center;
+            flex-basis: 50%;
+        }
+
+        .y2-axis{
+            display: initial;
+        }
+    }
+}
+
 
 /**************************************************
 // Home page layout End ***************************
@@ -273,6 +288,45 @@ main {
     
 }
 
+.chart {
+    .chart-container {
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+
+        .axis-titles{
+            flex-basis: 30%;
+            text-align: center;
+            font-weight: bold;
+            font-family: $font__heading;
+            color: $color__green-dark;
+            // margin: 0.5rem 0;
+        }
+
+        .y2-axis{
+            display: none;
+        }
+
+        .chart-info{
+            font-family: $font__body;
+            font-size: 1rem;
+            // font-style: normal;
+        }
+    }
+}
+
+
+.diet-display-container h2 , .reduce-food-cfp-container h3{    
+    font-size: 1.2rem;
+    text-align: left;    
+}
+
+.reduce-food-cfp-container-eat-local {
+    .axis{
+        display: none;
+    }
+}
 
 
 
@@ -283,4 +337,151 @@ main {
 
 /**************************************************
 // Calculator layout End ***************************
+/**************************************************/
+
+
+
+
+/**************************************************
+// About Us layout Start **************************
+/**************************************************/
+
+.about-us-container{
+    
+    padding: 0;
+    margin: 0;
+    .heading-container{
+        h1{
+            margin: 0;
+            padding: 0.5rem;
+            text-align: center;
+            background-color: $color__green-light;
+        }
+    }
+
+
+    p{
+        margin: 0;
+    }
+
+
+    .who-we-are-container, .our-values-container{
+
+        margin: 1rem 0;
+
+        h2{
+            color: $color__green-dark;
+            text-align: center;
+            margin: 0;
+        }
+    }
+
+    .about-us-container .heading-container ,
+    .our-team-container{
+        h1{
+            color: $color__green-dark;
+            // text-align: center;
+        }
+    }
+
+    .our-team-container{
+        text-align: center;
+        h3{
+            margin: 0;
+        }
+
+        .team-tile-container{
+            margin: 1.5rem 0;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+
+        .our-team-container{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+
+            h1{
+                flex-basis: 100%;
+            }
+
+            .project-manager , .lead-developer, .quality-assurance, .lead-designer{
+                flex-basis: 25%;
+            }
+
+            .designer{
+                flex-basis: 25%;
+            }
+        }
+    }
+
+
+}
+
+/**************************************************
+// About Us layout End ****************************
+/**************************************************/
+
+
+
+/**************************************************
+// Contact Us layout Start ************************
+/**************************************************/
+
+.contact-us-container{
+
+    h1{
+        text-align: center;
+        padding: 0.5rem 0;
+        background-color: $color__green-light;
+    }
+
+    .heroImage{
+        margin: 0 0.5rem;
+    }
+
+    .address , .phoneNumber  , .email {
+       text-align: center;
+       margin: 1rem;
+
+       img{
+            margin: 0.5rem;
+            border-radius: 50%;
+       }
+
+       p{
+            margin: 0;
+            text-align: center;
+            font-family: $font__body;
+        }
+    } 
+}
+
+
+@media screen and (min-width: 600px) {
+    .contact-us-container {
+        display: flex;
+        flex-flow: row wrap;
+
+        h1{
+            flex-basis: 100%;
+        }
+
+        .heroImage{
+            flex-basis: 100%;
+        }
+
+        .address , .phoneNumber , .email{
+            flex-basis: 28%;
+        }
+
+
+    }   
+    
+}
+
+
+/**************************************************
+// Contact Us layout End **************************
 /**************************************************/

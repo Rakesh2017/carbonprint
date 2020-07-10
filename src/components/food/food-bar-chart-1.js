@@ -36,14 +36,14 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
         // },
         backgroundColor: "#fff",
         axisY: {
-            title: "Carbon Footprint (Kgs)",
+            // title: "Carbon Footprint (Kgs / Year)",
             titleWrap: true,
-            margin: 10
+            margin: 15
         },
         axisX: {
-            title: "food name",
+            // title: "food name",
             titleWrap: true,
-            margin: 10,
+            margin: 15,
             labelAngle: 0,
             interval: 1
         },
@@ -57,10 +57,10 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
 
     return (
         <div id="food-graph-1-chart" className="chart" style={{ display: "none" }}>
-            <h2>Carbon Footprints of Various Foods (Kgs)</h2>
+            <h2>Carbon Footprints of Various Foods (Kgs / Year )</h2>
             {FoodDataForVisualization.length > 1 ? <CanvasJSChart options={options} /> : null}
             {/* chart container */}
-            <ChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
+            <ChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} axisX = {"Food Name"} axisY = {"Carbon Footprint in Kg/Year"}/>
         </div>
     )
 }

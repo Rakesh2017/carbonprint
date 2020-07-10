@@ -4,9 +4,28 @@
 // to place logo and navigation
 /**********************************************/
 header {
+    position: fixed;
+    z-index: 99;
+    margin: auto;
+    width: 100%;
     border-top: 2px solid #67bc3922;
-    border-bottom: 2px solid $color__green-dark2;
-    box-shadow: 1px 1px 4px #dddddd;
+    background-color: #424242;
+    background-image: url(../images/john-silliman.jpg);
+    background-position: top;
+    background-size: cover;
+    background-blend-mode: multiply;
+    // border-bottom: 2px solid $color__green-dark2;
+    // box-shadow: 1px 1px 4px #dddddd;
+
+    @media screen and (min-width: 800px) {
+        background-color: #777777;
+    }
+}
+
+
+
+header.header-fixed {
+    backdrop-filter: blur(3px);
 }
 
 .site-header-container {
@@ -26,6 +45,11 @@ header {
             display: block;
         }
 
+        
+        h2 {
+            color:$color__green-light2;
+        }
+        
         // &:after {
         //     content: "Carbon Print";
         //     font-family: $font__heading;
@@ -69,9 +93,9 @@ header {
             }
         }
 
-            
         a {
-            font-size: 1.15rem;
+            font-size: 1rem;
+            color: $color__green-light2;
             position: relative;
             text-transform: uppercase;
 
@@ -87,13 +111,13 @@ header {
             top: 12px;
             left: -3%;
             right: 0;
-            border-bottom: 10px solid #67bc3944;
+            // border-bottom: 10px solid #67bc3944;
         }
 
         a:hover {
-            color: $color__green-light;
+            // color: $color__green-light;
             // text-decoration:solid underline 3px $color__green-light;
-            text-decoration: none;
+            text-decoration: underline;
         }
 
         a:hover::after {

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import './App.scss';
 
 import {
@@ -17,8 +17,18 @@ import Contact from './pages/contact';
 // import Food from './pages/food';
 // import Flight from './pages/flight';
 
-
 function App(props) {
+
+  useEffect(() => {
+    window.onscroll = function() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.querySelector('header').classList.add('header-fixed');
+      } else {
+        document.querySelector('header').classList.remove('header-fixed');
+      }
+    }
+  });
+
   return (
     <Fragment>
       <Router>
