@@ -11,7 +11,9 @@ import NonStopFlight from '../components/flight/reduce-carbon-footprint/non-stop
 import EconomyClassFlight from '../components/flight/reduce-carbon-footprint/economy-class-flight.js'
 import RadioConnectingFlight from '../components/flight/radio-connecting-flight.js'
 
+
 const Flight = () => {
+    // console.log("PLACE_API_KEY", process.env.PLACE_API_KEY)
 
     // variable declaration
     const [takeOff, setTakeOff] = useState()

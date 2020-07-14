@@ -2,11 +2,13 @@ import Select from 'react-dropdown-select';
 import React, { useState, useEffect } from 'react';
 import baseUrl from '../../database-secrets/secrets.js';
 
-const ClassDropDown = ({parentCallback}) => {
+const ClassDropDown = ({ parentCallback }) => {
 
     const foodUrl = baseUrl + "/flights-carbon-footprint"
     const [options, setOptions] = useState([])
     let temp = []
+    const controller = new AbortController();
+    const signal = controller.signal;
 
     const sendData = (e, opt) => {
         parentCallback(e, opt)
@@ -16,13 +18,13 @@ const ClassDropDown = ({parentCallback}) => {
     function getData() {
         // GET request using fetch with set headers
         const headers = { 'Content-Type': 'application/json' }
-        fetch(foodUrl, { headers })
+        fetch(foodUrl, { headers }, { signal })
             .then(response =>
                 response.json())
             .then(data => {
 
                 for (let x in data[1].result[0]) {
-                    if (x !== "flight_carbon_footprint_id" && x!=="divisor") {
+                    if (x !== "flight_carbon_footprint_id" && x !== "divisor") {
                         temp.push({ label: x.replace("_", " "), value: data[1].result[0][x] })
                     }
                 }
@@ -37,8 +39,8 @@ const ClassDropDown = ({parentCallback}) => {
 
     useEffect(() => {
         getData()
-        return(()=> {
-            //AbortController.abort()
+        return (() => {
+            controller.abort();
         })
     }, [])
 

@@ -180,8 +180,10 @@ const HistoricalCarbonEmissionChart = () => {
     }, [])
 
     return (
+
         <div class="chart" id="historical-chart">
             <h2>Atmospheric Carbon Concentration</h2>
+
             {/* loading */}
             <LoadingIndicator />
             <ToastContainer />
