@@ -28,7 +28,6 @@ export default () => {
         navUl.style.transform = "translateX(0)";
     };
 
-
     useEffect(() => {
         const tabs = document.querySelectorAll('.tab-slider li');
         const tabContainers = document.querySelectorAll('.tab-container > div');
@@ -51,34 +50,24 @@ export default () => {
 
     return (
 
-    <Container>        
-        <div className="carbon-calculator">
+        <Container>
+            <div className="carbon-calculator">
 
-            <h1>Carbon Footprint Calculator For Individual</h1>
-            <h2>Free to Use - It just take few clicks to calculate and Compare yourself with the world!!</h2>
+                <h1>Carbon Footprint Calculator For Individual</h1>
+                <h2>Free to Use - It just take few clicks to calculate and Compare yourself with the world!!</h2>
 
-            <div className="tab-panel">
-                <div className="tab-nav">
-                    <div onClick={tabNavBack}>&laquo;</div>
-                    <div className="tab-slider">    
-                        <ul>
-                            <li tabIndex="0" className="activeTab">Food</li>
-                            <li tabIndex="1">Flight</li>
-                            <li tabIndex="2">Travel</li>
-                            <li tabIndex="3">Your Total Carbon Emission</li>
-                        </ul>
-                    </div>
-                    <div onClick={tabNavForward}>&raquo;</div>
-                </div>
-                <div className="tab-container">
-                    <div className="active">
-                        <Food />
-                    </div>
-                    <div>
-                        <Flight />
-                    </div>
-                    <div>
-                        <Travel />
+                <div className="tab-panel">
+                    <div className="tab-nav">
+                        <div onClick={tabNavBack}>&laquo;</div>
+                        <div className="tab-slider">
+                            <ul>
+                                <li tabIndex="0">Food</li>
+                                <li tabIndex="1">Flight</li>
+                                <li tabIndex="2">Travel</li>
+                                <li tabIndex="3">Your Total Carbon Emission</li>
+                            </ul>
+                        </div>
+                        <div onClick={tabNavForward}>&raquo;</div>
                     </div>
                     <div className="tab-container">
                         <div className="active">
