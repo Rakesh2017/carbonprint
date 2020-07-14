@@ -29,12 +29,12 @@ export default () => {
         tabs.forEach((tab) => {
             tab.addEventListener('click', function() {
                 tabs.forEach((item) => {
-                    item.style.backgroundColor= "#eeeeee";
+                    item.classList.remove("activeTab");
                 })
-                tab.style.backgroundColor = "red";
-
+                tab.classList.add("activeTab");
+                
                 tabContainers.forEach( (container) => {
-                container.classList.remove("active");
+                    container.classList.remove("active");
                 })
                 tabContainers[tab.tabIndex].classList.add("active");
             })
@@ -55,7 +55,7 @@ export default () => {
                     <div onClick={tabNavBack}>&laquo;</div>
                     <div className="tab-slider">    
                         <ul>
-                            <li tabIndex="0">Food</li>
+                            <li tabIndex="0" className="activeTab">Food</li>
                             <li tabIndex="1">Flight</li>
                             <li tabIndex="2">Travel</li>
                             <li tabIndex="3">Your Total Carbon Emission</li>

@@ -6,7 +6,6 @@ import {
 
 import AppFooterLogo from "./AppFooter/AppFooterLogo";
 import AppFooterNav1 from "./AppFooter/AppFooterNav1";
-import AppFooterNav2 from "./AppFooter/AppFooterNav2";
 
 const AppFooter = () => (    
     <footer className="site-footer" >
@@ -18,10 +17,7 @@ const AppFooter = () => (
                 
                 <div className="site-footer-col-2">
                     <AppFooterNav1 />
-                </div>
-
-                <div className="site-footer-col-3">
-                    <AppFooterNav2 />
+                    <p>Copyright &copy; 2020 CarbonPrint.wmdd.ca. All rights reserved.</p>
                 </div>
             </div>
         </Container>

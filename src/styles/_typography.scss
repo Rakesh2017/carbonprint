@@ -6,17 +6,34 @@ body {
     color: $color__text-main;
 }
 
-h1 {
-    font-size: $font__size_xxl;
-}
 
-h2 {
+
+h1 {
     font-size: $font__size_xl;
 }
 
-h3 {
+h2 {
     font-size: $font__size_lg;
 }
+
+h3 {
+    font-size: 1.15rem;
+}
+
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: $font__size_xxl;
+    }
+    
+    h2 {
+        font-size: $font__size_xl;
+    }
+    
+    h3 {
+        font-size: $font__size_lg;
+    }
+}
+
 
 h1,
 h2,
@@ -38,10 +55,4 @@ a:hover {
 
 a:visited {
     color: $color__link-visited;
-}
-
-.site-footer {
-    a {
-        color: $color__text-footer;
-    }
 }
