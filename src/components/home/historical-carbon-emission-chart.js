@@ -79,10 +79,14 @@ const HistoricalCarbonEmissionChart = () => {
             horizontalAlign: "center", // "center" , "right"
             verticalAlign: "bottom",  // "top" , "bottom"
         },
-        title: {
-            text: "Atmospheric Carbon Concentration",
-            fontColor: "white"
-        },
+        // title: {
+        //     text: "",
+        //     fontColor: "white",
+        //     fontFamily: "Arvo",
+        //     fontSize: 26,
+        //     fontWeight: "bold",
+        //     margin: 20
+        // },
         axisX: {
             stripLines: [
                 {
@@ -177,17 +181,19 @@ const HistoricalCarbonEmissionChart = () => {
 
     return (
         <div class="chart" id="historical-chart">
+            <h2>Atmospheric Carbon Concentration</h2>
             {/* loading */}
             <LoadingIndicator />
             <ToastContainer />
             {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 && <CanvasJSChart options={options} />}
             {/* chart container */}
 
-            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Years"} axisY={"Carbon in Parts per million"} axisY2={"Temperature Increase"} /> : null}
+            {chartTemperatureData.length > 1 && chartData.length > 1 && chartData.length > 2 ? <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} /> : null}
+
+            {/*  axisX={"Years"} axisY={"Carbon in Parts per million"} axisY2={"Temperature Increase"} */}
 
         </div>
     );
 }
 
 export default HistoricalCarbonEmissionChart;
-

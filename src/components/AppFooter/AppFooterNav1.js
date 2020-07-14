@@ -1,17 +1,14 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 const AppFooterNav1 = () => (
     <nav>
-
-    <h3>Nav 1</h3>
         <ul>
             <li>
-                <Link to="/">Home</Link>
+                <Link to="/about">About Us</Link>
             </li>
             <li>
-                <Link to="/about">About</Link>
+                <Link to="/contact">Contact Us</Link>
             </li>
         </ul>
     </nav>

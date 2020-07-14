@@ -5,7 +5,6 @@ import {
     Button,
   } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import heroImage from '../../images/hero.png';
 
 const homehero = () => (
     <Container>
@@ -20,7 +19,6 @@ const homehero = () => (
             </div>
             <div className="hero-image">
                 <HistoricalCarbonEmissionChart />
-                {/* <img src={heroImage} alt="carbonfootprint calculator" /> */}
             </div>
         </div>
     </Container>
