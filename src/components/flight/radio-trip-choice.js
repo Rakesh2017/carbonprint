@@ -1,7 +1,7 @@
 import React from 'react';
 import { RadioGroup, RadioButton } from 'react-radio-buttons';
 
-const RadioTripChoice = ({parentCallback}) => {
+const RadioTripChoice = ({ parentCallback }) => {
 
     const sendData = (e) => {
         parentCallback(e)

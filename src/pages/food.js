@@ -13,7 +13,8 @@ import ReduceFoodCfpEatLocal from '../components/food/reduce-food-cfp-eat-local.
 import DietDisplay from '../components/food/diet-display.js'
 
 
-const Food = () => {
+
+const Food = ({ parentCallback }) => {
 
     /* variables and hooks declarations */
     const foodUrl1 = baseUrl + "/food/1"
@@ -36,10 +37,6 @@ const Food = () => {
     // to check in other components that add item button is clicked
     const [checkAddBtn, setCheckAddBtn] = useState(false)
     // setting carbon footprint reduce message, derived from diet input of user
-    const [reduceMessage, setReduceMessage] = useState("")
-    // set food types list, as per added items
-    const [foodTypeList, setFoodTypeList] = useState([])
-    const [foodSupplyChainData, setFoodSupplyChainData] = useState([])
     let meatPercentage, vegPercentage, fruitPercentage, liquidPercentage
 
     let message = ''
@@ -171,7 +168,7 @@ const Food = () => {
             farm: farm,
             retail: retail
         }
-        setFoodSupplyChainData(tempArr)
+       // setFoodSupplyChainData(tempArr)
     }
 
     useEffect(() => {
@@ -181,12 +178,19 @@ const Food = () => {
         } catch (error) {
             console.log(error)
         }
-        
+
         // getFood_supply();
         return () => {
             // clean up
         }
     }, [])
+
+    useEffect(() => {
+        parentCallback(selectedFoodProducts)
+        return () => {
+            //cleanup
+        };
+    }, [selectedFoodProducts]);
 
     // setting the food frequency on select options (selection from options)
     function playFoodFrequency(event) {
@@ -361,7 +365,7 @@ const Food = () => {
                 {/* heading */}
                 <h2>How do your food choices impact the Environment?</h2>
             </div>
-            
+
             {/* logo+input container  */}
             <div className="logo+input-container">
                 {/* Logo Container */}
@@ -399,14 +403,14 @@ const Food = () => {
 
                 <div id="food-dynamic-entries" onClick={loopClicks}></div>
 
-                
+
                 {/* Displays the result of calculated carbon footprint */}
-                <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} foodList={selectedFoodProducts} />  
-            
+                <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} foodList={selectedFoodProducts} />
+
             </div>
 
-            
-                {/* displays user carbon foot print chart of selected foods  */}
+
+            {/* displays user carbon foot print chart of selected foods  */}
             <FoodUserBarChart checkAddBtn={checkAddBtn} foodList={selectedFoodProducts} />
 
 
@@ -421,7 +425,7 @@ const Food = () => {
 
             {/* showing result how to reduce food carbon footprint */}
             {countFoodTypes()}
-            
+
             {checkAddBtn && selectedFoodProducts.length >= 1 ?
                 <div className="how-to-reduce">
                     <h2>How to reduce food carbon footprint?</h2>

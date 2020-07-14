@@ -176,7 +176,7 @@ const HistoricalCarbonEmissionChart = () => {
     }, [])
 
     return (
-        <div class="chart" id="historical-chart">
+        <div className="chart" id="historical-chart">
             {/* loading */}
             <LoadingIndicator />
             <ToastContainer />

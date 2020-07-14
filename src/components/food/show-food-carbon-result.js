@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import numberWithCommas from '../../global-functions/number-comma.js'
 
 function FoodCarbonPrint({ foodFrequency, foodProduct }) {
@@ -23,7 +23,6 @@ function FoodCarbonPrint({ foodFrequency, foodProduct }) {
 
     }
 
-    showCarbonFootprint()
 
     /* Set carbon emission in kilograms */
     function setCarbonEmissionUnits(carbonPrint) {
@@ -31,7 +30,20 @@ function FoodCarbonPrint({ foodFrequency, foodProduct }) {
 
         document.getElementById("food-equivalent-car-id").innerHTML = `That's the equivalent of driving a regular petrol car for ${numberWithCommas((carbonPrint * 4.33).toFixed(0))} Kilometers.`
 
+        let temp = []
+        temp.push({
+            label: foodProduct[0].label, // food
+            x: carbonPrint
+        })
+
     }
+
+    useEffect(() => {
+        showCarbonFootprint()
+        return () => {
+            //cleanup
+        };
+    }, [foodFrequency, foodProduct]);
 
     return (
         /* carbon print stats container */
@@ -40,8 +52,7 @@ function FoodCarbonPrint({ foodFrequency, foodProduct }) {
             < p className="food-carbon-print-kgs" id="food-carbon-print-kgs-id" >
             </p >
             {/* equivalent to car kilometers */}
-            < p className="food-equivalent-car" id="food-equivalent-car-id" >
-            </p >
+            < p className="food-equivalent-car" id="food-equivalent-car-id" ></p >
         </div >
     )
 }
