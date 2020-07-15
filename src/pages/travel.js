@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Input from '../components/travel/car/input.js'
 import { Container } from '@material-ui/core';
 import Result from '../components/travel/car/result.js'
@@ -6,7 +6,7 @@ import GreenVehicle from '../components/travel/car/reduce-carbon-footprint/green
 import DriveBetter from '../components/travel/car/reduce-carbon-footprint/drive-better.js'
 
 
-const Travel = () => {
+const Travel = ({parentCallback}) => {
 
     const [type, setType] = useState()
     const [average, setAverage] = useState()
@@ -19,6 +19,19 @@ const Travel = () => {
         setDistance(distance)
         setChecker(true)
     }
+
+    useEffect(() => {
+        if (checker) {
+            parentCallback({
+                type: type,
+                average:average,
+                distance:distance
+            })
+        }
+        return () => {
+            // cleanup
+        };
+    }, [type, average, checker, distance]);
 
     return (
         <Container className="travel-main-container">

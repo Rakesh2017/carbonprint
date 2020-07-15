@@ -12,7 +12,7 @@ import EconomyClassFlight from '../components/flight/reduce-carbon-footprint/eco
 import RadioConnectingFlight from '../components/flight/radio-connecting-flight.js'
 
 
-const Flight = () => {
+const Flight = ({ parentCallback }) => {
     // console.log("PLACE_API_KEY", process.env.PLACE_API_KEY)
 
     // variable declaration
@@ -73,7 +73,7 @@ const Flight = () => {
         return () => {
             // cleanup
         };
-    }, [takeOff, destination, classType, trip]);
+    }, [takeOff, destination, classType, trip, connectingFlight]);
 
     useEffect(() => {
         getWorldCarbonFootprint()
@@ -110,6 +110,20 @@ const Flight = () => {
         setConnectingFlight(data)
     }
 
+    useEffect(() => {
+        if(resultLoader) {
+            parentCallback({
+                trip_type: trip,
+                takeOff: takeOff,
+                destination: destination,
+                connectingFlight: connectingFlight,
+                classType: classType
+            })
+        }
+        return () => {
+            // cleanup
+        };
+    }, [resultLoader, takeOff, destination, classType, trip, connectingFlight, takeOffAddress, destinationAddress]);
 
     return (
         <Container className="flight-main-container">

@@ -64,13 +64,15 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
         // calculate footprint
         let cfp = classType[0].value * distance / divisor
         cfp = cfp.toFixed(2)
-        console.log("calculateCarbonFootprint -> cfp", typeof(cfp) + " "+cfp)
+        
         cfp = parseFloat(cfp)
-        console.log("calculateCarbonFootprint -> cfp", typeof(cfp) + " "+cfp)
+        
         // if it is connecting flight, increase cfp by 25%
         if (connectingFlight === "0") {
             cfp = cfp + ((25 * cfp) / 100)
+            cfp = cfp.toFixed(2)
         }
+        
         air_distance = numberWithCommas(distance) + " Kms"
         // determine trip type (0=one way, 1=round)
         let trip_type = '', message = ''

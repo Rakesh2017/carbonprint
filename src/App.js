@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
 import './App.scss';
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,10 +16,10 @@ import Contact from './pages/contact';
 // import Food from './pages/food';
 // import Flight from './pages/flight';
 
-function App(props) {
+function App() {
 
   useEffect(() => {
-    window.onscroll = function() {
+    window.onscroll = function () {
       if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         document.querySelector('header').classList.add('header-fixed');
       } else {
@@ -32,9 +31,10 @@ function App(props) {
   return (
     <Fragment>
       <Router>
-        <AppHeader /> 
+        <AppHeader />
         <main>
           <Switch>
+
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/calculator" component={Calculator} />
