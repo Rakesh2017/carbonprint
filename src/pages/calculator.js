@@ -49,10 +49,6 @@ export default () => {
 
         <Container>
             <div className="carbon-calculator">
-
-                <h1>Carbon Footprint Calculator For Individual</h1>
-                <h2>Free to Use - It just take few clicks to calculate and Compare yourself with the world!!</h2>
-
                 <div className="tab-panel">
                     <div className="tab-nav">
                         <div onClick={tabNavBack}>&laquo;</div>

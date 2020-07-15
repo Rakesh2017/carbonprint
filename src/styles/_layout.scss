@@ -1,6 +1,6 @@
 main {
     min-height: 75vh;
-    padding-top: 6rem;
+    padding-top: 90px;
     padding-bottom: 1rem;
 }
 
@@ -13,8 +13,8 @@ main {
 
 .wrapper-hero {
     position: relative;
-    margin-top: -6rem;
-    padding-top: 5rem;
+    margin-top: -70px;
+    padding-top: 90px;
     padding-bottom: 5rem;
     background-image: url(../images/hero-image.jpg);
       
@@ -23,16 +23,10 @@ main {
     background-position: top;
     background-size: cover;
     background-blend-mode: multiply;
-    backdrop-filter: blur(3px);
     background-color: #908239e0;
     min-height: 300px;
     color: $color__green-light2;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 50% 100%, 0% 95%);
-
-    @media screen and (min-width: 800px) { 
-        padding-top: 8rem;
-        padding-bottom: 5rem;
-    }
+    clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 50% 100%, 0% 93%);
 
     h1,
     h2,
@@ -46,7 +40,7 @@ main {
     gap: 3rem;
 
     @media screen and (min-width: 800px) {
-        gap: 6rem;
+        gap: 4rem;
 
         grid-template-columns: 2fr 3fr;
 
@@ -57,22 +51,29 @@ main {
             }
         }
     }
+
+    @media screen and (min-width: 1000px) {
+        gap: 6rem;
+    }
         
     .hero-text {
-        min-width: 320px;
+        min-width: 200px;
     }
 
     .hero-button {
         background-color: transparent;
-        // color: $color__green-dark;
         color: white;
         border: 1px solid white;
+
+        &:hover {
+            color: $color__green-dark;
+        }
     }
 
 }
 
 .hero-image {
-    padding: 0.5rem 1rem;
+    padding: 2rem;
     background-color: #4242424d;
     border-radius: 0.5rem;
     box-shadow: 0 0 6px #636262a2;
@@ -80,14 +81,18 @@ main {
 
 #historical-chart{
     .chart-container{
-        .axis-titles{
+        .axis{
+            display: none;
+        }
+
+        .chart-version{
             color: white;
             text-align: center;
             flex-basis: 50%;
         }
 
-        .y2-axis{
-            display: initial;
+        .chart-info{
+            font-style: normal;
         }
     }
 }
@@ -97,6 +102,75 @@ main {
 // Home page layout End ***************************
 /**************************************************/
 
+/**************************************************
+// CTA Section layout START ***************************
+/**************************************************/
+
+.site-cta {
+    background-color: $color__green-light2;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    padding-top: 2rem;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+.form-newsletter {
+    background-color: white;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    label {
+        margin: 0.5rem;
+        flex-grow: 1;
+
+        input {
+            width: 100%;
+            background-color: white;
+            border-width: 2px;
+
+            &:focus {
+                color: $color__green-light;
+            }
+
+            &:invalid {
+                // color: red;
+            }
+        }
+    }
+
+    input[type="submit"] {
+        margin: 0.5rem;
+        flex-basis: 100%;
+
+        @media screen and (min-width:500px) {
+            max-width: 200px;
+            flex-basis: 200px;
+        }
+    }
+
+    input {
+        height: 2.5rem;
+    }
+}
+
+
+/**************************************************
+// CTA Section layout END ***************************
+/**************************************************/
 
 
 
@@ -164,6 +238,7 @@ main {
         li {
             height: 2.5rem;
             cursor: pointer;
+            outline-width: 0;
             display: block;
             flex: 0 0 auto;
             text-align: center;
@@ -212,9 +287,23 @@ main {
 
 .tab-container > div {
     margin-top: 0;
-    margin-bottom: 1rem;
     padding-bottom: 1rem;
+    height: calc(100vh - 150px);
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
 
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px #00000033;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: whitesmoke;
+        outline-width: 1px solid green;
+    }
             
     #section-heading {
         background-color: transparent;
@@ -261,10 +350,9 @@ main {
     .food-main-container {
 
         &>div {
-            // border:1px solid $color__green-dark;
             border-radius: 0.5rem;
             background-color: #f8f8f8;
-            padding: 0.5rem;
+            padding: 1rem;
             margin-bottom: 1rem;
             height: calc(100% - 1rem);
 
@@ -286,6 +374,20 @@ main {
             .how-to-reduce {
                 grid-column: span 2;
             }
+
+        }
+
+        .food-carbon-print-kgs,
+        .food-equivalent-car {
+            font-size: 140%;
+            color: $color__green-dark;
+            text-decoration: underline $color__green-light;
+            text-decoration-style: double;
+        }
+
+        .food-equivalent-car {
+
+            text-decoration-color: red;
 
         }
         
@@ -315,13 +417,17 @@ main {
         flex-flow: row wrap;
         justify-content: center;
 
-        .axis-titles{
-            flex-basis: 30%;
-            text-align: center;
-            font-weight: bold;
+        .axis, .chart-version{
+            flex-basis: 50%;
+            text-align: left;
             font-family: $font__heading;
             color: $color__green-dark;
+            font-size: $font__size-sm;
             // margin: 0.5rem 0;
+        }
+
+        .chart-version{
+            text-align: right;
         }
 
         .y2-axis{
@@ -329,8 +435,13 @@ main {
         }
 
         .chart-info{
+            flex-basis: 100%;
             font-family: $font__body;
             font-size: 1rem;
+           
+          i{
+                text-align: left;
+           }
             // font-style: normal;
         }
     }
@@ -343,8 +454,15 @@ main {
 }
 
 .reduce-food-cfp-container-eat-local {
+
     .axis{
         display: none;
+    }
+
+    .chart-container{
+        .chart-version{
+            text-align: center;
+        }
     }
 }
 
@@ -352,6 +470,67 @@ main {
 
 // Flight Section
 
+
+
+
+// Travel Section
+
+.car-result-container{
+
+    // background-color: $color__grey-light;
+    p{
+        font-family: $font__body;
+        color: $color__green-dark;
+        font-weight: bold;
+    }
+
+    .chart-container{
+        .axis{
+            display: none;
+        }
+
+        .chart-version{
+            font-size: 1rem;
+            font-weight: normal;
+            font-family: $font__heading;
+            text-align: center;
+        }
+    }
+}
+
+.how-to-reduce{
+    h2{
+        margin: 0;
+    }
+}
+
+.reduce-carbon-foot-print{
+    h2,p{
+        margin: 0;
+    }
+    p{
+        font-family: $font__body;
+        margin-bottom: 0.75rem ;
+    }
+}
+
+.green-vehicle-container{
+    .chart-container{
+        .axis{
+            display: none;
+        }
+
+        .chart-version{
+            flex-basis: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.drive-better-container{
+
+
+}
 
 
 
