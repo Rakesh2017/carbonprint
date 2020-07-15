@@ -11,9 +11,6 @@ const GreenVehicle = () => {
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
     const options = {
-        title: {
-            text: "Electric Vs Petroleum Car Carbon footprint"
-        },
         data: [
             {
                 type: "bar",
@@ -35,7 +32,8 @@ const GreenVehicle = () => {
             {/* Fact container */}
             <Fact message="Driving accounts for 47% of the carbon footprint of a typical American family with two cars." />
 
-            <div>
+            <div class="chart"> 
+                <h2>Electric Vs Petroleum Car Carbon footprint</h2>
                 <CanvasJSChart options={options} />
                 <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
             </div>

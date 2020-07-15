@@ -80,14 +80,18 @@ main {
 
 #historical-chart{
     .chart-container{
-        .axis-titles{
+        .axis{
+            display: none;
+        }
+
+        .chart-version{
             color: white;
             text-align: center;
             flex-basis: 50%;
         }
 
-        .y2-axis{
-            display: initial;
+        .chart-info{
+            font-style: normal;
         }
     }
 }
@@ -315,13 +319,17 @@ main {
         flex-flow: row wrap;
         justify-content: center;
 
-        .axis-titles{
-            flex-basis: 30%;
-            text-align: center;
-            font-weight: bold;
+        .axis, .chart-version{
+            flex-basis: 50%;
+            text-align: left;
             font-family: $font__heading;
             color: $color__green-dark;
+            font-size: $font__size-sm;
             // margin: 0.5rem 0;
+        }
+
+        .chart-version{
+            text-align: right;
         }
 
         .y2-axis{
@@ -329,8 +337,13 @@ main {
         }
 
         .chart-info{
+            flex-basis: 100%;
             font-family: $font__body;
             font-size: 1rem;
+           
+          i{
+                text-align: left;
+           }
             // font-style: normal;
         }
     }
@@ -343,8 +356,15 @@ main {
 }
 
 .reduce-food-cfp-container-eat-local {
+
     .axis{
         display: none;
+    }
+
+    .chart-container{
+        .chart-version{
+            text-align: center;
+        }
     }
 }
 
@@ -352,6 +372,67 @@ main {
 
 // Flight Section
 
+
+
+
+// Travel Section
+
+.car-result-container{
+
+    // background-color: $color__grey-light;
+    p{
+        font-family: $font__body;
+        color: $color__green-dark;
+        font-weight: bold;
+    }
+
+    .chart-container{
+        .axis{
+            display: none;
+        }
+
+        .chart-version{
+            font-size: 1rem;
+            font-weight: normal;
+            font-family: $font__heading;
+            text-align: center;
+        }
+    }
+}
+
+.how-to-reduce{
+    h2{
+        margin: 0;
+    }
+}
+
+.reduce-carbon-foot-print{
+    h2,p{
+        margin: 0;
+    }
+    p{
+        font-family: $font__body;
+        margin-bottom: 0.75rem ;
+    }
+}
+
+.green-vehicle-container{
+    .chart-container{
+        .axis{
+            display: none;
+        }
+
+        .chart-version{
+            flex-basis: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.drive-better-container{
+
+
+}
 
 
 
