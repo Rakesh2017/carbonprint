@@ -17,7 +17,7 @@ const AppFooter = () => (
                 
                 <div className="site-footer-col-2">
                     <AppFooterNav1 />
-                    <p>Copyright &copy; 2020 CarbonPrint.wmdd.ca. All rights reserved.</p>
+                    <p><small>&copy; Copyright 2020 CarbonPrint. All rights reserved.</small></p>
                 </div>
             </div>
         </Container>

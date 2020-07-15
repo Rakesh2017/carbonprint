@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeHero from '../components/AppHome/HomeHero';
 import HomeFeatures from '../components/AppHome/HomeFeatures';
+import AppCTA from '../components/AppCTA';
 
 export default () => (
     <div>
@@ -8,5 +9,6 @@ export default () => (
             <HomeHero />
         </div>
         <HomeFeatures />
+        <AppCTA />
     </div>
 );
