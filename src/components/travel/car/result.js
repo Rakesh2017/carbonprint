@@ -20,10 +20,13 @@ const Result = ({ type, average, distance }) => {
         title: {
             // text: ""
         },
+
+        backgroundColor: "#fff",
         legend: {
-            maxWidth: 350,
-            itemWidth: 120
+            maxWidth: 700,
+            itemWidth: 350
         },
+        
         data: [
             {
                 type: "pie",
@@ -40,10 +43,12 @@ const Result = ({ type, average, distance }) => {
 
 
     return (
-        <div className="car-result-container">
+        <div className="car-result-container chart">
             <p>
                 Your Average Carbon footprint for Driving a {type[0].label} Car for {numberWithCommas(distance)} km for 1 year is {numberWithCommas(resultKgs)} Kgs or {resultMTS} Metric Tonnes.
             </p>
+
+            <h2>Your Carbon Footprints V/s Average Carbon Footprint of drivers in EU</h2>
             {/* chart */}
             <CanvasJSChart options={options} />
             {/* chart container */}

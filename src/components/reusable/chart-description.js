@@ -6,10 +6,12 @@ const ChartDescription = ({chartNumber, chartInfo, axisX, axisY, axisY2 }) => {
     return (
         <div className="chart-container">
 
-            <p className="axis-titles axis">X-Axis: {axisX} </p>
-            <p className="axis-titles axis">Y-Axis: {axisY} </p>
-            <p className="axis-titles axis y2-axis">Y2-Axis: {axisY2} </p>
-            <p className="axis-titles chart-version">Chart Version: {chartNumber}</p>
+            <div class="axis">
+                <p className="">X-Axis: {axisX} </p>
+                <p className="">Y-Axis: {axisY} </p>
+                <p className=" y2-axis">Y2-Axis: {axisY2} </p>
+            </div>
+            <p className="chart-version">Chart Version: {chartNumber}</p>
             <p className= "chart-info">
 
                 <i>
