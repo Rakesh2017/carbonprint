@@ -9,11 +9,8 @@ import TotalResult from './total-result';
 export default () => {
 
     const [foodCFP, setFoodCFP] = useState()
-
-    // callback setting food cfp
-    const handleFoodCallback = (data) => {
-        setFoodCFP(data)
-    }
+    const [flightCFP, setFlightCFP] = useState()
+    const [travelCFP, setTravelCFP] = useState()
 
     const tabNavBack = () => {
         const navUl = document.querySelector('.tab-slider ul');
@@ -38,8 +35,8 @@ export default () => {
                     item.classList.remove("activeTab");
                 })
                 tab.classList.add("activeTab");
-                
-                tabContainers.forEach( (container) => {
+
+                tabContainers.forEach((container) => {
                     container.classList.remove("active");
                 })
                 tabContainers[tab.tabIndex].classList.add("active");
@@ -67,16 +64,16 @@ export default () => {
                     </div>
                     <div className="tab-container">
                         <div className="active">
-                            <Food parentCallback={handleFoodCallback} />
+                            <Food parentCallback={data => setFoodCFP(data)} />
                         </div>
                         <div>
-                            <Flight />
+                            <Flight parentCallback={data => setFlightCFP(data)} />
                         </div>
                         <div>
-                            <Travel />
+                            <Travel parentCallback={data => setTravelCFP(data)} />
                         </div>
                         <div>
-                            <TotalResult foodCFP={foodCFP} />
+                            <TotalResult foodCFP={foodCFP} flightCFP={flightCFP} travelCFP={travelCFP} />
                         </div>
                     </div>
                 </div>

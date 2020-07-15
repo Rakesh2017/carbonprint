@@ -3,9 +3,7 @@ import CanvasJSReact from '../../assets/canvasjs.react'
 import ChartDescription from '../reusable/chart-description.js'
 
 const WorldAverages = ({ worldChartData, personAvgData }) => {
-    console.log("WorldAverages -> personAvgData", personAvgData)
-    console.log("WorldAverages -> worldChartData", worldChartData)
-
+   
     const chartVersion = "Chart 2.0"
     const chartInfo = `Graph illustrates the Top 10 Countries with Annual Carbon footprint (in millions) emitted through travel Air flights in year 2018`
 

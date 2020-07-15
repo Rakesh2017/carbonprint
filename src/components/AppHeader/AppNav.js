@@ -18,19 +18,19 @@ const AppNav = () => (
 
             <ul>
                 <li>
-                    <Link to="/" onClick={toggleButton}>Home</Link>
+                    <Link to="." onClick={toggleButton}>Home</Link>
                 </li>
                 <li>
-                    <Link to="/about" onClick={toggleButton}>About</Link>
+                    <Link to="./about" onClick={toggleButton}>About</Link>
                 </li>
                 <li>
-                    <Link to="/calculator" onClick={toggleButton}>Calculator</Link>
+                    <Link to="./calculator" onClick={toggleButton}>Calculator</Link>
                 </li>
                 <li>
-                    <Link to="/carbon-impact" onClick={toggleButton}>Carbon Impact</Link>
+                    <Link to="./carbon-impact" onClick={toggleButton}>Carbon Impact</Link>
                 </li>
                 <li>
-                    <Link to="/contact" onClick={toggleButton}>Contact Us</Link>
+                    <Link to="./contact" onClick={toggleButton}>Contact Us</Link>
                 </li>
             </ul>
         </div>

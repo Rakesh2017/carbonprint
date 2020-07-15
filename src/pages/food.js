@@ -168,7 +168,7 @@ const Food = ({ parentCallback }) => {
             farm: farm,
             retail: retail
         }
-       // setFoodSupplyChainData(tempArr)
+        // setFoodSupplyChainData(tempArr)
     }
 
     useEffect(() => {
@@ -178,7 +178,6 @@ const Food = ({ parentCallback }) => {
         } catch (error) {
             console.log(error)
         }
-
         // getFood_supply();
         return () => {
             // clean up
@@ -405,7 +404,7 @@ const Food = ({ parentCallback }) => {
 
 
                 {/* Displays the result of calculated carbon footprint */}
-                <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} foodList={selectedFoodProducts} />
+                <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} foodList={selectedFoodProducts} parentCallback={()=> console.log("done")} />
 
             </div>
 
