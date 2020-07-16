@@ -76,17 +76,10 @@ const HistoricalCarbonEmissionChart = () => {
         theme: "dark1",
         lineDashType: "dash",
         legend: {
-            horizontalAlign: "center", // "center" , "right"
-            verticalAlign: "bottom",  // "top" , "bottom"
+            horizontalAlign: "center",
+            verticalAlign: "bottom",
+            fontWeight: "normal"
         },
-        // title: {
-        //     text: "",
-        //     fontColor: "white",
-        //     fontFamily: "Arvo",
-        //     fontSize: 26,
-        //     fontWeight: "bold",
-        //     margin: 20
-        // },
         axisX: {
             stripLines: [
                 {
@@ -128,6 +121,7 @@ const HistoricalCarbonEmissionChart = () => {
             suffix: " ppm",
             titleFontSize: 15,
             labelFontSize:12,
+            gridColor: "lightgrey",
             crosshair: {
                 enabled: true
             },
@@ -181,7 +175,7 @@ const HistoricalCarbonEmissionChart = () => {
 
     return (
 
-        <div class="chart" id="historical-chart">
+        <div className="chart" id="historical-chart">
             <h2>Atmospheric Carbon Concentration</h2>
 
             {/* loading */}

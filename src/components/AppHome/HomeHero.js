@@ -6,7 +6,7 @@ import {
   } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
-const homehero = () => (
+const HomeHero = () => (
     <Container>
         <div className="hero-container">
             <div className="hero-text">
@@ -24,4 +24,4 @@ const homehero = () => (
     </Container>
 );
 
-export default (homehero);
+export default (HomeHero);

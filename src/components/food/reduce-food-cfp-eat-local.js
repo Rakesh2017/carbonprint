@@ -40,12 +40,15 @@ const ReduceFoodCfpEatLocal = () => {
 
     const options = {
         animationEnabled: true,
-        // title: {
-        //     text: "Percentages of factors involved in food"
-        // },
+        backgroundColor:"transparent",
+        legend: {
+            fontWeight: "normal"
+        },
         data: [{
             type: "doughnut",
-            showInLegend: true,
+            toolTipContent: "<b><i>{name}</i></b>: <b>{y}</b>",
+            legendText: "{name}",
+            showInLegend: "true",
             indexLabel: "{name}: {y}",
             yValueFormatString: "#,###'%'",
             dataPoints: chartData

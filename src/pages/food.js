@@ -296,10 +296,10 @@ const Food = ({ parentCallback }) => {
         fruitPercentage = calculateDietPercentage(totalCount, fruitCount)
         liquidPercentage = calculateDietPercentage(totalCount, liquidCount)
 
-        if (meatPercentage => 50) {
-            message = `Your diet consist of ${meatPercentage}% of meat. You may have balanced diet of both veg and non-veg to reduce your carbon footprint. Or, You can go for vegetarian to substantially decrease your carbon footprint.`
+        if (meatPercentage >= 50) {
+            message = `Your diet consist of ${parseInt(meatPercentage)}% of meat. You may have balanced diet of both veg and non-veg to reduce your carbon footprint. Or, You can go for vegetarian to substantially decrease your carbon footprint.`
         } else {
-            message = `Your diet consist of ${meatPercentage}% of meat ${vegPercentage}% vegetables, ${fruitPercentage}% fruits and ${liquidPercentage}% of drink products. This diet seems ideal for low carbon footprint. Additionally you may practice below measure to reduce your food carbon footprint further`
+            message = `Your diet consist of ${(meatPercentage)}% meat, ${(vegPercentage)}% vegetables, ${parseInt(fruitPercentage)}% fruits and ${(liquidPercentage)}% of drink products. This diet seems ideal for low carbon footprint. Additionally you may practice below measure to reduce your food carbon footprint further`
         }
 
     }
@@ -383,6 +383,8 @@ const Food = ({ parentCallback }) => {
                         className="select-food"
                         options={foodProductOption}
                         onChange={playFoodProduct}
+                        searchable = {false}
+                        separator = {true}
                     />
                     {/* input 2 */}
                     <label>How often do you have it?</label>
@@ -391,6 +393,8 @@ const Food = ({ parentCallback }) => {
                         className="select-food"
                         options={foodFrequencyOption}
                         onChange={playFoodFrequency}
+                        searchable = {false}
+                        separator = {true}
                     />
                 </div>
 
@@ -404,13 +408,13 @@ const Food = ({ parentCallback }) => {
 
 
                 {/* Displays the result of calculated carbon footprint */}
-                <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} foodList={selectedFoodProducts} parentCallback={()=> console.log("done")} />
+                { foodFrequency!==undefined && foodProduct!==undefined && <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} foodList={selectedFoodProducts} />}
 
             </div>
 
 
             {/* displays user carbon foot print chart of selected foods  */}
-            <FoodUserBarChart checkAddBtn={checkAddBtn} foodList={selectedFoodProducts} />
+            {checkAddBtn && selectedFoodProducts.length!==0 && <FoodUserBarChart checkAddBtn={checkAddBtn} foodList={selectedFoodProducts} />}
 
 
             {/* Displays the result of Accumulated calculated carbon footprint */}

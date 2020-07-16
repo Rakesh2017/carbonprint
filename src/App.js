@@ -40,8 +40,7 @@ function App() {
             <Route exact path="/calculator" component={Calculator} />
             <Route exact path="/carbon-impact" component={CarbonImpact} />
             <Route exact path="/contact" component={Contact} />
-            {/* <Route exact path="/food" component={Food} /> */}
-            {/* <Route exact path="/flight" component={Flight} /> */}
+            
           </Switch>
         </main>
         <AppFooter />
