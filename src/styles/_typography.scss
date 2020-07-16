@@ -9,28 +9,28 @@ body {
 
 
 h1 {
-    font-size: $font__size_xl;
+    font-size: $font__size_xxl;
 }
 
 h2 {
-    font-size: $font__size_lg;
+    font-size: $font__size_xl;
 }
 
 h3 {
-    font-size: 1.15rem;
+    font-size: $font__size_lg;
 }
 
 @media screen and (min-width: 800px) {
     h1 {
-        font-size: $font__size_xxl;
+        font-size: $font__size_xxxl;
     }
     
     h2 {
-        font-size: $font__size_xl;
+        font-size: $font__size_xxl;
     }
     
     h3 {
-        font-size: $font__size_lg;
+        font-size: $font__size_xl;
     }
 }
 
