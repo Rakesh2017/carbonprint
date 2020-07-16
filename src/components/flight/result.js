@@ -29,7 +29,7 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
                 cfp = cfp + ((25 * cfp) / 100)
             }
             if (classType[0].value === element.value && trip === "0") {
-                temp.push({ label: element.label, y: cfp, indexLabel: "Your Carbon Footprint: " + cfp + " kgs" })
+                temp.push({ label: element.label, y: cfp, indexLabel: "You: " + cfp + " kgs" })
             } else {
                 temp.push({ label: element.label, y: cfp })
             }
@@ -49,7 +49,7 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
                 cfp = cfp + ((25 * cfp) / 100)
             }
             if (classType[0].value === element.value && trip === "1") {
-                temp.push({ label: element.label, y: cfp, indexLabel: "Your Carbon Footprint: " + cfp + " kgs" })
+                temp.push({ label: element.label, y: cfp, indexLabel: "You: " + cfp + " kgs" })
             } else {
                 temp.push({ label: element.label, y: cfp })
             }
@@ -96,20 +96,22 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
 
 
     const options = {
-        animationEnabled: true,
         exportEnabled: true,
-        title: {
-            text: "Carbon Footprints of Flight",
-            // theme: "light2"
-        },
-        backgroundColor: "#fff",
+        animationEnabled: true,
+        backgroundColor:"transparent",
+        legend: 
+		{
+            fontWeight: "normal",
+            markerMargin: 5               
+		},
         axisY: {
-            title: "Carbon Footprint (Kgs)",
             titleWrap: true,
-            margin: 10
+            margin: 10,
+            interlacedColor: "#F8F1E4",
+            gridColor: "lightgrey",
+            suffix: " kg",
         },
         axisX: {
-            title: "flight Class Type",
             titleWrap: true,
             margin: 10,
             labelAngle: 0,
@@ -117,15 +119,23 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
         },
         data: [
             {
-                type: "bar",
+                type: "column",
                 showInLegend: true,
                 legendText: "One Way Trip",
+                indexLabelOrientation: "vertical",
+                indexLabelFontStyle: "bold",
+                indexLabelWrap: "true",
+                toolTipContent: "<i><strong>{label}</strong></i> : <strong>{y}</strong> Kgs",
                 dataPoints: setOneWayDataForChart()
             },
             {
-                type: "bar",
+                type: "column",
                 showInLegend: true,
                 legendText: "Round Trip",
+                indexLabelOrientation: "vertical",
+                indexLabelFontStyle: "bold",
+                indexLabelWrap: "true",
+                toolTipContent: "<i><strong>{label}</strong></i> : <strong>{y}</strong> Kgs",
                 dataPoints: setRoundTripDataForChart()
             },
         ]
@@ -142,7 +152,7 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
             {/* chart */}
             <CanvasJSChart options={options} />
             {/* chart container */}
-            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
+            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"carbon footprint [(Kgs)"} axisY={"Flight class types"} />
         </div>
     );
 }

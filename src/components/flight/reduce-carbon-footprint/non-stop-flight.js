@@ -1,7 +1,7 @@
 import React from 'react';
 import Fact from '../../reusable/facts.js'
 import CanvasJSReact from '../../../assets/canvasjs.react';
-import ChartDescription from '../../reusable/chart-description.js';
+import PieChartDescription from '../../reusable/pie-chart-description.js';
 
 const NonStopFlight = () => {
 
@@ -11,18 +11,16 @@ const NonStopFlight = () => {
     const chartInfo = "This Chart illustrates the carbon footprint released by One-Way Economy Class Air Flight from Madrid, Spain to Vancouver, Canada (Connecting Flight (Susceptible to increased distance) VS Direct Flight (8427 Kms)). With Connecting Flight it released around ~787Kgs of carbon whereas direct flight produces ~630Kgs (25% less) of carbon"
 
     const connectingOptions = {
-        title: {
-            // text: ""
-        },
+        animationEnabled: true,
+        backgroundColor:"transparent",
         legend: {
-            maxWidth: 350,
-            itemWidth: 120
+            fontWeight: "normal"
         },
         data: [
             {
-                type: "pie",
+                type: "doughnut",
                 showInLegend: true,
-                toolTipContent: "<strong>{indexLabel} = {y} Kgs for 8427Kms</strong>",
+                toolTipContent: "<strong><i>{indexLabel}</i></strong> = <b>{y}<b> Kgs for 8427Kms",
                 legendText: "{indexLabel}",
                 dataPoints: [
                     { y: "787", indexLabel: "connecting flight" },
@@ -43,7 +41,7 @@ const NonStopFlight = () => {
            
             <div>
                 <CanvasJSChart options={connectingOptions} />
-                <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
+                <PieChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
             </div>
         </div>
     );

@@ -52,7 +52,8 @@ const Flight = ({ parentCallback }) => {
                 data[1].result.forEach(element => {
                     temp = ({
                         label: element.country,
-                        y: element.people
+                        y: element.people,
+                        indexLabel: element.people+""
                     })
                     tempArr.push(temp)
                 });

@@ -2,10 +2,10 @@
 
 # CARBONPRINT
 
-# Langara College WMDD Term 3 Project
+<!-- # Langara College WMDD Term 3 Project -->
 # Built on ReactJS and NodeJS with ExpressJS Server
 
-******* Team Tiger Shark *******
+<!-- ******* Team Tiger Shark ******* -->
 
 <!--1. Rakesh,                  Project Manager | Developer | DA 
 2. Dalbir Singh,            Lead Developer | Front-end UI

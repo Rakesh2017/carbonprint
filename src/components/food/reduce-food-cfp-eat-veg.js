@@ -27,11 +27,11 @@ const ReduceFoodCfpEatVeg = () => {
                 data[1].result.forEach(element => {
 
                     temp = [
-                        { label: "Meat Lovers", y: element.meat_lover },
-                        { label: "Non-Veg", y: element.average },
-                        { label: "No-Beef", y: element.no_beef },
-                        { label: "Vegetarian", y: element.vegetarian },
-                        { label: "Vegan", y: element.vegan }
+                        { label: "Meat Lovers", y: element.meat_lover, indexLabel: element.meat_lover+"" },
+                        { label: "Non-Veg", y: element.average, indexLabel: element.average+"" },
+                        { label: "No-Beef", y: element.no_beef, indexLabel: element.no_beef+"" },
+                        { label: "Vegetarian", y: element.vegetarian, indexLabel: element.vegetarian+"" },
+                        { label: "Vegan", y: element.vegan, indexLabel: element.vegan+"" }
                     ]
                 });
                 setChartData(temp)
@@ -42,19 +42,36 @@ const ReduceFoodCfpEatVeg = () => {
     }
 
     const options = {
-        // title: {
-        //     text: "Food Carbon footprints by diet type (tonnes/person)"
-        // },
-        // axisX: {
-        //     title: "Diet Type"
-        // },
-        // axisY: {
-        //     title: "Carbon emission in tonnes"
-        // },
+        animationEnabled: true,
+        animationDuration: 2000,
+        backgroundColor: "transparent",
+        legend:
+        {
+            fontWeight: "normal",
+            dockInsidePlotArea: true,
+            markerMargin: 5,
+            verticalAlign: "top",
+            horizontalAlign: "right",
+        },
+        axisY: {
+            titleWrap: true,
+            margin: 10,
+            interlacedColor: "#F8F1E4",
+            suffix: " MT",
+            gridColor: "lightgrey",
+        },
+        axisX: {
+            titleWrap: true,
+            margin: 10,
+            labelAngle: 0,
+            interval: 1,
+        },
         data: [
             {
-                // Change type to "doughnut", "line", "splineArea", etc.
                 type: "column",
+                showInLegend: true,
+                toolTipContent: "<i><strong>{label}</strong></i> : <strong>{y}</strong> MT",
+                name: "Carbon Footprint Metric Tonnes",
                 dataPoints: chartData
             }
         ]
@@ -71,7 +88,7 @@ const ReduceFoodCfpEatVeg = () => {
             <h3>Food Carbon footprints by diet type (tonnes/person)</h3>
             <CanvasJSChart options={options} />
             {/* chart container */}
-            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX = {"Diet Type"} axisY = {"Carbon emission in tonnes"} />
+            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Diet Type"} axisY={"Carbon emission in metric tonnes(MT)"} />
             <div className="explanation-container">
                 {/* Fact container */}
                 <Fact message="Livestock farming produces from 20% to 50% of all man-made greenhouse gas emissions." />

@@ -23,7 +23,7 @@ const About = () => {
                     if (element.designation_type_id === 1) {
                         setTeamInfo("manager-name", element.name)
                         setTeamInfo("manager-designation", element.designation_type)
-                        // document.getElementById("image1").src = image;
+                        document.getElementById("image1").src = element.image_base64;
                     } else if (element.designation_type_id === 2) {
                         setTeamInfo("lead-developer-name", element.name)
                         setTeamInfo("lead-developer-designation", element.designation_type)
@@ -109,7 +109,7 @@ const About = () => {
 
                 {/* Rakesh */}
                 <div className="team-tile-container project-manager">
-                    {/* <img /> */}
+                    <img id="image1" />
                     <h3 className="member-name" id="manager-name"></h3>
                     <p className="member-designation" id="manager-designation"></p>
                 </div>

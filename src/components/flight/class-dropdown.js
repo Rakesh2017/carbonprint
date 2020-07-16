@@ -52,6 +52,8 @@ const ClassDropDown = ({ parentCallback }) => {
                 className="select-flight"
                 options={options}
                 onChange={playFoodProduct}
+                searchable = {false}
+                separator = {true}
             />
 
         </div>

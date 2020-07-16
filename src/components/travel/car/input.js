@@ -23,6 +23,7 @@ const Input = ({ parentCallback }) => {
         }
     }
 
+
     /* select option */
     function playOptions(event) {
         setType(event)
@@ -37,6 +38,8 @@ const Input = ({ parentCallback }) => {
                 className="select-car-type"
                 options={CarTypeOptions}
                 onChange={playOptions}
+                searchable = {false}
+                separator = {true}
             />
             {/* input 2 */}
             <label>How much litres of gas you car burn per 100 kms?</label>
