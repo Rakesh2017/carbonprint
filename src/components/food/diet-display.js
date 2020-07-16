@@ -34,11 +34,14 @@ const DietDisplay = ({ reduceMessage, meatPercentage, fruitPercentage, vegPercen
     }
 
     return (
-        <div className="diet-display-container">
-            <h2>Your Food Diet Chart</h2>
-            <p>
-                {reduceMessage}
-            </p>
+        <div className="diet-display-container section-column-2">
+            <div className="chart-info-section">
+                <h3>Your Food Diet</h3>
+                <p>
+                    {reduceMessage}
+                </p>
+            </div>
+            <CanvasJSChart options={options} />
             {/* chart container */}
             <CanvasJSChart options={options} />
             <PieChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
