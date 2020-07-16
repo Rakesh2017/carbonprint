@@ -26,9 +26,9 @@ function FoodCarbonPrint({ foodFrequency, foodProduct }) {
 
     /* Set carbon emission in kilograms */
     function setCarbonEmissionUnits(carbonPrint) {
-        document.getElementById("food-carbon-print-kgs-id").innerHTML = `Over an entire year your consumption of ${foodProduct[0].label} is contributing ${numberWithCommas(carbonPrint)} kilograms to your annual greenhouse gas emissions.`
+        document.getElementById("food-carbon-print-kgs-id").innerHTML = `Over an entire year your consumption of <span class="emphasis ${foodProduct[0].label}">${foodProduct[0].label}</span> is contributing <span class="emphasis">${numberWithCommas(carbonPrint)} kilograms</span> to your annual greenhouse gas emissions.`
 
-        document.getElementById("food-equivalent-car-id").innerHTML = `That's the equivalent of driving a regular petrol car for ${numberWithCommas((carbonPrint * 4.33).toFixed(0))} Kilometers.`
+        document.getElementById("food-equivalent-car-id").innerHTML = `That's the equivalent of driving a regular petrol <span class="car-icon">Car</span> for <span class="car-kms">${numberWithCommas((carbonPrint * 4.33).toFixed(0))} Kilometers</span>.`
 
         let temp = []
         temp.push({
