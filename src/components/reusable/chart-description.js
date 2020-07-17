@@ -2,7 +2,7 @@ import React from 'react';
 
 /* Contains the description of a chart */
 
-const ChartDescription = ({chartNumber, axisX, axisY, axisY2 }) => {
+const ChartDescription = ({ chartNumber, axisX, axisY, chartInfo }) => {
     return (
         <div className="chart-container">
 
@@ -11,7 +11,12 @@ const ChartDescription = ({chartNumber, axisX, axisY, axisY2 }) => {
                 <p className="">Y-Axis: {axisY} </p>
             </div>
             <p className="chart-version">Chart Version: {chartNumber}</p>
+
+            <div className="chart-info">
+               <i> {chartInfo} </i>
             </div>
+
+        </div>
 
     );
 }

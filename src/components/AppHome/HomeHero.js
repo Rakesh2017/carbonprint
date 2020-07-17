@@ -10,8 +10,10 @@ const HomeHero = () => (
     <Container>
         <div className="hero-container">
             <div className="hero-text">
-                <h1>Heading Home</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti tenetur eius ullam atque officiis possimus, eaque consequatur fugit optio placeat. Eius, error aut! Laudantium enim sed doloribus est sunt deleniti quod officiis magni nisi perspiciatis laboriosam quidem ratione assumenda cupiditate pariatur beatae nemo, eos magnam in aspernatur tempora optio. Quam.</p>
+                <h1>My Carbon Footprint</h1>
+                <p>A Carbon footprint is the number of greenhouse gases, primarily carbon dioxide, released into the atmosphere by your daily activities.</p>
+                <p>Carbon Print helps you to calculate your carbon emissions produced by food, travelling etc. Calculate your carbon footprint in few minutes.
+                </p>
                 <Link to="/calculator">
                     <Button variant="contained" className="hero-button">Calculate your Carbon footprint</Button>
                 </Link>

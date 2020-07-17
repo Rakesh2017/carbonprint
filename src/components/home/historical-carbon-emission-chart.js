@@ -75,6 +75,9 @@ const HistoricalCarbonEmissionChart = () => {
         backgroundColor: "transparent",
         theme: "dark1",
         lineDashType: "dash",
+        toolTip: {
+            shared: true   
+          },
         legend: {
             horizontalAlign: "center",
             verticalAlign: "bottom",
@@ -151,12 +154,14 @@ const HistoricalCarbonEmissionChart = () => {
                 type: "splineArea",
                 showInLegend: true,
                 legendText: "Carbon Emission",
+                toolTipContent: "<i><strong>{x}</strong>Y</i> : <strong>{y}</strong> MT Carbon Footprint", 
                 dataPoints: chartData
             },
             {
                 type: "column",
                 axisYType: "secondary",
                 showInLegend: true,
+                toolTipContent: "<i><strong>{x}</strong>Y</i> : <strong>{y}</strong> °C",
                 legendText: "Average temperature increase",
                 dataPoints: chartTemperatureData
 

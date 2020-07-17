@@ -89,7 +89,9 @@ const ReduceFoodCfpEatVeg = () => {
             <CanvasJSChart options={options} />
             {/* chart container */}
             <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Diet Type"} axisY={"Carbon emission in metric tonnes(MT)"} />
+
             <div className="explanation-container">
+
                 {/* Fact container */}
                 <Fact message="Livestock farming produces from 20% to 50% of all man-made greenhouse gas emissions." />
                 <p>

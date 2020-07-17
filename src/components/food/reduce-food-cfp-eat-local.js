@@ -68,10 +68,11 @@ const ReduceFoodCfpEatLocal = () => {
             {/* chart container */}
             <ChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
             <div className="explanation-container">
+                <p class="fact-container">Up to 83% of CO2 emissions come from only production, in which mainly comes from Meat Lovers (especially beef, pork, lamb) Production.</p>
                 <p>
                     You can easily reduce the carbon footprint of your food by up to 7% by eating locally. Food miles are only a small part of our food’s carbon emissions, so to devise the best strategy to cut its carbon footprint.
-
-                    In fact, up to 83% of CO2 emissions come from only production, in which mainly comes from Meat Lovers (especially beef, pork, lamb) Production. You may go vegetarian or vegan to reduce carbon emissions drastically.
+                    <br />
+                    You may go vegetarian or vegan to reduce carbon emissions drastically.
                 </p>
             </div>
 

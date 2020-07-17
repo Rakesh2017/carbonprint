@@ -23,28 +23,35 @@ const About = () => {
                     if (element.designation_type_id === 1) {
                         setTeamInfo("manager-name", element.name)
                         setTeamInfo("manager-designation", element.designation_type)
-                        document.getElementById("image1").src = element.image_base64;
+                        setImage("image1", element.image_base64)
                     } else if (element.designation_type_id === 2) {
                         setTeamInfo("lead-developer-name", element.name)
                         setTeamInfo("lead-developer-designation", element.designation_type)
+                        setImage("image2", element.image_base64)
                     } else if (element.designation_type_id === 3) {
                         setTeamInfo("qa-name", element.name)
                         setTeamInfo("qa-designation", element.designation_type)
+                        setImage("image3", element.image_base64)
                     } else if (element.designation_type_id === 4) {
                         setTeamInfo("lead-designer-name", element.name)
                         setTeamInfo("lead-designer-designation", element.designation_type)
+                        setImage("image4", element.image_base64)
                     } else if (element.designation_type_id === 51) {
                         setTeamInfo("designer-1-name", element.name)
                         setTeamInfo("designer-1-designation", element.designation_type)
+                        setImage("image5", element.image_base64)
                     } else if (element.designation_type_id === 52) {
                         setTeamInfo("designer-2-name", element.name)
                         setTeamInfo("designer-2-designation", element.designation_type)
+                        setImage("image6", element.image_base64)
                     } else if (element.designation_type_id === 53) {
                         setTeamInfo("designer-3-name", element.name)
                         setTeamInfo("designer-3-designation", element.designation_type)
+                        setImage("image7", element.image_base64)
                     } else if (element.designation_type_id === 54) {
                         setTeamInfo("designer-4-name", element.name)
                         setTeamInfo("designer-4-designation", element.designation_type)
+                        setImage("image8", element.image_base64)
                     }
                 });
             })
@@ -57,6 +64,10 @@ const About = () => {
     /* Set Team Info */
     function setTeamInfo(id, value) {
         document.getElementById(id).innerHTML = value
+    }
+
+    function setImage (id, value) {
+        document.getElementById(id).src = value;
     }
 
     return (
@@ -116,49 +127,49 @@ const About = () => {
 
                 {/* dalbir */}
                 <div className="team-tile-container lead-developer">
-                    {/* <img /> */}
+                    <img id="image2" />
                     <h3 className="member-name" id="lead-developer-name"></h3>
                     <p className="member-designation" id="lead-developer-designation"></p>
                 </div>
 
                 {/* Palak */}
                 <div className="team-tile-container developer quality-assurance">
-                    {/* <img /> */}
+                    <img id="image3" />
                     <h3 className="member-name" id="qa-name"></h3>
                     <p className="member-designation" id="qa-designation"></p>
                 </div>
 
                 {/* Lalit */}
                 <div className="team-tile-container lead-designer designer">
-                    {/* <img /> */}
+                    <img id="image4" />
                     <h3 className="member-name" id="lead-designer-name"></h3>
                     <p className="member-designation" id="lead-designer-designation"></p>
                 </div>
 
                 {/* Neha */}
                 <div className="team-tile-container designer">
-                    {/* <img /> */}
+                    <img id="image5" />
                     <h3 className="member-name" id="designer-1-name"></h3>
                     <p className="member-designation" id="designer-1-designation"></p>
                 </div>
 
                 {/* Aanchal */}
                 <div className="team-tile-container designer">
-                    {/* <img /> */}
+                    <img id="image6" />
                     <h3 className="member-name" id="designer-2-name"></h3>
                     <p className="member-designation" id="designer-2-designation"></p>
                 </div>
 
                 {/* Arsh */}
                 <div className="team-tile-container designer">
-                    {/* <img /> */}
+                    <img id="image7" />
                     <h3 className="member-name" id="designer-3-name"></h3>
                     <p className="member-designation" id="designer-3-designation"></p>
                 </div>
 
                 {/* Hiril */}
                 <div className="team-tile-container designer">
-                    {/* <img /> */}
+                    <img id="image8" />
                     <h3 className="member-name" id="designer-4-name"></h3>
                     <p className="member-designation" id="designer-4-designation"></p>
                 </div>

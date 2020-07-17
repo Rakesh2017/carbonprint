@@ -10,7 +10,7 @@ const DietDisplay = ({ reduceMessage, meatPercentage, fruitPercentage, vegPercen
 
 
     const options = {
-        exportEnabled: true,
+        // exportEnabled: true,
         animationEnabled: true,
         backgroundColor:"transparent",
         legend: {
