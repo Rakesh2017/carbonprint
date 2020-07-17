@@ -420,9 +420,6 @@ const Food = ({ parentCallback }) => {
             {/* Displays the result of Accumulated calculated carbon footprint */}
             <FoodCarbonPrintUnited checkAddBtn={checkAddBtn} foodList={selectedFoodProducts} />
 
-            {/* displays the average cfp chart */}
-            <FoodBarChart1 checkAddBtn={checkAddBtn} foodProduct={foodProduct} foodFrequency={foodFrequency} foodList={foodProductOption} />
-
             {/* it shows the bundling of carbon footprint along the supply chain of food */}
             {/* <FoodSupplyChainChart foodSupplyChainData={foodSupplyChainData} /> */}
 
@@ -430,16 +427,20 @@ const Food = ({ parentCallback }) => {
             {countFoodTypes()}
 
             {checkAddBtn && selectedFoodProducts.length >= 1 ?
-                <div className="how-to-reduce">
+                <div className="how-to-reduce chart">
                     <h2>How to reduce food carbon footprint?</h2>
                     <DietDisplay reduceMessage={message} meatPercentage={meatPercentage} fruitPercentage={fruitPercentage} vegPercentage={vegPercentage} liquidPercentage={liquidPercentage} />
-                </div> : null
-            }
+                </div> : null }
+
             {/* show reduce methods for food */}
             {checkAddBtn && selectedFoodProducts.length >= 1 ? <ReduceFoodCfpEatVeg /> : null}
 
             {/* show reduce methods for food */}
             {checkAddBtn && selectedFoodProducts.length >= 1 ? <ReduceFoodCfpEatLocal /> : null}
+
+            
+            {/* displays the average cfp chart */}
+            <FoodBarChart1 checkAddBtn={checkAddBtn} foodProduct={foodProduct} foodFrequency={foodFrequency} foodList={foodProductOption} />
 
         </Container>
     )
