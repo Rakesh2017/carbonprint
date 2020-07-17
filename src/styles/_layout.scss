@@ -4,6 +4,16 @@ main {
     padding-bottom: 1rem;
 }
 
+@media screen and (max-width:500px) {
+    #root {
+        .MuiContainer-root {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+    }    
+}
+
+
 /**************************************************
 // Home page layout *******************************
 // Author: Dalbir Singh ***************************
@@ -38,26 +48,11 @@ main {
 .hero-container {
     display: grid;
     gap: 3rem;
-
-    @media screen and (min-width: 800px) {
-        gap: 4rem;
-
-        grid-template-columns: 2fr 3fr;
-
-        .hero-image {
-
-            img {
-                display: block;
-            }
-        }
-    }
-
-    @media screen and (min-width: 1000px) {
-        gap: 6rem;
-    }
-        
+      
     .hero-text {
         min-width: 200px;
+        text-align: center;
+
     }
 
     .hero-button {
@@ -70,14 +65,38 @@ main {
         }
     }
 
+    .hero-image {
+        padding: 0.5rem;
+        background-color: #4242424d;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 6px #636262a2;
+    }
 }
 
-.hero-image {
-    padding: 2rem;
-    background-color: #4242424d;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 6px #636262a2;
+
+
+
+@media screen and (min-width: 800px) {
+    .hero-container {
+        gap: 2rem;
+        grid-template-columns: 2fr 3fr;
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-image {
+            padding: 1rem;
+        }
+    }
 }
+
+@media screen and (min-width: 1000px) {
+    .hero-container { 
+        gap: 6rem;
+    }
+}
+
 
 #historical-chart{
     .chart-container{
@@ -145,10 +164,6 @@ main {
             &:focus {
                 color: $color__green-light;
             }
-
-            &:invalid {
-                // color: red;
-            }
         }
     }
 
@@ -193,9 +208,13 @@ main {
     }
     
     .tab-nav {
+        padding-top: 10px;
+        background-color: white;
         border-radius: 0.25rem;
-        display: block;
-        position: relative;
+        position: -webkit-sticky; /* Safari */    
+        position: sticky;
+        top: 74px;
+        z-index: 9999999;
 
         display: flex;
         align-items: center;
@@ -241,7 +260,7 @@ main {
             text-align: center;
             background-color: $color__green-light2;
             border: 1px solid #68d5b5;
-            border-bottom: none;
+            // border-bottom: none;
             min-width: 60px;
             padding: 0.4rem;
             margin: 0;
@@ -285,12 +304,12 @@ main {
 .tab-container > div {
     margin-top: 0;
     padding-bottom: 1rem;
-    height: calc(100vh - 150px);
-    max-height: calc(100vh - 150px);
+    height: calc(100vh - 130px);
+    max-height: calc(100vh - 130px);
     overflow-y: auto;
 
     &::-webkit-scrollbar {
-        width: 1rem;
+        width: 3px;
     }
 
     &::-webkit-scrollbar-track {
@@ -298,7 +317,7 @@ main {
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: whitesmoke;
+        background-color: rgb(18, 204, 89);
         outline-width: 1px solid green;
     }
             
@@ -383,11 +402,14 @@ main {
         &>div {
             border-radius: 0.5rem;
             background-color: #f8f8f8;
-            padding: 1rem;
+            padding: 0.4rem;
             margin-bottom: 1rem;
             height: calc(100% - 1rem);
 
-            @media screen and (min-width: 800px) {
+            @media screen and (min-width: 600px) {
+                padding: 1rem;
+            }
+            @media screen and (min-width: 1000px) {
                 padding: 2rem;
             }
 
@@ -400,7 +422,8 @@ main {
         @media screen and (min-width: 1000px) {
             display:grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            column-gap: 3rem;
+            row-gap: 1rem;
             align-items: start;
             align-content: stretch;
         
@@ -487,7 +510,7 @@ main {
 }   
 
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
 
         .section-column-2 {
             display: flex;
@@ -495,13 +518,13 @@ main {
             justify-content: space-between;
             align-items: flex-start;
 
-
             .food-chart-section,
-            .how-to-reduce-chart {
+            .reduce-carbon-chart-section {
                 flex-shrink: 0;
                 flex-basis: 65%;
                 width: 60%;
                 order: -1;
+                max-width: 620px;
             }
 
             .chart-info-section {
