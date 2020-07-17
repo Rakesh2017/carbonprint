@@ -591,9 +591,109 @@ main {
 // Flight Section
 
 
+.flight-main-container{
+
+    // background-color: #f8f8f8;
+    padding: 1.5rem 0;
+    .input-container{ 
+        display: flex;
+        flex-flow: row wrap;
+
+        .take-off-container, .destination-container {
+            
+            flex-basis: 50%;            
+            padding: 0.5rem ;
+            font-family: $font__body;
+            input{
+                min-width: 100%;
+                min-height: 36px;
+            }
+
+            ul {
+                border: 0.5px solid black;
+                border-top: 0;
+                margin: 0;
+                padding: 0;
+                border-radius: 2px;
+
+                li{
+                    list-style-type: none;
+                    background-color: white;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    pointer-events: all;
+
+                    strong , small {
+                        font-weight: normal;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 700px){
+            .take-off-container, .destination-container{
+                flex-basis: 100%;
+            }
+        }
+
+    }
+
+    .flight-result-container, .world-flight-averages,
+    .non-stop-flight-container, .economy-class-flight-container {
+        background-color: #f8f8f8;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+    }
+
+    .flight-result-container > p{
+      
+            font-size: 1.3rem;
+            color: $color__green-dark;
+            margin: 0;
+            margin-bottom: 0.5rem;
+            // font-weight: bold;
+    }
+}
+
+
+
+.economy-class-flight-container, .non-stop-flight-container{
+    .chart{
+        .axis{
+            display: none;
+        }
+
+        .chart-version{
+            flex-basis: 100%;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+    }
+}
 
 
 // Travel Section
+
+.travel-main-container{
+    .input-container{
+        background-color: #f8f8f8;
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+        input{
+            min-height: 36px;
+        }
+
+        button{
+            margin: 1rem 0;
+            background-color: $color__green-dark;
+            color: white;
+        }
+    }
+}
+
 
 .car-result-container{
 
@@ -647,10 +747,6 @@ main {
     }
 }
 
-.drive-better-container{
-
-
-}
 
 
 
@@ -800,10 +896,62 @@ main {
     
 }
 
-
 /**************************************************
 // Contact Us layout End **************************
 /**************************************************/
+
+/**************************************************
+// Carbon Impact layout Start *********************
+/**************************************************/
+.carbon-impact-container {
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 1.5rem;
+
+    h1{
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .impact-section1{
+        flex-basis: 50%;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+
+    #impact-image1{
+        flex-basis: 50%;
+    }
+
+    #impact-image2{
+        flex-basis: 75%;
+    }
+
+    .impact-section2{
+        flex-basis: 100%;
+        margin: 1rem 0 1rem 0;
+    }
+
+    h2, h3,h4,p{
+        margin: 0;
+    }
+
+    h4{
+        font-family: $font__heading;
+        color: $color__green-dark;
+    }
+
+}
+
+
+
+
+
+/**************************************************
+// Carbon Impact layout End ***********************
+/**************************************************/
+
+
 
 
 

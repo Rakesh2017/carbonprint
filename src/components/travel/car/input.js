@@ -30,7 +30,7 @@ const Input = ({ parentCallback }) => {
     }
 
     return (
-        <div>
+        <div class="travel-input-container">
             {/* input 1 */}
             <label>What type of car you have?</label>
             <Select
