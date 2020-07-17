@@ -54,7 +54,7 @@ export default () => {
                         <div onClick={tabNavBack}>&laquo;</div>
                         <div className="tab-slider">
                             <ul>
-                                <li tabIndex="0">Food</li>
+                                <li tabIndex="0" className="activeTab">Food</li>
                                 <li tabIndex="1">Flight</li>
                                 <li tabIndex="2">Travel</li>
                                 <li tabIndex="3">Your Total Carbon Emission</li>

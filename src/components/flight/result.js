@@ -142,7 +142,7 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
     }
 
     return (
-        <div className="flight-result-container">
+        <div className="flight-result-container ">
             <p>
                 {para}
             </p>
@@ -153,6 +153,7 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
             <CanvasJSChart options={options} />
             {/* chart container */}
             <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"carbon footprint [(Kgs)"} axisY={"Flight class types"} />
+
         </div>
     );
 }

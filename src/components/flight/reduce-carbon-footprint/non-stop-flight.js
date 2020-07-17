@@ -39,7 +39,8 @@ const NonStopFlight = () => {
             {/* Fact container */}
             <Fact message="Driving your family from San Francisco to Los Angeles emits fewer carbon than flying. To tip the balance further, take-off and landing use more fuel than cruising does, so shorter flights like this one end up being even less efficient than a cross-country route" />
            
-            <div>
+            <div class="chart">
+                <h2>Carbon-Emission of Direct Flights V/S Connecting FLights</h2>
                 <CanvasJSChart options={connectingOptions} />
                 <PieChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
             </div>

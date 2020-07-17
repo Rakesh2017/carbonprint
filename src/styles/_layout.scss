@@ -4,6 +4,16 @@ main {
     padding-bottom: 1rem;
 }
 
+@media screen and (max-width:500px) {
+    #root {
+        .MuiContainer-root {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+    }    
+}
+
+
 /**************************************************
 // Home page layout *******************************
 // Author: Dalbir Singh ***************************
@@ -38,26 +48,11 @@ main {
 .hero-container {
     display: grid;
     gap: 3rem;
-
-    @media screen and (min-width: 800px) {
-        gap: 4rem;
-
-        grid-template-columns: 2fr 3fr;
-
-        .hero-image {
-
-            img {
-                display: block;
-            }
-        }
-    }
-
-    @media screen and (min-width: 1000px) {
-        gap: 6rem;
-    }
-        
+      
     .hero-text {
         min-width: 200px;
+        text-align: center;
+
     }
 
     .hero-button {
@@ -70,14 +65,38 @@ main {
         }
     }
 
+    .hero-image {
+        padding: 0.5rem;
+        background-color: #4242424d;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 6px #636262a2;
+    }
 }
 
-.hero-image {
-    padding: 2rem;
-    background-color: #4242424d;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 6px #636262a2;
+
+
+
+@media screen and (min-width: 800px) {
+    .hero-container {
+        gap: 2rem;
+        grid-template-columns: 2fr 3fr;
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-image {
+            padding: 1rem;
+        }
+    }
 }
+
+@media screen and (min-width: 1000px) {
+    .hero-container { 
+        gap: 6rem;
+    }
+}
+
 
 #historical-chart{
     .chart-container{
@@ -145,10 +164,6 @@ main {
             &:focus {
                 color: $color__green-light;
             }
-
-            &:invalid {
-                // color: red;
-            }
         }
     }
 
@@ -193,9 +208,13 @@ main {
     }
     
     .tab-nav {
+        padding-top: 10px;
+        background-color: white;
         border-radius: 0.25rem;
-        display: block;
-        position: relative;
+        position: -webkit-sticky; /* Safari */    
+        position: sticky;
+        top: 74px;
+        z-index: 9999999;
 
         display: flex;
         align-items: center;
@@ -241,7 +260,7 @@ main {
             text-align: center;
             background-color: $color__green-light2;
             border: 1px solid #68d5b5;
-            border-bottom: none;
+            // border-bottom: none;
             min-width: 60px;
             padding: 0.4rem;
             margin: 0;
@@ -285,12 +304,12 @@ main {
 .tab-container > div {
     margin-top: 0;
     padding-bottom: 1rem;
-    height: calc(100vh - 150px);
-    max-height: calc(100vh - 150px);
+    height: calc(100vh - 130px);
+    max-height: calc(100vh - 130px);
     overflow-y: auto;
 
     &::-webkit-scrollbar {
-        width: 1rem;
+        width: 3px;
     }
 
     &::-webkit-scrollbar-track {
@@ -298,7 +317,7 @@ main {
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: whitesmoke;
+        background-color: rgb(18, 204, 89);
         outline-width: 1px solid green;
     }
             
@@ -383,11 +402,14 @@ main {
         &>div {
             border-radius: 0.5rem;
             background-color: #f8f8f8;
-            padding: 1rem;
+            padding: 0.4rem;
             margin-bottom: 1rem;
             height: calc(100% - 1rem);
 
-            @media screen and (min-width: 800px) {
+            @media screen and (min-width: 600px) {
+                padding: 1rem;
+            }
+            @media screen and (min-width: 1000px) {
                 padding: 2rem;
             }
 
@@ -400,7 +422,8 @@ main {
         @media screen and (min-width: 1000px) {
             display:grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            column-gap: 3rem;
+            row-gap: 1rem;
             align-items: start;
             align-content: stretch;
         
@@ -487,7 +510,7 @@ main {
 }   
 
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
 
         .section-column-2 {
             display: flex;
@@ -495,13 +518,13 @@ main {
             justify-content: space-between;
             align-items: flex-start;
 
-
             .food-chart-section,
-            .how-to-reduce-chart {
+            .reduce-carbon-chart-section {
                 flex-shrink: 0;
                 flex-basis: 65%;
                 width: 60%;
                 order: -1;
+                max-width: 620px;
             }
 
             .chart-info-section {
@@ -591,9 +614,109 @@ main {
 // Flight Section
 
 
+.flight-main-container{
+
+    // background-color: #f8f8f8;
+    padding: 1.5rem 0;
+    .input-container{ 
+        display: flex;
+        flex-flow: row wrap;
+
+        .take-off-container, .destination-container {
+            
+            flex-basis: 50%;            
+            padding: 0.5rem ;
+            font-family: $font__body;
+            input{
+                min-width: 100%;
+                min-height: 36px;
+            }
+
+            ul {
+                border: 0.5px solid black;
+                border-top: 0;
+                margin: 0;
+                padding: 0;
+                border-radius: 2px;
+
+                li{
+                    list-style-type: none;
+                    background-color: white;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    pointer-events: all;
+
+                    strong , small {
+                        font-weight: normal;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 700px){
+            .take-off-container, .destination-container{
+                flex-basis: 100%;
+            }
+        }
+
+    }
+
+    .flight-result-container, .world-flight-averages,
+    .non-stop-flight-container, .economy-class-flight-container {
+        background-color: #f8f8f8;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+    }
+
+    .flight-result-container > p{
+      
+            font-size: 1.3rem;
+            color: $color__green-dark;
+            margin: 0;
+            margin-bottom: 0.5rem;
+            // font-weight: bold;
+    }
+}
+
+
+
+.economy-class-flight-container, .non-stop-flight-container{
+    .chart{
+        .axis{
+            display: none;
+        }
+
+        .chart-version{
+            flex-basis: 100%;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+    }
+}
 
 
 // Travel Section
+
+.travel-main-container{
+    .input-container{
+        background-color: #f8f8f8;
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+        input{
+            min-height: 36px;
+        }
+
+        button{
+            margin: 1rem 0;
+            background-color: $color__green-dark;
+            color: white;
+        }
+    }
+}
+
 
 .car-result-container{
 
@@ -647,10 +770,6 @@ main {
     }
 }
 
-.drive-better-container{
-
-
-}
 
 
 
@@ -800,10 +919,62 @@ main {
     
 }
 
-
 /**************************************************
 // Contact Us layout End **************************
 /**************************************************/
+
+/**************************************************
+// Carbon Impact layout Start *********************
+/**************************************************/
+.carbon-impact-container {
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 1.5rem;
+
+    h1{
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .impact-section1{
+        flex-basis: 50%;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+
+    #impact-image1{
+        flex-basis: 50%;
+    }
+
+    #impact-image2{
+        flex-basis: 75%;
+    }
+
+    .impact-section2{
+        flex-basis: 100%;
+        margin: 1rem 0 1rem 0;
+    }
+
+    h2, h3,h4,p{
+        margin: 0;
+    }
+
+    h4{
+        font-family: $font__heading;
+        color: $color__green-dark;
+    }
+
+}
+
+
+
+
+
+/**************************************************
+// Carbon Impact layout End ***********************
+/**************************************************/
+
+
 
 
 

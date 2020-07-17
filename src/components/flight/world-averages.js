@@ -50,7 +50,8 @@ const WorldAverages = ({ worldChartData, personAvgData }) => {
 
 
     return (
-        <div className="world-flight-averages">
+        <div className="world-flight-averages chart">
+            <h2>Carbon Footprint of top 10 Countries (in Million Tonnes)</h2>
             {/* chart */}
             <CanvasJSChart options={options} />
             {/* chart container */}
