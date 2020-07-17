@@ -15,8 +15,8 @@ const EconomyClassFlight = () => {
             // text: ""
         },
         legend: {
-            maxWidth: 350,
-            itemWidth: 120
+            maxWidth: 800,
+            itemWidth: 250
         },
         data: [
             {
@@ -47,7 +47,8 @@ const EconomyClassFlight = () => {
             {/* Fact container */}
             <Fact message="Airline emissions make up a little more than three per cent of total emissions in Canada. The total carbon impact of a single flight is so high that avoiding just one trip can be equivalent to going (gasoline) car-free for a year." />
 
-            <div>
+            <div class="chart">
+                <h2>Carbon Emission due to different class of Flights</h2>
                 <CanvasJSChart options={connectingOptions} />
                 <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
             </div>

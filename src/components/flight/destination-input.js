@@ -69,7 +69,7 @@ const DestinationInput = ({ parentCallback }) => {
 
 
     return (
-        <div ref={ref}>
+        <div ref={ref} class="destination-container">
 
             <label>Enter Destination Airport or City Name?</label>
             <input

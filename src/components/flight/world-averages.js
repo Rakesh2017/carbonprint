@@ -11,17 +11,12 @@ const WorldAverages = ({ worldChartData, personAvgData }) => {
 
 
     const options = {
-        title: {
-            // text: ""
-        },
         axisY: {
-            title: "Carbon footprint",
             includeZero: false,
             suffix: " MT",
             interlacedColor: "#F8F1E4",
         },
         axisX: {
-            title: "Country Name",
             labelAngle: 90
         },
         toolTip: {
@@ -41,11 +36,12 @@ const WorldAverages = ({ worldChartData, personAvgData }) => {
 
 
     return (
-        <div className="world-flight-averages">
+        <div className="world-flight-averages chart">
+            <h2>Carbon Footprint of top 10 Countries (in Million Tonnes)</h2>
             {/* chart */}
             <CanvasJSChart options={options} />
             {/* chart container */}
-            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
+            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Country Name"} axisY={"Carbon Footprint"} />
         </div>
     );
 }

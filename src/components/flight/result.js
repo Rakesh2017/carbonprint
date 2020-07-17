@@ -98,18 +98,12 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
     const options = {
         animationEnabled: true,
         exportEnabled: true,
-        title: {
-            text: "Carbon Footprints of Flight",
-            // theme: "light2"
-        },
         backgroundColor: "#fff",
         axisY: {
-            title: "Carbon Footprint (Kgs)",
             titleWrap: true,
             margin: 10
         },
         axisX: {
-            title: "flight Class Type",
             titleWrap: true,
             margin: 10,
             labelAngle: 0,
@@ -132,17 +126,20 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
     }
 
     return (
-        <div className="flight-result-container">
+        <div className="flight-result-container ">
             <p>
                 {para}
             </p>
             {/* fact container */}
-            <Fact message={`Distance between ${takeOffAddress} and ${destinationAddress} is ${air_distance}.`} />
+            <Fact className="fact" message={`Distance between ${takeOffAddress} and ${destinationAddress} is ${air_distance}.`} />
 
-            {/* chart */}
-            <CanvasJSChart options={options} />
-            {/* chart container */}
-            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
+            <div class="chart">
+                <h2>Carbon Footprints of Flight</h2>
+                {/* chart */}
+                <CanvasJSChart options={options} />
+                {/* chart container */}
+                <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Flight Class Type"} axisY={"Carbon Footprint (Kgs)"}/>
+            </div>
         </div>
     );
 }

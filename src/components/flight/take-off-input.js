@@ -71,7 +71,7 @@ const TakeOffInput = ({ parentCallback }) => {
 
 
     return (
-        <div ref={ref}>
+        <div ref={ref} class="take-off-container">
 
             <label>Enter Take-off Airport or City Name?</label>
             <input

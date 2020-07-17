@@ -7,9 +7,9 @@ const ChartDescription = ({chartNumber, chartInfo, axisX, axisY, axisY2 }) => {
         <div className="chart-container">
 
             <div class="axis">
-                <p className="">X-Axis: {axisX} </p>
-                <p className="">Y-Axis: {axisY} </p>
-                <p className=" y2-axis">Y2-Axis: {axisY2} </p>
+                <p className="X-axis">X-Axis: {axisX} </p>
+                <p className="Y-axis">Y-Axis: {axisY} </p>
+                <p className="y2-axis">Y2-Axis: {axisY2} </p>
             </div>
             <p className="chart-version">Chart Version: {chartNumber}</p>
             <p className= "chart-info">
