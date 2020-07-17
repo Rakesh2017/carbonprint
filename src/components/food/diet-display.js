@@ -41,7 +41,7 @@ const DietDisplay = ({ reduceMessage, meatPercentage, fruitPercentage, vegPercen
                     {reduceMessage}
                 </p>
             </div>
-            <CanvasJSChart options={options} />
+            {/* <CanvasJSChart options={options} /> */}
             {/* chart container */}
             <CanvasJSChart options={options} />
             <PieChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
