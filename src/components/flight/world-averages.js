@@ -11,13 +11,25 @@ const WorldAverages = ({ worldChartData, personAvgData }) => {
 
 
     const options = {
+        animationEnabled: true,
+        backgroundColor:"transparent",
+        legend: 
+		{
+            fontWeight: "normal",
+            markerMargin: 5               
+		},
         axisY: {
-            includeZero: false,
-            suffix: " MT",
+            titleWrap: true,
+            margin: 10,
             interlacedColor: "#F8F1E4",
+            gridColor: "lightgrey",
+            suffix: " MT",
         },
         axisX: {
-            labelAngle: 90
+            titleWrap: true,
+            margin: 10,
+            labelAngle: 90,
+            interval: 1
         },
         toolTip: {
             enabled: true,      
@@ -26,7 +38,9 @@ const WorldAverages = ({ worldChartData, personAvgData }) => {
         },
         data: [
             {
-                type: "line",
+                type: "column",
+                indexLabelWrap: "true",
+                toolTipContent: "<i><strong>{label}</strong></i> : <strong>{y}</strong> MT",
                 dataPoints: personAvgData,
                 showInLegend: true,
                 legendText: "Carbon in Million Tonnes (Year 2018)",
@@ -41,7 +55,7 @@ const WorldAverages = ({ worldChartData, personAvgData }) => {
             {/* chart */}
             <CanvasJSChart options={options} />
             {/* chart container */}
-            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Country Name"} axisY={"Carbon Footprint"} />
+            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Carbon footprint (Metric Tones)"} axisY={"Countries Name"} />
         </div>
     );
 }

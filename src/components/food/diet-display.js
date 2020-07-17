@@ -1,24 +1,25 @@
 import React from 'react';
 import CanvasJSReact from '../../assets/canvasjs.react';
-import ChartDescription from '../reusable/chart-description.js';
+import PieChartDescription from '../reusable/pie-chart-description.js';
 
 const DietDisplay = ({ reduceMessage, meatPercentage, fruitPercentage, vegPercentage, liquidPercentage }) => {
 
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
     const chartVersion = "Chart 3.0"
-    const chartInfo = "Graph illustrates the distribution of food types of your food diet"
+    const chartInfo = "Graph illustrates the percentage distribution of food types derived from your food input"
 
 
     const options = {
         exportEnabled: true,
         animationEnabled: true,
-        // title: {
-        //     text: "Your Food Diet"
-        // },
+        backgroundColor:"transparent",
+        legend: {
+            fontWeight: "normal"
+        },
         data: [{
-            type: "pie",
+            type: "doughnut",
             startAngle: 75,
-            toolTipContent: "<b>{label}</b>: {y}%",
+            toolTipContent: "<b><i>{label}</i></b>: <b>{y}</b>%",
             showInLegend: "true",
             legendText: "{label}",
             indexLabelFontSize: 16,
@@ -33,14 +34,17 @@ const DietDisplay = ({ reduceMessage, meatPercentage, fruitPercentage, vegPercen
     }
 
     return (
-        <div className="diet-display-container">
-            <h2>Your Food Diet</h2>
-            <p>
-                {reduceMessage}
-            </p>
+        <div className="diet-display-container section-column-2">
+            <div className="chart-info-section">
+                <h3>Your Food Diet</h3>
+                <p>
+                    {reduceMessage}
+                </p>
+            </div>
             <CanvasJSChart options={options} />
             {/* chart container */}
-            {/* <PieChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} /> */}
+            <CanvasJSChart options={options} />
+            <PieChartDescription chartNumber ={chartVersion} chartInfo = {chartInfo} />
         </div>
     );
 }

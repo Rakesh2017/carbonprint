@@ -74,7 +74,6 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
     foodY = getFoodCFP().y
     flightY = getFlightCFP().y
     travelY = getTravelCFP().y
-    console.log("ResultChart -> getTravelCFP", travelY)
 
 
     const options = {

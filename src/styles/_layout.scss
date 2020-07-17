@@ -193,15 +193,12 @@ main {
     }
     
     .tab-nav {
-        // border: 1px solid $color__green-dark;
         border-radius: 0.25rem;
         display: block;
         position: relative;
 
         display: flex;
         align-items: center;
-
-
 
         div:first-of-type,
         div:last-of-type {
@@ -312,8 +309,8 @@ main {
         margin: 0;
 
         h2 {
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
         }
     }
 
@@ -343,6 +340,40 @@ main {
 }
 
 
+// Fun fact container
+.fact-container {
+    padding: 5px;
+    background-color: $color__green-light;
+    color: $color__green-light2;
+
+    &:before {
+        content: "\f5c2";
+        margin-right: 3px;
+     }
+
+    &:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+    }
+}
+
+
+// React select dropdown form fields
+.react-dropdown-select {
+    .react-dropdown-select-dropdown {
+        width: 100%;
+        min-width: 200px;
+        top: 40px;
+        position: absolute;
+    }
+}
+
 
 // Food Section ****************************
 .tab-container {
@@ -356,15 +387,20 @@ main {
             margin-bottom: 1rem;
             height: calc(100% - 1rem);
 
+            @media screen and (min-width: 800px) {
+                padding: 2rem;
+            }
+
             h2 {
                 margin-top: 0;
+                margin-bottom: 1rem;
             }
         }
     
         @media screen and (min-width: 1000px) {
             display:grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 2rem;
             align-items: start;
             align-content: stretch;
         
@@ -374,50 +410,143 @@ main {
             .how-to-reduce {
                 grid-column: span 2;
             }
-
         }
-
-        .food-carbon-print-kgs,
-        .food-equivalent-car {
-            font-size: 140%;
-            color: $color__green-dark;
-            text-decoration: underline $color__green-light;
-            text-decoration-style: double;
-        }
-
-        .food-equivalent-car {
-
-            text-decoration-color: red;
-
-        }
-        
     }
-
-    #food-dynamic-entries > div {
-        display: flex;
-        align-items: center;
-
-        p {
-            width: 250px;
-            border-left: 0.3rem solid $color__green-light;
-            background-color: $color__green-light2;
-            padding: 3px;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-    }
-    
 }
 
+
+.carbon-print-food-revealed-container {
+
+    .emphasis {
+        font-size: 120%;
+        color: $color__green-light;
+        font-weight: bold;
+    }
+    
+    .food-equivalent-car {
+        .car-icon {
+            color: red;
+            font-size: 120%;
+            font-weight: bold;
+
+
+            &:after {
+                color: $color__text-main;
+                content: "\f1b9";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 200%;
+                -webkit-font-smoothing: antialiased;
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                line-height: 1;
+
+                margin-left: 6px;
+                margin-right: 6px;
+            }
+
+        }
+
+        .car-kms {
+            position: relative;
+            font-size: 120%;
+            font-weight: bold;
+            
+            &:before,
+            &:after {
+                display: inline-block;
+                position: relative;
+                bottom: -6px;
+                content: "";
+                width: 30%;
+                border-bottom: 2px solid $color__text-main;
+            }
+        }
+    }
+}
+
+
+
+
+
+#food-dynamic-entries > div {
+    display: flex;
+    align-items: center;
+
+    p {
+        width: 250px;
+        border-left: 0.3rem solid $color__green-light;
+        background-color: $color__green-light2;
+        padding: 6px;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+}   
+
+
+@media screen and (min-width: 900px) {
+
+        .section-column-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+
+
+            .food-chart-section,
+            .how-to-reduce-chart {
+                flex-shrink: 0;
+                flex-basis: 65%;
+                width: 60%;
+                order: -1;
+            }
+
+            .chart-info-section {
+                flex-basis: 25%;
+                flex-grow: 0;
+                flex-shrink: 0;
+                order: 1;
+            }
+        }
+    }
+
+
+
+.chart-info-section,
+.explanation-container { 
+
+    border-left: 3px solid $color__green-light;
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: $color__green-light2;
+    
+    p {
+        margin-top: 0;
+        margin-bottom: 0.5rem;    
+    }
+
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+
+
 .chart {
+
     .chart-container {
+        margin-bottom: 1rem;
 
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
 
-        .axis, .chart-version{
+        .axis, 
+        .chart-version {
             flex-basis: 50%;
             text-align: left;
             font-family: $font__heading;
@@ -426,30 +555,21 @@ main {
             // margin: 0.5rem 0;
         }
 
-        .chart-version{
+        .chart-version {
             text-align: right;
         }
 
         .y2-axis{
             display: none;
         }
-
-        .chart-info{
-            flex-basis: 100%;
-            font-family: $font__body;
-            font-size: 1rem;
-           
-          i{
-                text-align: left;
-           }
-            // font-style: normal;
-        }
     }
 }
 
 
-.diet-display-container h2 , .reduce-food-cfp-container h3{    
-    font-size: 1.2rem;
+.diet-display-container h3 , 
+.reduce-food-cfp-container h3 {
+    font-family: $font__heading;
+    margin-bottom: 0.5rem;
     text-align: left;    
 }
 
