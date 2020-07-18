@@ -833,7 +833,7 @@ main {
         }
     }
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 900px) {
 
         .our-team-container{
             display: flex;
@@ -869,54 +869,66 @@ main {
 
 .contact-us-container{
 
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+
     h1{
         text-align: center;
-        padding: 0.5rem 0;
-        // background-color: $color__green-light;
+        flex-basis: 100%;
     }
 
-    .heroImage{
-        margin: 0 0.5rem;
-    }
-
-    .address , .phoneNumber  , .email {
-       text-align: center;
-       margin: 1rem;
-
-       img{
-            margin: 0.5rem;
-            border-radius: 50%;
-       }
-
-       p{
+    .contact-section1{
+        flex-basis: 50%;
+        padding: 1.5rem;
+        p{
             margin: 0;
-            text-align: center;
             font-family: $font__body;
+            color: $color__green-dark;
         }
-    } 
+
+        .contact-image{
+            max-width: 100%;
+            text-align: right;
+            height: auto;
+        }
+    }
+    
+    .contact-form{
+        flex-basis: 50%;
+        padding: 1.5rem;
+
+        input{
+            min-width: 100%;
+            min-height: 2.25rem;
+        }
+
+        #contact-label-name{
+            margin-top: 0;
+        }
+        #contact-message{
+            min-height: 3.5rem;
+        }
+
+        #contact-button{
+            margin: 1rem 0;
+            min-width: 100%;
+            padding: 0.5rem 1rem;
+        }
+    }
 }
 
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 700px) {
     .contact-us-container {
-        display: flex;
-        flex-flow: row wrap;
-
-        h1{
+        .contact-section1, .contact-form {
             flex-basis: 100%;
+            padding: 0.5rem;
+            justify-self: center;
         }
-
-        .heroImage{
-            flex-basis: 100%;
-        }
-
-        .address , .phoneNumber , .email{
-            flex-basis: 28%;
-        }
-
-
-    }   
-    
+    }    
 }
 
 /**************************************************
@@ -928,6 +940,9 @@ main {
 /**************************************************/
 .carbon-impact-container {
 
+    // max-width: 1200px;
+    margin: 0 4rem;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -937,25 +952,33 @@ main {
         flex-basis: 100%;
         text-align: center;
     }
+
     .impact-section1{
-        flex-basis: 50%;
-        margin: 0.5rem 0 0.5rem 0;
+        flex-basis: 35%;
+        margin: 0.5rem 0 1rem 0;
+        padding-right: 1.5rem ;
+        p{
+            text-align: justify;
+        }
     }
 
     #impact-image1{
-        flex-basis: 50%;
+        flex-basis: 5%;
+        height: auto;
+        margin-bottom: 1rem;
     }
 
     #impact-image2{
-        flex-basis: 75%;
+        flex-basis: 40%;
     }
 
     .impact-section2{
         flex-basis: 100%;
-        margin: 1rem 0 1rem 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
-    h2, h3,h4,p{
+    h2,h3,h4,p{
         margin: 0;
     }
 
@@ -966,7 +989,15 @@ main {
 
 }
 
+.carbon-impact-container{
 
+    @media screen and (max-width: 700px) {
+
+        .impact-section1, .impact-section2{
+            flex-basis: 100%;
+        }
+    }
+}
 
 
 

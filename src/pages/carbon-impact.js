@@ -1,4 +1,7 @@
 import React from 'react';
+import AppCTA from '../components/AppCTA';
+import image1 from '../images/image-1.jpg';
+import image2 from '../images/image-2.png';
 import {
     Container,
 } from '@material-ui/core';
@@ -25,9 +28,9 @@ export default () => (
             </p>
         </div>
 
-        <img id="impact-image1"></img>
+        <img id="impact-image1" src={image1} />
 
-        <img id="impact-image2"></img>
+        <img id="impact-image2" src={image2} />
 
         <div class="impact-section2">      
 
@@ -62,5 +65,7 @@ export default () => (
 
         </div>
 
+
+         <AppCTA />
     </Container>
 );
