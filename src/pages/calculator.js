@@ -48,6 +48,11 @@ export default () => {
     return (
 
         <Container>
+            <div className="page-heading">
+                <h1>Carbon Footprint Calculator for Individuals</h1>
+                <h3>Select the appropriate tab to calculate your Cabon Impact and compare it with the world !</h3>
+            </div>
+            
             <div className="carbon-calculator">
                 <div className="tab-panel">
                     <div className="tab-nav">
