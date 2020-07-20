@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     window.onscroll = function () {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
         document.querySelector('header').classList.add('header-fixed');
       } else {
         document.querySelector('header').classList.remove('header-fixed');

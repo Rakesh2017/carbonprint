@@ -5,7 +5,7 @@
 /**********************************************/
 header {
     position: fixed;
-    z-index: 99;
+    z-index: 999999;
     margin: auto;
     width: 100%;
     border-top: 4px solid #59bd24f8;
@@ -24,7 +24,21 @@ header {
 
 
 header.header-fixed {
-    backdrop-filter: blur(3px);
+    .site-logo {
+        h2 {
+            display: none;
+        }
+
+        img {
+            height: 34px;
+            width: 14px;
+        }
+    }
+
+    .site-header-container {
+        height: 36px;
+    }
+    
 }
 
 
@@ -76,12 +90,13 @@ header.header-fixed {
                 margin: 0;
                 padding: 0;
                 // visibility: hidden;
+                height: 90vh;
                 position: fixed;
                 top:72px;
                 left:0;
                 right: 0;
                 bottom: 0;
-                z-index: 99;
+                z-index: 9999999;
                 background-color: $color__green-light2;
                 background-blend-mode:color-burn;
                 

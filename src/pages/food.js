@@ -11,7 +11,7 @@ import ReduceFoodCfpEatVeg from '../components/food/reduce-food-cfp-eat-veg.js'
 import ReduceFoodCfpEatLocal from '../components/food/reduce-food-cfp-eat-local.js'
 // import FoodSupplyChainChart from '../components/food/food-supply-chain-graph.js'
 import DietDisplay from '../components/food/diet-display.js'
-
+import IconFood from '../images/icons/icon-food.png'
 
 
 const Food = ({ parentCallback }) => {
@@ -366,46 +366,52 @@ const Food = ({ parentCallback }) => {
             </div>
 
             {/* logo+input container  */}
-            <div className="logo+input-container">
-                {/* Logo Container */}
-                <div className="logo-container">
-                    {/* food logo */}
-                    {/* <img /> logo */}
-                    {/* <h3>Food</h3> */}
+            <div className="input-container-food">
+
+                <div className="container-logo-input">
+                    {/* Logo Container */}
+                    <div className="container-logo">
+                        <img src={IconFood} alt="food logo" />
+                        {/* <img /> logo */}
+                        {/* <h3>Food</h3> */}
+                    </div>
+
+                    {/* input container */}
+                    <div className="container-input">
+                        {/* input 1 */}
+                        <label>Which food would you like?</label>
+                        <Select
+                            placeholder="Select Food"
+                            className="select-food"
+                            options={foodProductOption}
+                            onChange={playFoodProduct}
+                            searchable = {false}
+                            separator = {true}
+                        />
+                        {/* input 2 */}
+                        <label>How often do you have it?</label>
+                        <Select
+                            placeholder="Select how often?"
+                            className="select-food"
+                            options={foodFrequencyOption}
+                            onChange={playFoodFrequency}
+                            searchable = {false}
+                            separator = {true}
+                        />
+                            
+                        {/* Add more */}
+                        <div className="button-submit">
+                            <Button style={{ display: "none" }} id="add-food-item" variant="contained" onClick={addItem}>
+                                Add Item
+                            </Button>
+                        </div>
+
+                    </div>
+
                 </div>
-
-                {/* input container */}
-                <div className="input-container">
-                    {/* input 1 */}
-                    <label>Which food would you like?</label>
-                    <Select
-                        placeholder="Select Food"
-                        className="select-food"
-                        options={foodProductOption}
-                        onChange={playFoodProduct}
-                        searchable = {false}
-                        separator = {true}
-                    />
-                    {/* input 2 */}
-                    <label>How often do you have it?</label>
-                    <Select
-                        placeholder="Select how often?"
-                        className="select-food"
-                        options={foodFrequencyOption}
-                        onChange={playFoodFrequency}
-                        searchable = {false}
-                        separator = {true}
-                    />
-                </div>
-
-                {/* Add more */}
-                <Button style={{ display: "none" }} id="add-food-item" variant="contained" onClick={addItem}>
-                    Add Item
-                </Button>
-
+               
 
                 <div id="food-dynamic-entries" onClick={loopClicks}></div>
-
 
                 {/* Displays the result of calculated carbon footprint */}
                 { foodFrequency!==undefined && foodProduct!==undefined && <FoodCarbonPrint foodFrequency={foodFrequency} foodProduct={foodProduct} foodList={selectedFoodProducts} />}

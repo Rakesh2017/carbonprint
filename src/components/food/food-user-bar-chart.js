@@ -97,7 +97,7 @@ export default function FoodUserBarChart({ checkAddBtn, foodList }) {
 
     return (
         <div id="food-user-multiple-bar-chart" className="chart" style={{ display: "none" }}>
-            <h2>Your Carbon Footprint VS World Average Carbon Footprint</h2>
+            <h3>How you compare with the world.</h3>
             {userCarbonArray.length >= 1 && <CanvasJSChart options={options} />}
             {/* chart container */}
             <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Food Name"} axisY={"Carbon Footprint in Kg/Year"} />

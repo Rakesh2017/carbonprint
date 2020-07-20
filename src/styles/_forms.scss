@@ -14,7 +14,7 @@ input[type="datetime"],
 input[type="color"],
 input,
 textarea,
-.input-container .react-dropdown-select {
+.container-input .react-dropdown-select {
 	backface-visibility: hidden;
 	background: $color__background-input;
 	border: solid 1px $color__border-input;
@@ -24,7 +24,7 @@ textarea,
 	-webkit-appearance: none;
 	outline-offset: 0;
     border-radius: 0.2rem;
-	max-width: 600px;
+	max-width: 300px;
 
 	&:focus {
 		border-color: $color__border-green;
@@ -53,7 +53,7 @@ form {
 
 label {
     display: block;
-    margin: 1rem 0 0.5rem 0;
+    margin: 0.5rem 0;
 }
 
 .button,
