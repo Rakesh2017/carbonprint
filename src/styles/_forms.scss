@@ -60,7 +60,8 @@ label {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+#root .MuiButton-colorInherit {
 	background: $color__background-button;
 	border: none;
 	border-radius: 0.2rem;

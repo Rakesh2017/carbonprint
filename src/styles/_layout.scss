@@ -200,9 +200,24 @@ main {
 
 // Tab Panel *******************************
 
-.carbon-calculator { 
+.carbon-calculator {
+    max-width: 1100px;
+    margin: auto;
+
+    @media screen and (min-width: 1440px) {
+        max-width: 1280px;
+    }
+
+    @media screen and (min-width: 600px) {
+
+        .tab-slider {
+                padding-left: 24px;
+                padding-right: 24px;
+        }
+    }
 
 }
+
 
 .tab-panel {
 
@@ -231,10 +246,7 @@ main {
             height: 2.5rem;
             font-size: 2rem;
             line-height: 1rem;
-
-            @media screen and (min-width: 850px) {
-                display: none;
-            }
+            display: none;
         }
         
         .tab-slider {
@@ -251,7 +263,7 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
-            justify-items: center;
+            justify-items: stretch;
 
             transform: translateX(0);
         }
@@ -261,19 +273,33 @@ main {
             cursor: pointer;
             outline-width: 0;
             display: block;
-            flex: 0 0 auto;
+            flex: 1 1 auto;
             text-align: center;
             background-color: $color__green-light2;
             border: 1px solid #68d5b5;
-            // border-bottom: none;
             min-width: 60px;
             padding: 0.4rem;
             margin: 0;
             margin-right: 2px;
             margin-left: 2px;
+
+            span:first-child {
+                display: inline;
+            }
+
+            span:last-child {
+                display: none;
+            }
             
             @media screen and (min-width:600px) {
                 min-width: 100px;
+
+                span:first-child {
+                    display: none;
+                }
+                span:last-child {
+                    display: inline;
+                }
 
                 &:last-of-type {
                     min-width: 260px;
@@ -338,6 +364,15 @@ main {
             margin-top: 1rem;
             margin-bottom: 1.5rem;
         }
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
     }
 
 }
@@ -478,11 +513,6 @@ main {
             @media screen and (min-width: 1000px) {
                 padding: 1rem 2rem;
             }
-
-            h3 {
-                margin-top: 0;
-                margin-bottom: 1rem;
-            }
         }
     
         @media screen and (min-width: 800px) {
@@ -515,7 +545,7 @@ main {
     
     .food-equivalent-car {
         .car-icon {
-            color: red;
+            // color: red;
             font-size: 120%;
             font-weight: bold;
 
@@ -525,7 +555,7 @@ main {
                 content: "\f1b9";
                 font-family: "Font Awesome 5 Free";
                 font-weight: 900;
-                font-size: 200%;
+                font-size: 160%;
                 -webkit-font-smoothing: antialiased;
                 display: inline-block;
                 font-style: normal;
@@ -543,18 +573,21 @@ main {
             position: relative;
             font-size: 120%;
             font-weight: bold;
-            
-            &:before,
-            &:after {
-                display: inline-block;
-                position: relative;
-                bottom: -6px;
-                content: "";
-                width: 30%;
-                border-bottom: 2px solid $color__text-main;
-            }
         }
     }
+}
+
+.carbon-print-food-united-revealed-container {
+    p {
+        text-align: center;
+    }
+}
+
+.light-green-background {
+    padding: 1.5rem;
+    background-color: $color__green-light2;
+    border: 2px solid $color__green-light;
+    border-radius: 5px;
 }
 
 
@@ -619,12 +652,17 @@ main {
 
         .axis, 
         .chart-version {
-            flex-basis: 50%;
             text-align: left;
             font-family: $font__heading;
             color: $color__green-dark;
             font-size: $font__size-sm;
-            // margin: 0.5rem 0;
+        }
+
+        .axis {
+            flex-basis: 65%;
+        }
+        .chart-version {
+            flex-basis: 35%;
         }
 
         .chart-version {
@@ -634,6 +672,15 @@ main {
         .y2-axis{
             display: none;
         }
+    }
+
+    .chart-info {
+        border-radius: 5px;
+        background-color: #cccccc;
+        color: $color__green-dark;
+        font-size: 90%;
+        padding: 0.5rem;
+        width: 100%;
     }
 }
 

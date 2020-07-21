@@ -401,7 +401,7 @@ const Food = ({ parentCallback }) => {
                             
                         {/* Add more */}
                         <div className="button-submit">
-                            <Button style={{ display: "none" }} id="add-food-item" variant="contained" onClick={addItem}>
+                            <Button style={{ display: "none" }} id="add-food-item" variant="contained" color="inherit" onClick={addItem}>
                                 Add Item
                             </Button>
                         </div>
@@ -434,7 +434,7 @@ const Food = ({ parentCallback }) => {
 
             {checkAddBtn && selectedFoodProducts.length >= 1 ?
                 <div className="how-to-reduce chart">
-                    <h2>How to reduce food carbon footprint?</h2>
+                    <h3>How to reduce food carbon footprint?</h3>
                     <DietDisplay reduceMessage={message} meatPercentage={meatPercentage} fruitPercentage={fruitPercentage} vegPercentage={vegPercentage} liquidPercentage={liquidPercentage} />
                 </div> : null }
 
