@@ -22,7 +22,7 @@ function FoodCarbonPrintUnited({ checkAddBtn, foodList }) {
      if (foodList.length < 2) {
             document.getElementById("carbon-print-revealed-container-id").style.display = "none"
      } else {
-                     document.getElementById("carbon-print-revealed-container-id").style.display = "block"
+            document.getElementById("carbon-print-revealed-container-id").style.display = "block"
  
      }
     }
@@ -32,15 +32,17 @@ function FoodCarbonPrintUnited({ checkAddBtn, foodList }) {
         < div id="carbon-print-revealed-container-id" className="carbon-print-revealed-container carbon-print-food-united-revealed-container"
         style={{display:"none"}}
          >
-            <h2>Your Accumulated Carbon footprint Result.</h2>
-            {/* carbon print in kgs */}
-            < p className="food-united-carbon-print-kgs" id="food-carbon-print-united-kgs-id" >
-             {carbonData}
-            </p >
-            {/* equivalent to car kilometers */}
-            < p className="food-united-equivalent-car" id="food-united-equivalent-car-id" >
-            {carData}
-            </p >
+            <h3>Your Accumulated Carbon footprint Result.</h3>
+            <div className="light-green-background">
+                {/* carbon print in kgs */}
+                < p className="food-united-carbon-print-kgs" id="food-carbon-print-united-kgs-id" >
+                {carbonData}
+                </p >
+                {/* equivalent to car kilometers */}
+                < p className="food-united-equivalent-car" id="food-united-equivalent-car-id" >
+                {carData}
+                </p >
+            </div>
         </div >
     )
 }

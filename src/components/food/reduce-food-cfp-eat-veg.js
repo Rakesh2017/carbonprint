@@ -84,8 +84,8 @@ const ReduceFoodCfpEatVeg = () => {
 
     return (
         <div className="reduce-food-cfp-container reduce-food-cfp-container-eat-veg chart">
-            <h2>Eat Vegetarian</h2>
-            <h3>Food Carbon footprints by diet type (tonnes/person)</h3>
+            <h3>Eat Vegetarian</h3>
+            <p><strong>Food Carbon footprints by diet type (tonnes/person)</strong></p>
             <CanvasJSChart options={options} />
             {/* chart container */}
             <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Diet Type"} axisY={"Carbon emission in metric tonnes(MT)"} />

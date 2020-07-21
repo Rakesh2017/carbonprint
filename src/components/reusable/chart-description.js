@@ -10,7 +10,7 @@ const ChartDescription = ({ chartNumber, axisX, axisY, chartInfo }) => {
                 <p className="">X-Axis: {axisX} </p>
                 <p className="">Y-Axis: {axisY} </p>
             </div>
-            <p className="chart-version">Chart Version: {chartNumber}</p>
+            <p className="chart-version">{chartNumber}</p>
 
             <div className="chart-info">
                <i> {chartInfo} </i>

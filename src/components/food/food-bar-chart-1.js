@@ -65,7 +65,7 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
 
     return (
         <div id="food-graph-1-chart" className="chart" style={{ display: "none" }}>
-            <h2>Carbon Footprints of Various Foods</h2>
+            <h3>Carbon Footprints of Various Foods</h3>
             <div className="section-column-2">
                 <div className="food-chart-section">
                     {FoodDataForVisualization.length > 1 ? <CanvasJSChart options={options} /> : null}
