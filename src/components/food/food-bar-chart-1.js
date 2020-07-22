@@ -64,7 +64,7 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
     }
 
     return (
-        <div id="food-graph-1-chart" className="chart" style={{ display: "none" }}>
+        <div id="food-graph-1-chart" className="chart full-width" style={{ display: "none" }}>
             <h3>Carbon Footprints of Various Foods</h3>
             <div className="section-column-2">
                 <div className="food-chart-section">
