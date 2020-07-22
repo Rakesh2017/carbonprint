@@ -5,6 +5,8 @@ import linked_icon from '../images/icons/linkedin.png';
 import about_us_image from '../images/about-us-hero.jpg'
 import who_we_are from '../images/who-we-are.jpg';
 import our_values from '../images/our-values.jpg';
+import github_image from '../images/github.png'
+import stackoverflow_image from '../images/stack-overflow.png'
 
 const About = () => {
 
@@ -135,6 +137,8 @@ const About = () => {
                         <div>
                             <img id="image1" />
                             <a href="http://linkedin.com/in/rakesh-kumar-aa3135117" target="_blank"> <img src={linked_icon} /> </a>
+                            <a href="https://github.com/Rakesh2017" target="_blank"> <img id="github-image" src={github_image} /> </a>
+                            <a href="https://stackoverflow.com/users/7872344/rakesh-kumar" target="_blank"> <img id="stack-overflow-image" src={stackoverflow_image} /> </a>
                         </div>
 
                         <h3 className="member-name" id="manager-name"></h3>
@@ -146,6 +150,7 @@ const About = () => {
                         <div>
                             <img id="image2" />
                             <a href="https://www.linkedin.com/in/dalbir-singh-01815328/" target="_blank"> <img src={linked_icon} /> </a>
+                            <a href="https://github.com/dalbirsrana" target="_blank"> <img id="github-image" src={github_image} /> </a>
                         </div>
                         <h3 className="member-name" id="lead-developer-name"></h3>
                         <p className="member-designation" id="lead-developer-designation"></p>

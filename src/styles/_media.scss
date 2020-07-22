@@ -3,10 +3,15 @@ img {
   height: auto;
 }
 
-/* Our Team Images */
+
 /* Author: Rakesh */
 
+/* Our Team Images */
+
 .about-us-container .our-team-container {
+
+  // background-color: #00000005;
+
   div img:first-child {
     max-width: 50%;
     height: auto;
@@ -21,17 +26,45 @@ img {
   }
 
   div a img[src*="linked"] {
-    max-width: 15%;
+    max-width: 13%;
     height: auto;
     position: relative;
     left: -24px;
+    top: 12px;
+    border: none;
+    transition: all 0.4s;
+    filter: none;
+  }
+
+  #github-image {
+    max-width: 12%;
+    height: auto;
+    position: relative;
+    left: -35px;
     top: 10px;
     border: none;
     transition: all 0.4s;
     filter: none;
   }
 
-  div a img[src*="linked"]:hover {
+  #stack-overflow-image {
+    max-width: 11%;
+    height: auto;
+    position: relative;
+    left: -45px;
+    top: 10px;
+    border: none;
+    transition: all 0.4s;
+    filter: none;
+    border-radius: 30%;
+  }
+
+  div a img[src*="linked"]:hover, #github-image:hover {
+    transform: rotate(360deg);
+  }
+
+  #stack-overflow-image:hover {
+    border-radius: 30%;
     transform: rotate(360deg);
   }
 
@@ -40,6 +73,11 @@ img {
     margin-bottom: 3rem;
     font-weight: 700;
   }
+
+  .member-name {
+    margin-top: 1.5rem;
+  }
+
 }
 
 #who-we-are-container-id {
@@ -64,4 +102,16 @@ img {
     padding: 0.3rem;
     filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
   }
+}
+
+/* Contact Us page */
+
+.contact-image {
+  max-width: 70% !important; 
+  height: auto;
+  border-radius: 10%;
+  border-bottom-right-radius: 40%;
+  border: solid 0.275rem coral;
+  padding: 0.3rem;
+  filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
 }
