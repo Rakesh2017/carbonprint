@@ -9,7 +9,7 @@ const RadioTripChoice = ({ parentCallback }) => {
 
     return (
         <div className="trip-choice-container">
-            <p>Is it One-Way or Round Trip?</p>
+            <label>Is it One-Way or Round Trip?</label>
             <RadioGroup className="flight-radio-group" onChange={sendData} horizontal>
                 <RadioButton value="0">
                     One Way Trip

@@ -96,6 +96,7 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
 
 
     const options = {
+        height: 300,
         exportEnabled: true,
         animationEnabled: true,
         backgroundColor:"transparent",
@@ -142,17 +143,18 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
     }
 
     return (
-        <div className="flight-result-container ">
+        <div className="flight-result-container chart">
             <p>
-                {para}
+                {/* {para} Need to move on container-input */}
             </p>
-            {/* fact container */}
-            <Fact message={`Distance between ${takeOffAddress} and ${destinationAddress} is ${air_distance}.`} />
-
+            <h3>Your Air Travel Emission</h3>
             {/* chart */}
             <CanvasJSChart options={options} />
             {/* chart container */}
             <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"carbon footprint [(Kgs)"} axisY={"Flight class types"} />
+
+            {/* fact container */}
+            <Fact message={`Distance between ${takeOffAddress} and ${destinationAddress} is ${air_distance}.`} />
 
         </div>
     );

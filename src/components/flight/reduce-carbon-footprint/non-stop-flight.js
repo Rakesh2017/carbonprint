@@ -32,18 +32,21 @@ const NonStopFlight = () => {
 
     return (
         <div className="reduce-carbon-foot-print non-stop-flight-container">
-            <h2>Go for the Nonstop Flight</h2>
+            <h3>Go for the Nonstop Flight</h3>
             <p>
-                It may cost a little extra, but flying nonstop is better for the environment. Not only does it save you valuable time by sparing you a connection, but one flight uses less energy than two. Planes use around 25% of fuel during takeoff and are much more fuel-efficient once cruising altitude is reached.
+                It may cost a little extra, but flying nonstop is better for the environment. Planes use around 25% of fuel during takeoff and are much more fuel-efficient once cruising altitude is reached.
             </p>
-            {/* Fact container */}
-            <Fact message="Driving your family from San Francisco to Los Angeles emits fewer carbon than flying. To tip the balance further, take-off and landing use more fuel than cruising does, so shorter flights like this one end up being even less efficient than a cross-country route" />
-           
+          
             <div class="chart">
-                <h2>Carbon-Emission of Direct Flights V/S Connecting FLights</h2>
+                <p><strong>Carbon-Emission of Direct Flights V/S Connecting FLights</strong></p>
+
                 <CanvasJSChart options={connectingOptions} />
                 <PieChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
             </div>
+
+            {/* Fact container */}
+            <Fact message="Driving your family from San Francisco to Los Angeles emits fewer carbon than flying. To tip the balance further, take-off and landing use more fuel than cruising does, so shorter flights like this one end up being even less efficient than a cross-country route" />
+
         </div>
     );
 }

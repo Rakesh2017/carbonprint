@@ -127,37 +127,51 @@ const Flight = ({ parentCallback }) => {
     }, [resultLoader, takeOff, destination, classType, trip, connectingFlight, takeOffAddress, destinationAddress]);
 
     return (
-        <Container className="flight-main-container">
-            <div id="section-heading">
+        <Container className="flight-main-container tab-content">
+            <div id="section-heading" className="full-width">
                 {/* heading */}
                 <h2>How do your Air Flight Travel impact the Environment?</h2>
             </div>
 
             {/* logo+input container  */}
-            <div className="logo+input-container">
-                {/* Logo Container */}
-                <div className="logo-container">
-                    {/* flight logo */}
-                    {/* <img /> logo */}
-                    {/* <h3>Air Flight</h3> */}
-                </div>
+            <div className="input-container-flight">
 
-                {/* input container */}
-                <div className="input-container">
-                    {/* input 1 */}
-                    <TakeOffInput parentCallback={handleTakeOffCallback} />
-                    {/* input 2 */}
-                    <DestinationInput parentCallback={handleDestinationCallback} />
-                </div>
+                <div className="container-logo-input">
+                    {/* Logo Container */}
+                    <div className="container-logo">
+                        {/* flight logo */}
+                        {/* <img /> logo */}
+                        {/* <h3>Air Flight</h3> */}
+                    </div>
 
-                {/* trip choice */}
-                <RadioConnectingFlight parentCallback={handleConnectingFlightCallback} />
+                    {/* input container */}
+                    <div className="container-input">
+                        {/* input 1 */}
+                        <TakeOffInput parentCallback={handleTakeOffCallback} />
+                        {/* input 2 */}
+                        <DestinationInput parentCallback={handleDestinationCallback} />
 
-                {/* flight class choice  */}
-                <ClassDropdown parentCallback={handleDropDownCallback} />
-                {/* trip choice */}
-                <RadioTripChoice parentCallback={handleTripChoiceCallback} />
 
+                        {/* trip choice */}
+                        <RadioConnectingFlight parentCallback={handleConnectingFlightCallback} />
+
+                        {/* flight class choice  */}
+                        <ClassDropdown parentCallback={handleDropDownCallback} />
+                        {/* trip choice */}
+                        <RadioTripChoice parentCallback={handleTripChoiceCallback} />
+
+
+                    </div>
+
+                    
+                    <p>Your Carbon footprint for one way trip flight from YVR - Vancouver Intl Airport (YVR), Grant McConachie Way, Richmond, BC, Canada to Trontano, Province of Verbano-Cusio-Ossola, Italy is <span className="emphasis">0.79 metric tons or 790 Kgs</span></p>
+
+                </div>     
+
+            </div>
+
+
+            
                 {/* show result */}
                 {resultLoader && <Result takeOff={takeOff} destination={destination} takeOffAddress={takeOffAddress} destinationAddress={destinationAddress} classType={classType} trip={trip} flightClassOption={flightClassOption} connectingFlight={connectingFlight} />}
 
@@ -166,7 +180,7 @@ const Flight = ({ parentCallback }) => {
 
                 {/* reduce carbon footprint */}
 
-                {resultLoader && <div className="how-to-reduce">
+                {resultLoader && <div className="how-to-reduce full-width">
                     <h2>How to reduce Flight carbon footprint?</h2>
                 </div>}
 
@@ -174,8 +188,7 @@ const Flight = ({ parentCallback }) => {
                 {resultLoader && <NonStopFlight />}
                 {/* reduce method 2 */}
                 {resultLoader && <EconomyClassFlight />}
-
-            </div>
+           
 
         </Container>
     );

@@ -70,6 +70,7 @@ const HistoricalCarbonEmissionChart = () => {
     }
 
     const options = {
+        height: 350,
         animationEnabled: true,
         animationDuration: 2500,
         backgroundColor: "transparent",

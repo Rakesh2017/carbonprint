@@ -5,7 +5,7 @@ import ResultChart from '../components/total-result/result-chart.js'
 const TotalResult = ({ foodCFP, flightCFP, travelCFP }) => {
 
     return (
-        <Container className="total-result-main-container">
+        <Container className="total-result-main-container tab-content">
             <h1>
                 Your Total Carbon footprint from food, flight and Car Travel.
 

@@ -29,7 +29,7 @@ function FoodCarbonPrintUnited({ checkAddBtn, foodList }) {
  
     return (
         /* accumulated Food carbon footprint */
-        < div id="carbon-print-revealed-container-id" className="carbon-print-revealed-container carbon-print-food-united-revealed-container"
+        < div id="carbon-print-revealed-container-id" className="carbon-print-revealed-container carbon-print-food-united-revealed-container full-width"
         style={{display:"none"}}
          >
             <h3>Your Accumulated Carbon footprint Result.</h3>

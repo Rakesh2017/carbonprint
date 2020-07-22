@@ -34,7 +34,7 @@ const Travel = ({parentCallback}) => {
     }, [type, average, checker, distance]);
 
     return (
-        <Container className="travel-main-container">
+        <Container className="travel-main-container tab-content">
             <div id="section-heading">
                 {/* heading */}
                 <h2>How does your Vehicle emissions impact the Environment?</h2>

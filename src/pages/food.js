@@ -358,9 +358,9 @@ const Food = ({ parentCallback }) => {
     }
 
     return (
-        <Container className="food-main-container">
+        <Container className="food-main-container tab-content">
 
-            <div id="section-heading">
+            <div id="section-heading" className="full-width">
                 {/* heading */}
                 <h2>How do your food choices impact the Environment?</h2>
             </div>
@@ -433,7 +433,7 @@ const Food = ({ parentCallback }) => {
             {countFoodTypes()}
 
             {checkAddBtn && selectedFoodProducts.length >= 1 ?
-                <div className="how-to-reduce chart">
+                <div className="how-to-reduce chart full-width">
                     <h3>How to reduce food carbon footprint?</h3>
                     <DietDisplay reduceMessage={message} meatPercentage={meatPercentage} fruitPercentage={fruitPercentage} vegPercentage={vegPercentage} liquidPercentage={liquidPercentage} />
                 </div> : null }

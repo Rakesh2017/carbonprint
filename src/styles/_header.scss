@@ -11,14 +11,14 @@ header {
     border-top: 4px solid #59bd24f8;
     background-color: #908239e0;
     box-shadow: 0px 0px 1px #a7a6a6;
-    background-image: url(../images/hero-image.jpg);
+    background-image: url(../images/hero-image-900x600.jpg);
+    background-image: image-set(
+        url(../images/hero-image-900x600.jpg) 1x,
+        url(../images/hero-image-1920x1278.jpg) 2x,
+        url(../images/hero-image-2560x1703.jpg) 3x,
+    );
     background-position: top;
     background-size: cover;
-    background-blend-mode: multiply;
-
-    @media screen and (min-width: 800px) {
-        background-color: #908239f6;
-    }
 }
 
 
@@ -185,14 +185,15 @@ header.header-fixed {
     }
 }
 
-
-.header-fixed .site-header-container {
-    .site-main-nav {
-        ul {
-            top: 40px;
-            height: 96vh;
-        }
-    }            
+@media screen and (max-width:799px) {
+    .header-fixed .site-header-container {
+        .site-main-nav {
+            ul {
+                top: 40px;
+                height: 96vh;
+            }
+        }            
+    }
 }
 
 
