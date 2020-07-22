@@ -58,6 +58,8 @@ export default function FoodUserBarChart({ checkAddBtn, foodList }) {
 
 
     const options = {
+        height: 300,
+        dataPointMaxWidth: 40,
         animationEnabled: true,
         animationDuration: 2000,
         backgroundColor: "transparent",
