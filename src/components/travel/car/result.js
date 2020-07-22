@@ -16,28 +16,38 @@ const Result = ({ type, average, distance }) => {
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
     
     const options = {
-        animationEnabled : true,
-        title: {
-            // text: ""
+        animationEnabled: true,
+        backgroundColor: "transparent",
+        legend: 
+		{
+			verticalAlign: "top",
+            horizontalAlign: "left",
+            fontWeight: "normal",
+            markerMargin: 5               
+		},
+        axisY: {
+            titleWrap: true,
+            margin: 15,
+            interlacedColor: "#F8F1E4",
+            gridColor: "lightgrey",
+            suffix: " kg",
         },
-
-        backgroundColor: "#fff",
-        legend: {
-            maxWidth: 700,
-            itemWidth: 350
+        axisX: {
+            titleWrap: true,
+            labelAngle: 0,
+            interval: 1,
         },
-        
         data: [
             {
-                type: "pie",
-                showInLegend: true,
-                toolTipContent: "<strong>{indexLabel} = {y} Kgs per year</strong>",
-                legendText: "{indexLabel}",
+                type: "column",
+                // showInLegend: true,
+                toolTipContent: "<b><i>{label}</i></b> = <b>{y}</b> Kgs per year",
+                legendText: "",
                 dataPoints: [
-                    { y: resultKgs, indexLabel: "Your Yearly Carbon footprint" },
-                    { y: "4683", indexLabel: "Typical Average Carbon footprint of drivers in EU" }
+                    { y: parseInt(resultKgs), label: "Your Yearly Carbon footprint", indexLabel:resultKgs+" kgs" },
+                    { y: 4683, label: "Typical Average Carbon footprint of drivers in EU", indexLabel:4683+" Kgs" }
                 ]
-            }
+            },
         ]
     }
 

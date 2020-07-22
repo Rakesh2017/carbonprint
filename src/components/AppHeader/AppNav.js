@@ -21,10 +21,10 @@ const AppNav = () => (
                     <Link to="." onClick={toggleButton}>Home</Link>
                 </li>
                 <li>
-                    <Link to="about" onClick={toggleButton}>About</Link>
+                    <Link to="./calculator" onClick={toggleButton}>Calculator</Link>
                 </li>
                 <li>
-                    <Link to="./calculator" onClick={toggleButton}>Calculator</Link>
+                    <Link to="about" onClick={toggleButton}>About</Link>
                 </li>
                 <li>
                     <Link to="./carbon-impact" onClick={toggleButton}>Carbon Impact</Link>

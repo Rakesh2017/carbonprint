@@ -1,4 +1,67 @@
 img {
-    max-width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Our Team Images */
+/* Author: Rakesh */
+
+.about-us-container .our-team-container {
+  div img:first-child {
+    max-width: 50%;
     height: auto;
+    border-radius: 10%;
+    border-bottom-right-radius: 40%;
+    border: solid 0.275rem coral;
+    padding: 0.3rem;
+    filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
+  }
+  div:nth-of-type(n + 4) img {
+    border-color: cornflowerblue;
+  }
+
+  div a img[src*="linked"] {
+    max-width: 15%;
+    height: auto;
+    position: relative;
+    left: -24px;
+    top: 10px;
+    border: none;
+    transition: all 0.4s;
+    filter: none;
+  }
+
+  div a img[src*="linked"]:hover {
+    transform: rotate(360deg);
+  }
+
+  h1 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+}
+
+#who-we-are-container-id {
+  img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10%;
+    border-bottom-right-radius: 40%;
+    border: solid 0.275rem coral;
+    padding: 0.3rem;
+    filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
+  }
+}
+
+#our-values-container-id {
+  img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10%;
+    border-top-left-radius: 40%;
+    border: solid 0.275rem cornflowerblue;
+    padding: 0.3rem;
+    filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
+  }
 }
