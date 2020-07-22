@@ -29,14 +29,17 @@ main {
   margin-top: -70px;
   padding-top: 90px;
   padding-bottom: 5rem;
-  background-image: url(../images/hero-image.jpg);
+  background-image: url(../images/hero-image-900x600.jpg);
+  background-image: image-set(
+    url(../images/hero-image-900x600.jpg) 1x,
+    url(../images/hero-image-1920x1278.jpg) 2x,
+    url(../images/hero-image-2560x1703.jpg) 3x
+  );
 
   // <span>Photo by <a href="https://unsplash.com/@alex_andrews?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexander Andrews</a> on <a href="https://unsplash.com/collections/10637370/desktop-backgrounds?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
   background-position: top;
   background-size: cover;
-  background-blend-mode: multiply;
-  background-color: #908239e0;
   min-height: 300px;
   color: $color__green-light2;
   clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 50% 100%, 0% 93%);
@@ -191,24 +194,20 @@ main {
 // Tab Panel *******************************
 
 .carbon-calculator {
+  max-width: 1100px;
+  margin: auto;
 
-    max-width: 1100px;
-    margin: auto;
+  @media screen and (min-width: 1440px) {
+    max-width: 1280px;
+  }
 
-    @media screen and (min-width: 1440px) {
-        max-width: 1280px;
+  @media screen and (min-width: 600px) {
+    .tab-slider {
+      padding-left: 24px;
+      padding-right: 24px;
     }
-
-    @media screen and (min-width: 600px) {
-
-        .tab-slider {
-                padding-left: 24px;
-                padding-right: 24px;
-        }
-    }
-
+  }
 }
-
 
 .tab-panel {
   h3 {
@@ -236,10 +235,7 @@ main {
       height: 2.5rem;
       font-size: 2rem;
       line-height: 1rem;
-
-      @media screen and (min-width: 850px) {
-        display: none;
-      }
+      display: none;
     }
 
     .tab-slider {
@@ -248,77 +244,54 @@ main {
       width: 100%;
     }
 
-        div:first-of-type,
-        div:last-of-type {
-            cursor: pointer;
-            padding: 0.4rem;
-            height: 2.5rem;
-            font-size: 2rem;
-            line-height: 1rem;
-            display: none;
+    ul {
+      // position: absolute;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-items: stretch;
+
+      transform: translateX(0);
+    }
+
+    li {
+      height: 2.5rem;
+      cursor: pointer;
+      outline-width: 0;
+      display: block;
+      flex: 1 1 auto;
+      text-align: center;
+      background-color: $color__green-light2;
+      border: 1px solid #68d5b5;
+      min-width: 60px;
+      padding: 0.4rem;
+      margin: 0;
+      margin-right: 2px;
+      margin-left: 2px;
+
+      span:first-child {
+        display: inline;
+      }
+
+      span:last-child {
+        display: none;
+      }
+
+      @media screen and (min-width: 600px) {
+        min-width: 100px;
+
+        span:first-child {
+          display: none;
         }
-        
-        .tab-slider {
-            overflow-x: hidden;
-            position: relative;
-            width: 100%;
+        span:last-child {
+          display: inline;
         }
 
-        ul {
-            // position: absolute;        
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            justify-items: stretch;
-
-            transform: translateX(0);
-        }
-    
-        li {
-            height: 2.5rem;
-            cursor: pointer;
-            outline-width: 0;
-            display: block;
-            flex: 1 1 auto;
-            text-align: center;
-            background-color: $color__green-light2;
-            border: 1px solid #68d5b5;
-            min-width: 60px;
-            padding: 0.4rem;
-            margin: 0;
-            margin-right: 2px;
-            margin-left: 2px;
-
-            span:first-child {
-                display: inline;
-            }
-
-            span:last-child {
-                display: none;
-            }
-            
-            @media screen and (min-width:600px) {
-                min-width: 100px;
-
-                span:first-child {
-                    display: none;
-                }
-                span:last-child {
-                    display: inline;
-                }
-
-                &:last-of-type {
-                    min-width: 260px;
-                }
-            }
-
-            @media screen and (min-width:1000px) {
-                min-width: 200px;
-            }
-
+        &:last-of-type {
+          min-width: 260px;
         }
       }
 
@@ -377,17 +350,16 @@ main {
       margin-top: 1rem;
       margin-bottom: 1.5rem;
     }
+  }
 
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
 
-    h3 {
-        margin-top: 0;
-        margin-bottom: 1.5rem;
-    }
-
-    p {
-        margin-bottom: 1rem;
-    }
-
+  p {
+    margin-bottom: 1rem;
+  }
 }
 
 .container-input {
@@ -497,9 +469,10 @@ main {
   }
 }
 
-// Food Section ****************************
+// common grid layout for all tab-container's (Food, Flight, Travel, Result)
+
 .tab-container {
-  .food-main-container {
+  .tab-content {
     & > div {
       border-radius: 0.5rem;
       background-color: #f8f8f8;
@@ -507,65 +480,33 @@ main {
       margin-bottom: 1rem;
       height: calc(100% - 1rem);
 
-    .food-main-container {
+      @media screen and (min-width: 600px) {
+        padding: 1rem;
+      }
 
-        &>div {
-            border-radius: 0.5rem;
-            background-color: #f8f8f8;
-            padding: 0.4rem;
-            margin-bottom: 1rem;
-            height: calc(100% - 1rem);
-
-            @media screen and (min-width: 600px) {
-                padding: 1rem;
-            }
-            @media screen and (min-width: 1000px) {
-                padding: 1rem 2rem;
-            }
-        }
-    
-        @media screen and (min-width: 800px) {
-            display:grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 3rem;
-            row-gap: 1rem;
-            align-items: start;
-            align-content: stretch;
-        
-            #section-heading,
-            .carbon-print-revealed-container,
-            #food-graph-1-chart,
-            .how-to-reduce {
-                grid-column: span 2;
-            }
-        }
-    }
-}
-
-
-      h3 {
-        margin-top: 0;
-        margin-bottom: 1rem;
+      @media screen and (min-width: 1000px) {
+        padding: 1rem 2rem;
       }
     }
+  }
 
-    @media screen and (min-width: 800px) {
+  @media screen and (min-width: 800px) {
+    .tab-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 3rem;
       row-gap: 1rem;
       align-items: start;
       align-content: stretch;
+    }
 
-      #section-heading,
-      .carbon-print-revealed-container,
-      #food-graph-1-chart,
-      .how-to-reduce {
-        grid-column: span 2;
-      }
+    .full-width {
+      grid-column: span 2;
     }
   }
 }
+
+// Food Section ****************************
 
 .carbon-print-food-revealed-container {
   .emphasis {
@@ -576,7 +517,7 @@ main {
 
   .food-equivalent-car {
     .car-icon {
-      color: red;
+      // color: red;
       font-size: 120%;
       font-weight: bold;
 
@@ -585,7 +526,7 @@ main {
         content: "\f1b9";
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        font-size: 200%;
+        font-size: 160%;
         -webkit-font-smoothing: antialiased;
         display: inline-block;
         font-style: normal;
@@ -598,56 +539,25 @@ main {
       }
     }
 
-    .food-equivalent-car {
-        .car-icon {
-            // color: red;
-            font-size: 120%;
-            font-weight: bold;
-
-
-            &:after {
-                color: $color__text-main;
-                content: "\f1b9";
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 160%;
-                -webkit-font-smoothing: antialiased;
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                line-height: 1;
-
-                margin-left: 6px;
-                margin-right: 6px;
-            }
-
-
     .car-kms {
       position: relative;
       font-size: 120%;
       font-weight: bold;
-
-        .car-kms {
-            position: relative;
-            font-size: 120%;
-            font-weight: bold;
-        }
     }
   }
 }
 
 .carbon-print-food-united-revealed-container {
-    p {
-        text-align: center;
-    }
+  p {
+    text-align: center;
+  }
 }
 
 .light-green-background {
-    padding: 1.5rem;
-    background-color: $color__green-light2;
-    border: 2px solid $color__green-light;
-    border-radius: 5px;
+  padding: 1.5rem;
+  background-color: $color__green-light2;
+  border: 2px solid $color__green-light;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 1000px) {
@@ -700,20 +610,20 @@ main {
     flex-flow: row wrap;
     justify-content: center;
 
-        .axis, 
-        .chart-version {
-            text-align: left;
-            font-family: $font__heading;
-            color: $color__green-dark;
-            font-size: $font__size-sm;
-        }
+    .axis,
+    .chart-version {
+      text-align: left;
+      font-family: $font__heading;
+      color: $color__green-dark;
+      font-size: $font__size-sm;
+    }
 
-        .axis {
-            flex-basis: 65%;
-        }
-        .chart-version {
-            flex-basis: 35%;
-        }
+    .axis {
+      flex-basis: 65%;
+    }
+    .chart-version {
+      flex-basis: 35%;
+    }
 
     .chart-version {
       text-align: right;
@@ -722,16 +632,16 @@ main {
     .y2-axis {
       display: none;
     }
+  }
 
-    .chart-info {
-        border-radius: 5px;
-        background-color: #cccccc;
-        color: $color__green-dark;
-        font-size: 90%;
-        padding: 0.5rem;
-        width: 100%;
-    }
-
+  .chart-info {
+    border-radius: 5px;
+    background-color: #cccccc;
+    color: $color__green-dark;
+    font-size: 90%;
+    padding: 0.5rem;
+    width: 100%;
+  }
 }
 
 .diet-display-container h3,
@@ -756,70 +666,6 @@ main {
 // Flight Section
 
 .flight-main-container {
-  // background-color: #f8f8f8;
-  padding: 1.5rem 0;
-  .container-input {
-    display: flex;
-    flex-flow: row wrap;
-
-    .take-off-container,
-    .destination-container {
-      flex-basis: 50%;
-      padding: 0.5rem;
-      font-family: $font__body;
-      input {
-        min-width: 100%;
-        min-height: 36px;
-      }
-
-      ul {
-        border: 0.5px solid black;
-        border-top: 0;
-        margin: 0;
-        padding: 0;
-        border-radius: 2px;
-
-        li {
-          list-style-type: none;
-          background-color: white;
-          padding: 5px 10px;
-          cursor: pointer;
-          pointer-events: all;
-
-          strong,
-          small {
-            font-weight: normal;
-            font-size: 1rem;
-          }
-        }
-      }
-    }
-
-    @media screen and (max-width: 700px) {
-      .take-off-container,
-      .destination-container {
-        flex-basis: 100%;
-      }
-    }
-  }
-
-  .flight-result-container,
-  .world-flight-averages,
-  .non-stop-flight-container,
-  .economy-class-flight-container {
-    background-color: #f8f8f8;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 0.5rem;
-  }
-
-  .flight-result-container > p {
-    font-size: 1.3rem;
-    color: $color__green-dark;
-    margin: 0;
-    margin-bottom: 0.5rem;
-    // font-weight: bold;
-  }
 }
 
 .economy-class-flight-container,
@@ -920,6 +766,80 @@ main {
 .about-us-container {
   padding: 0;
   margin: 0;
+  .heading-container {
+    h1 {
+      margin: 0;
+      padding: 0.5rem;
+      text-align: center;
+      // background-color: $color__green-light;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .who-we-are-container,
+  .our-values-container {
+    margin: 1rem 0;
+
+    h2 {
+      color: $color__green-dark;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .about-us-container .heading-container,
+  .our-team-container {
+    h1 {
+      color: $color__green-dark;
+      // text-align: center;
+    }
+  }
+
+  .our-team-container {
+    text-align: center;
+    h3 {
+      margin: 0;
+    }
+
+    .team-tile-container {
+      margin: 1.5rem 0;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .our-team-container {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+
+      h1 {
+        flex-basis: 100%;
+      }
+
+      .project-manager,
+      .lead-developer,
+      .quality-assurance,
+      .lead-designer {
+        flex-basis: 25%;
+      }
+
+      .designer {
+        flex-basis: 25%;
+      }
+    }
+  }
+}
+
+/**************************************************
+// About Us layout End ****************************
+/**************************************************/
+
+.about-us-container {
+  padding: 0;
+  margin: 0;
 
   .heading-container {
     h1 {
@@ -995,7 +915,6 @@ main {
   }
 
   @media screen and (min-width: 900px) {
-
     #our-values-container-id {
       margin-top: 3rem;
       div:first-child {
@@ -1020,7 +939,8 @@ main {
       grid-template-columns: 1fr 1fr;
     }
 
-    #who-we-are-container-id, #our-values-container-id {
+    #who-we-are-container-id,
+    #our-values-container-id {
       margin-top: 3rem;
       div:first-child {
         text-align: center;
@@ -1073,10 +993,6 @@ main {
     }
   }
 }
-
-/**************************************************
-// About Us layout End ****************************
-/**************************************************/
 
 /**************************************************
 // Contact Us layout Start ************************
@@ -1221,3 +1137,10 @@ main {
 // Result Page *******************************
 // Author: Rakesh ***************************
 ***************************************************/
+.total-result-page-hidden {
+  display: none;
+}
+
+.total-result-page-hidden-active {
+  display: block;
+}
