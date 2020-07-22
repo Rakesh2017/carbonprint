@@ -8,11 +8,9 @@ const TotalResult = ({ foodCFP, flightCFP, travelCFP }) => {
         <Container className="total-result-main-container tab-content">
             <h1>
                 Your Total Carbon footprint from food, flight and Car Travel.
-
-                {/* Result chart */}
-                <ResultChart foodCFP={foodCFP} flightCFP={flightCFP} travelCFP={travelCFP} />
-                
             </h1>
+            {/* Result chart */}
+            <ResultChart foodCFP={foodCFP} flightCFP={flightCFP} travelCFP={travelCFP} />
         </Container>
     );
 }

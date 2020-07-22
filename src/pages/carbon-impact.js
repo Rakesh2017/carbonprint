@@ -30,7 +30,7 @@ export default () => (
 
         <img id="impact-image1" src={image1} />
 
-        <img id="impact-image2" src={image2} />
+        {/* <img id="impact-image2" src={image2} /> */}
 
         <div class="impact-section2">      
 

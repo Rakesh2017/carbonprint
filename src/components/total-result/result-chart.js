@@ -1,6 +1,7 @@
 import React from 'react';
 import CanvasJSReact from '../../assets/canvasjs.react'
 import GetDistanceBetweenGeoCodes from '../../global-functions/get-distance-between-geo-codes'
+import addComma from '../../global-functions/number-comma.js'
 
 const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
 
@@ -13,10 +14,10 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
         if (travelCFP !== null && travelCFP !== undefined) {
             const resultKgs = ((travelCFP.type[0].carbon_per_litre * travelCFP.average * travelCFP.distance / 100000) * 12).toFixed(0)
             let temp
-            temp = {y: resultKgs*1}
+            temp = { y: resultKgs * 1 }
             return temp
         } else {
-            return [{}]
+            return [{y:0}]
         }
     }
 
@@ -48,7 +49,7 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
             }
             return temp
         } else {
-            return [{}]
+            return [{y:0}]
         }
     }
 
@@ -65,27 +66,46 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
             temp = { y: total }
             return temp
         } else {
-            return [{}]
+            return [{y:0}]
         }
     }
 
     // getting chart values
-    let foodY, flightY, travelY
+    let foodY = 0, flightY = 0, travelY = 0
     foodY = getFoodCFP().y
-    flightY = getFlightCFP().y
-    travelY = getTravelCFP().y
+    if (getFlightCFP().y !== undefined) flightY = getFlightCFP().y
+    if (getTravelCFP().y !== undefined) travelY = getTravelCFP().y
 
 
     const options = {
-        title: {
-            text: "Your Total Carbon Footprint"
+        animationEnabled: true,
+        backgroundColor: "transparent",
+        legend:
+        {
+            fontWeight: "normal",
+            markerMargin: 5
+        },
+        axisY: {
+            titleWrap: true,
+            margin: 15,
+            interlacedColor: "#F8F1E4",
+            gridColor: "lightgrey",
+            suffix: " kg",
+        },
+        axisX: {
+            titleWrap: true,
+            labelAngle: 90,
+            interval: 1,
         },
         data: [
             {
+                showInLegend: true,
+                toolTipContent: "<i><strong>{label}</strong></i> : <strong>{y}</strong> Kgs per year",
+                legendText: "Carbon footprint in Kgs",
                 dataPoints: [
-                    { label: "Food", y: foodY },
-                    { label: "Car Travel", y: travelY },
-                    { label: "Air travel", y: flightY },
+                    { label: "Food", y: foodY, indexLabel: foodY + " kgs" },
+                    { label: "Car Travel", y: travelY, indexLabel: travelY + " kgs" },
+                    { label: "Air travel", y: flightY, indexLabel: flightY + " kgs" },
                 ]
             }
         ]
@@ -94,6 +114,14 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
     return (
         <div className="total-result-chart-container">
             <CanvasJSChart options={options} />
+            <div>
+                <p>
+                    Your total carbon footprint from Food is {addComma(foodY)} Kgs <br />
+                    Your total carbon footprint from Air Travel is {addComma(flightY)} Kgs <br />
+                    Your total carbon footprint from Car Travel is {addComma(travelY)} Kgs <br />
+                    Your Total carbon footprint from Food, Air and travel is {addComma(foodY + flightY + travelY)} Kgs
+                </p>
+            </div>
         </div>
     );
 }

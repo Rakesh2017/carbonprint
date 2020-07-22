@@ -11,10 +11,31 @@ const GreenVehicle = () => {
     var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
     const options = {
+        animationEnabled: true,
+        backgroundColor: "transparent",
+        legend: 
+		{
+			verticalAlign: "top",
+            horizontalAlign: "left",
+            fontWeight: "normal",
+            markerMargin: 5               
+		},
+        axisY: {
+            titleWrap: true,
+            margin: 15,
+            interlacedColor: "#F8F1E4",
+            gridColor: "lightgrey",
+            suffix: " kg",
+        },
+        axisX: {
+            titleWrap: true,
+            labelAngle: 0,
+            interval: 1,
+        },
         data: [
             {
                 type: "bar",
-                toolTipContent: "<strong>{label} = {y}Kg CO<sup>2</sup></strong>",
+                toolTipContent: "<b><i>{label}</i></b> = <b>{y}</b>Kg CO<sup>2</sup>",
                 dataPoints: [
                     { y: 11, label: "Car Electric", indexLabel: "~7 times less" },
                     { y: 80.7, label: "Car Petroleum" },

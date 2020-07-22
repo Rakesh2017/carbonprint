@@ -11,6 +11,7 @@ const EconomyClassFlight = () => {
     const chartInfo = "This Chart illustrates the carbon footprint released by One-Way Various Flight Classes Class Air Flight from Madrid, Spain to Vancouver, Canada (Connecting Flight (Susceptible to increased distance) VS Direct Flight (8427 Kms))."
 
     const connectingOptions = {
+        animationEnabled: true,
         backgroundColor:"transparent",
         legend: {
             fontWeight: "normal"
@@ -19,7 +20,7 @@ const EconomyClassFlight = () => {
             {
                 type: "doughnut",
                 showInLegend: true,
-                toolTipContent: "<strong>{indexLabel} = {y} Kgs for 8427Kms</strong>",
+                toolTipContent: "<b><i>{indexLabel}</i></b> = <b>{y}</b> Kgs for 8427Kms",
                 legendText: "{indexLabel}",
                 dataPoints: [
                     { y: "630", indexLabel: "Economy (Most Carbon Saving)" },
