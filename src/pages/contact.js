@@ -1,6 +1,6 @@
 import React from 'react';
 import AppCTA from '../components/AppCTA';
-import Image from '../images/hero-image.jpg';
+import Image from '../images/our-values.jpg';
 import {
     Container,
 } from '@material-ui/core';
@@ -11,9 +11,9 @@ export default () => (
 
         <div class = "contact-section1">
             <img class="contact-image" src={Image}/>
-            <p>
+            {/* <p>
                 Team Carbon Print is open to any kind of queries you have regarding Carbon Footprint, it's dependency on food and suggestions to reduce your individual carbon impression.
-            </p>         
+            </p>          */}
         </div>
 
         <div class = "contact-form">
