@@ -77,15 +77,34 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
 
 
     const options = {
-        title: {
-            text: "Your Total Carbon Footprint"
+        animationEnabled: true,
+        backgroundColor: "transparent",
+        legend: 
+		{
+            fontWeight: "normal",
+            markerMargin: 5               
+		},
+        axisY: {
+            titleWrap: true,
+            margin: 15,
+            interlacedColor: "#F8F1E4",
+            gridColor: "lightgrey",
+            suffix: " kg",
+        },
+        axisX: {
+            titleWrap: true,
+            labelAngle: 90,
+            interval: 1,
         },
         data: [
             {
+                showInLegend: true,  
+                toolTipContent: "<i><strong>{label}</strong></i> : <strong>{y}</strong> Kgs per year", 
+                legendText: "Carbon footprint in Kgs", 
                 dataPoints: [
-                    { label: "Food", y: foodY },
-                    { label: "Car Travel", y: travelY },
-                    { label: "Air travel", y: flightY },
+                    { label: "Food", y: foodY, indexLabel:foodY+" kgs" },
+                    { label: "Car Travel", y: travelY, indexLabel:travelY+" kgs" },
+                    { label: "Air travel", y: flightY, indexLabel:flightY+" kgs" },
                 ]
             }
         ]
