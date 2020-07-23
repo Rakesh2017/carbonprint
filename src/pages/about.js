@@ -104,8 +104,9 @@ const About = () => {
                     <div>
                         <h2>Who we are?</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
+                            We are a team of people who are willing to use their skills to bring a sustainable change to the environment by making use of the technology. Being beginners, we have done the research and found out that the environment is most affected by the amount of carbon being produced.
+                            Hence, we came up with this website to educate people about carbon footprint and how big of an impact it has on our planet.
+                        </p>
                     </div>
                     {/* image container */}
                     <div>
@@ -119,7 +120,7 @@ const About = () => {
                     <div>
                         <h2>Our Values</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            Our team holds integrity on the top of values that we posses. Our teaam members have worked hard on getting reliale data to the users which will guide them to bring necessary and appropriate changes in theri life to contribute in reducing carbon impression. Our whole team is very passionate about environmental protection and this website is one off the first initiatives that we have taken to follow our passion and prevent the environmental health from deteriorating further.
                         </p>
                     </div>
                     <div>
