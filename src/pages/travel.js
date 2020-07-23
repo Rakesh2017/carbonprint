@@ -44,37 +44,34 @@ const Travel = ({parentCallback}) => {
             </div>
 
             {/* logo+input container  */}
-            <div className="logo-input-container">
-
-                {/* input container */}
-                <div className="input-container">
-                    {/* car type */}
-                    <Input parentCallback={handleCarTypeCallback} />
-                </div>
-
+            <div className="input-container-travel">
+                <div className="container-logo-input">
                 {/* Logo Container */}
-                <div className="logo-container">
-                    {/* Car logo */}
-                    <img src={carLogo}/>
-                    {/* <h3>Car</h3> */}
+                    <div className="container-logo">
+                        {/* Car logo */}
+                        {/* <img /> logo */}
+                        {/* <h3>Car</h3> */}
+                    </div>
+                    {/* input container */}
+                    <div className="container-input">
+                        {/* car type */}
+                        <Input parentCallback={handleCarTypeCallback} />
+                    </div>
                 </div>
+            </div>
 
-                </div> 
+            {/* result */}
+            {checker && <Result type={type} average={average} distance={distance} />}
 
-                {/* result */}
-                {checker && <Result type={type} average={average} distance={distance} />}
-
-                {/* how to reduce carbon footprint */}
-                {checker && <div className="how-to-reduce" id="how-to-reduce-heading">
-                    <h2 >How to reduce Car carbon footprint?</h2>
-                </div>}
-                {/* 1. green vehicles */}
-                {checker && <GreenVehicle />}
-                {/* 2. drive better */}
-                {checker && <DriveBetter />}
-
+            {/* how to reduce carbon footprint */}
+            {checker && <div className="how-to-reduce full-width">
+                <h2>How to reduce Car carbon footprint?</h2>
+            </div>}
             
-
+            {/* 1. green vehicles */}
+            {checker && <GreenVehicle />}
+            {/* 2. drive better */}
+            {checker && <DriveBetter />}
         </Container>
     );
 }

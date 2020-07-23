@@ -30,29 +30,41 @@ const Input = ({ parentCallback }) => {
     }
 
     return (
-        <div class="travel-input-container">
+        <div class="container-input fieldset-travel">
             {/* input 1 */}
-            <label>What type of car you have?</label>
-            <Select
-                placeholder="Select Type"
-                className="select-car-type"
-                options={CarTypeOptions}
-                onChange={playOptions}
-                searchable = {false}
-                separator = {true}
-            />
+            <div>
+                <label>What type of car you have?</label>
+                <Select
+                    placeholder="Select Type"
+                    className="select-car-type"
+                    options={CarTypeOptions}
+                    onChange={playOptions}
+                    searchable = {false}
+                    separator = {true}
+                />            
+            </div>
+            
             {/* input 2 */}
-            <label>How much litres of gas you car burn per 100 kms?</label>
-            <input id='average-per-100-km' type="number" step="0.1" min='0' max='100' maxLength='2' onBlur={(event) => setAverage(event.target.value)} /> Litres/100kms
+            <div>
+                <label>How much litres of gas your car burn per 100 kms?</label>
+                <input id='average-per-100-km' type="number" step="0.1" min='0' max='100' maxLength='2' onBlur={(event) => setAverage(event.target.value)} /> Litres/100kms
+            </div>                
             {/* input 3 */}
-
-            <label>Average distance (in Kilometers) travelled in car in month?</label>
-            <input id='month-kilometer' type="number" step="1" min='0' onBlur={(event) => setDistance(event.target.value)} /> Kilometers
-            <br />
+            <div>
+                <label>Average distance (in Kilometers) travelled in car in month?</label>
+                <input id='month-kilometer' type="number" step="1" min='0' onBlur={(event) => setDistance(event.target.value)} /> Kilometers
+            </div>
+            
             {/* get */}
-            <Button id="btn-car-carbon" variant="contained" onClick={playButton}>
+            <div className="button-submit">
+               <Button id="btn-car-carbon" variant="contained"
+               color="inherit" 
+               onClick={playButton}>
                 Get Carbon footprint
-            </Button>
+                </Button>
+            </div>
+            
+
             <ToastContainer />
         </div>
     );

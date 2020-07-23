@@ -377,7 +377,7 @@ const Food = ({ parentCallback }) => {
                     </div>
 
                     {/* input container */}
-                    <div className="container-input">
+                    <div className="container-input fieldset-food">
                         {/* input 1 */}
                         <label>Which food would you like?</label>
                         <Select

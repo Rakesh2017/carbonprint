@@ -45,18 +45,17 @@ const GreenVehicle = () => {
     }
 
     return (
-        <div className="reduce-carbon-foot-print green-vehicle-container">
-            <div class="green-vehicle-content">
-                <h2>Invest in a greener vehicle</h2>
-                <p>
-                    Hybrid and electric cars use electricity as fuel, generating fewer emissions than their gas-guzzling counterparts. Plus, if charged with clean electricity from renewable sources, electric cars produce zero CO2. Using cleaner fuels and a fuel-efficient car helps too. Some fuels can reduce emissions by up to 80% compared to gasoline! Go ahead and check out the EPA’s Green Vehicle Guide. Depending on where you live, after incentives and gas savings, it can cost next to nothing to swap your car for an electric one.
-                </p>
-                {/* Fact container */}
-                <Fact message="Driving accounts for 47% of the carbon footprint of a typical American family with two cars." />
-            </div>
+
+        <div className="reduce-carbon-foot-print green-vehicle-container full-width">
+            <h3>Invest in a greener vehicle</h3>
+            <p>
+                Hybrid and electric cars use electricity as fuel, generating fewer emissions than their gas-guzzling counterparts. Plus, if charged with clean electricity from renewable sources, electric cars produce zero CO2. Using cleaner fuels and a fuel-efficient car helps too. Some fuels can reduce emissions by up to 80% compared to gasoline! Go ahead and check out the EPA’s Green Vehicle Guide. Depending on where you live, after incentives and gas savings, it can cost next to nothing to swap your car for an electric one.
+            </p>
+            {/* Fact container */}
+            <Fact message="Driving accounts for 47% of the carbon footprint of a typical American family with two cars." />
 
             <div class="chart"> 
-                <h2>Electric Vs Petroleum Car Carbon footprint</h2>
+                <h3>Electric Vs Petroleum Car Carbon footprint</h3>
                 <CanvasJSChart options={options} />
                 <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
             </div>
