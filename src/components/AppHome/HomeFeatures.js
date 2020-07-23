@@ -13,24 +13,26 @@ const homeFeatures = () => (
         <h2>Features</h2>
 
         <div class="home-features">
-            <Link to ="./calculator" class="features feature1" >
-                <img src={Feature1} />
-                <h3>Footprint Calculator</h3>
-            </Link>
+
+            <div class="features feature1">
+                <Link to ="./calculator">
+                    <img src={Feature1} />
+                    <h3>Footprint Calculator</h3>
+                </Link>
+            </div>
     
-            <Link to="./carbon-impact" class="features feature2">
-                <img src={Feature2} />
-                <h3>Impacts of Carbon</h3>
-            </Link>
+            <div class="features feature2">
+                <Link to="./carbon-impact">
+                    <img src={Feature2} />
+                    <h3>Impacts of Carbon</h3>
+                </Link>
+            </div>
     
             <div class="features feature3">
                 <img src={Feature3} />
                 <h3>Reduction Measures</h3>
             </div>
 
-            <p>
-
-            </p>
         </div>
 
     </Container>
