@@ -420,14 +420,6 @@ main {
   margin-top: 0;
   margin-bottom: 1rem;
   max-width: 300px;
-
-  & > div {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
 }
 
 // Fun fact container
@@ -561,6 +553,15 @@ main {
 }
 
 // Food Section ****************************
+
+.fieldset-food > div {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 
 .carbon-print-food-revealed-container {
   .emphasis {
@@ -820,78 +821,63 @@ main {
 // Travel Section
 
 .travel-main-container {
-  .container-input {
-    background-color: #f8f8f8;
-    padding: 1rem;
-    border-radius: 0.5rem;
+
+  .fieldset-travel > div {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
 
     input {
-      min-height: 36px;
-    }
-
-    button {
-      margin: 1rem 0;
-      background-color: $color__green-dark;
-      color: white;
+      padding: 0.4rem;
+      width: 50%;
     }
   }
 }
 
-.car-result-container {
-  // background-color: $color__grey-light;
-  p {
-    font-family: $font__body;
-    color: $color__green-dark;
-    font-weight: bold;
-  }
-
-  .chart-container {
-    .axis {
-      display: none;
-    }
-
-    .chart-version {
-      font-size: 1rem;
-      font-weight: normal;
-      font-family: $font__heading;
+.tab-container {
+  .travel-main-container {
+    .how-to-reduce {
+      background-color: transparent;
       text-align: center;
     }
   }
 }
 
-.how-to-reduce {
-  h2 {
-    margin: 0;
-  }
+
+.emphasis {
+  font-size: 120%;
+  color: $color__green-light;
+  font-weight: bold;
 }
 
-.reduce-carbon-foot-print {
-  h2,
-  p {
-    margin: 0;
-  }
-  p {
-    font-family: $font__body;
-    margin-bottom: 0.75rem;
-  }
-}
 
-.green-vehicle-container {
-  .chart-container {
-    .axis {
-      display: none;
+// total result
+@media screen and (min-width: 800px) {
+  .total-result-chart-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+
+    .total-result-info {
+      p {
+        font-size: 120%;
+
+        span {
+          color: $color__green-light;
+          font-weight: bold;
+        }
+      }
     }
-
-    .chart-version {
-      flex-basis: 100%;
-      text-align: center;
-    }
-  }
+  }  
 }
+
 
 /**************************************************
 // Calculator layout End ***************************
 /**************************************************/
+
+
+
 
 /**************************************************
 // About Us layout Start **************************

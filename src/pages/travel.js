@@ -35,39 +35,42 @@ const Travel = ({parentCallback}) => {
 
     return (
         <Container className="travel-main-container tab-content">
-            <div id="section-heading">
+            <div id="section-heading" className="full-width">
                 {/* heading */}
                 <h2>How does your Vehicle emissions impact the Environment?</h2>
             </div>
 
             {/* logo+input container  */}
-            <div className="logo+input-container">
+            <div className="input-container-travel">
+                <div className="container-logo-input">
                 {/* Logo Container */}
-                <div className="logo-container">
-                    {/* Car logo */}
-                    {/* <img /> logo */}
-                    {/* <h3>Car</h3> */}
+                    <div className="container-logo">
+                        {/* Car logo */}
+                        {/* <img /> logo */}
+                        {/* <h3>Car</h3> */}
+                    </div>
+                    {/* input container */}
+                    <div className="container-input">
+                        {/* car type */}
+                        <Input parentCallback={handleCarTypeCallback} />
+                    </div>
                 </div>
-
-                {/* input container */}
-                <div className="input-container">
-                    {/* car type */}
-                    <Input parentCallback={handleCarTypeCallback} />
-                </div>
-
-                {/* result */}
-                {checker && <Result type={type} average={average} distance={distance} />}
-
-                {/* how to reduce carbon footprint */}
-                {checker && <div className="how-to-reduce">
-                    <h2>How to reduce Car carbon footprint?</h2>
-                </div>}
-                {/* 1. green vehicles */}
-                {checker && <GreenVehicle />}
-                {/* 2. drive better */}
-                {checker && <DriveBetter />}
-
             </div>
+
+
+
+            {/* result */}
+            {checker && <Result type={type} average={average} distance={distance} />}
+
+            {/* how to reduce carbon footprint */}
+            {checker && <div className="how-to-reduce full-width">
+                <h2>How to reduce Car carbon footprint?</h2>
+            </div>}
+            
+            {/* 1. green vehicles */}
+            {checker && <GreenVehicle />}
+            {/* 2. drive better */}
+            {checker && <DriveBetter />}
 
         </Container>
     );
