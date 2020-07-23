@@ -5,9 +5,8 @@ main {
 }
 
 .page-heading {
-
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 500px) {
@@ -27,44 +26,40 @@ main {
 // Hero section
 
 .wrapper-hero {
+  position: relative;
+  margin-top: -90px;
+  padding-top: 90px;
+  padding-bottom: 5rem;
+  background-image: url(../images/hero-image-900x600.jpg);
+  background-image: image-set(
+    url(../images/hero-image-900x600.jpg) 1x,
+    url(../images/hero-image-1920x1278.jpg) 2x,
+    url(../images/hero-image-2560x1703.jpg) 3x
+  );
 
-    position: relative;
-    margin-top: -90px;
-    padding-top: 90px;
-    padding-bottom: 5rem;
-    background-image: url(../images/hero-image-900x600.jpg);
-    background-image: image-set(
-        url(../images/hero-image-900x600.jpg) 1x,
-        url(../images/hero-image-1920x1278.jpg) 2x,
-        url(../images/hero-image-2560x1703.jpg) 3x,
-    );
-      
-    // <span>Photo by <a href="https://unsplash.com/@alex_andrews?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexander Andrews</a> on <a href="https://unsplash.com/collections/10637370/desktop-backgrounds?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+  // <span>Photo by <a href="https://unsplash.com/@alex_andrews?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexander Andrews</a> on <a href="https://unsplash.com/collections/10637370/desktop-backgrounds?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
-    background-position: top;
-    background-size: cover;
-    min-height: 94vh;   
-    color: $color__green-light2;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 50% 100%, 0% 93%);
+  background-position: top;
+  background-size: cover;
+  min-height: 94vh;
+  color: $color__green-light2;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 50% 100%, 0% 93%);
 
+  h1,
+  h2,
+  p {
+    color: #ffffff;
+  }
 
-    h1,
-    h2,
-    p {
-        color: #ffffff;
+  @media screen and (min-width: 800px) {
+    height: 99vh;
+
+    > div {
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
-
-    @media screen and (min-width:800px) {
-
-        height: 99vh;
-
-        > div {
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-    }
-
+  }
 }
 
 .hero-container {
@@ -133,63 +128,48 @@ main {
   }
 }
 
-//  Home Feature Section 
+//  Home Feature Section
 
 .home-features-container {
-    margin: 2.5rem 0;
-    background-color: $color__green-light2;
-    padding: 4rem;
-    h2{
-        text-align: center;
-        font-size: $font__size-xxxl;
+  margin: 2.5rem 0;
+  background-color: $color__green-light2;
+  padding: 4rem;
+  h2 {
+    text-align: center;
+    font-size: $font__size-xxxl;
+    margin: 0;
+  }
+
+  .home-features {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    .features {
+      flex-basis: 25%;
+      padding: 1.5rem;
+      text-align: center;
+      h3 {
         margin: 0;
+      }
     }
+  }
 
-    .home-features{
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
+  @media screen and (max-width: 800px) {
+    .home-features {
+      flex-flow: row wrap;
 
-        .features{
-            flex-basis: 25%;
-            padding: 1.5rem;
-            text-align: center;
-            h3{
-                margin: 0;
-            }
+      .features {
+        flex-basis: 100%;
+
+        img {
+          max-width: 50%;
+          height: auto;
         }
+      }
     }
-
-
-    @media screen and (max-width: 800px){
-        .home-features{
-            flex-flow: row wrap;
-
-            .features{
-                flex-basis: 100%;
-                 
-                img{
-                    max-width: 50%;
-                    height: auto;
-                }
-            }
-        }
-    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /**************************************************
 // Home page layout End ***************************
@@ -553,52 +533,32 @@ main {
       padding: 0.4rem;
       margin-bottom: 1rem;
       height: calc(100% - 1rem);
-      
-    .tab-content {
+
+      @media screen and (min-width: 600px) {
+        padding: 1rem;
+      }
+
       @media screen and (min-width: 1000px) {
         padding: 1rem 2rem;
       }
     }
   }
 
-            @media screen and (min-width: 600px) {
-                padding: 1rem;
-            }
-
-            @media screen and (min-width: 1000px) {
-                padding: 1rem 2rem;
-            }
-
-        }
+  @media screen and (min-width: 800px) {
+    .tab-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 3rem;
+      row-gap: 1rem;
+      align-items: start;
+      align-content: stretch;
     }
-
-    @media screen and (min-width: 800px) {
-        
-        .tab-content { 
-            display:grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 3rem;
-            row-gap: 1rem;
-            align-items: start;
-            align-content: stretch;
-        }
-
-        .full-width {
-            grid-column: span 2;
-        }
-    }
-
-
-}
-
 
     .full-width {
       grid-column: span 2;
     }
   }
 }
-
-// Food Section ****************************
 
 // Food Section ****************************
 
@@ -719,29 +679,22 @@ main {
       flex-basis: 35%;
     }
 
-
-        .y2-axis{
-            display: none;
-        }
-
-        p {
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
+    .chart-version {
+      text-align: right;
     }
 
-    .chart-info {
-        margin-top: 0.5rem;
-        border-radius: 5px;
-        background-color: #cccccc;
-        color: $color__green-dark;
-        font-size: 90%;
-        padding: 0.5rem;
-        width: 100%;
+    .y2-axis {
+      display: none;
+    }
+
+    p {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
     }
   }
 
   .chart-info {
+    margin-top: 0.5rem;
     border-radius: 5px;
     background-color: #cccccc;
     color: $color__green-dark;
@@ -772,89 +725,116 @@ main {
 
 // Flight Section
 .tab-container {
-    .flight-main-container {
-        .how-to-reduce {
-            background-color: transparent;
-            text-align: center;
-        }
+  .flight-main-container {
+    .how-to-reduce {
+      background-color: transparent;
+      text-align: center;
     }
+  }
 }
-
 
 .flight-main-container {
+  .emphasis {
+    color: $color__green-light;
+    font-size: 110%;
+  }
+
+  .container-input {
+    & > div {
+      margin-bottom: 0.6rem;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    > div > input {
+      padding: 0.4rem;
+      width: 100%;
+    }
+
+    > div > div {
+      width: 100%;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      box-shadow: 1px 2px 3px #cccccc;
+
+      li {
+        padding: 0.25rem;
+        font-size: 90%;
+
+        &:hover {
+          background-color: $color__green-light;
+        }
+      }
+    }
+
+    .connecting-flight-radio-group,
+    .flight-radio-group {
+      > div {
+        padding: 6px 8px !important;
+        border-radius: 16px !important;
+        background-color: $color__green-light2;
+
+        > div {
+          color: #807f7f !important;
+
+          > div:last-child {
+            height: 22px !important;
+            width: 22px !important;
+            margin: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+
+      & > div {
+        padding: 0.25rem;
+        border: 2px solid $color__green-dark;
+      }
+    }
+  }
 }
 
-.flight-main-container{
-
-    .emphasis {
-        color: $color__green-light;
-        font-size: 110%;
+.economy-class-flight-container,
+.non-stop-flight-container {
+  .chart {
+    .axis {
+      display: none;
     }
 
-    .container-input {
-        & > div {
-            margin-bottom: 0.6rem;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-        }
+    .chart-version {
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+}
 
-        > div > input {
-            padding: 0.4rem;
-            width: 100%;
-        }
+// Travel Section
 
-        > div > div { 
-            width: 100%;
-        }
+.travel-main-container {
+  .container-input {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-radius: 0.5rem;
 
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            border: 1px solid #cccccc;
-            border-radius: 3px;
-            box-shadow: 1px 2px 3px #cccccc;
-
-            li {
-                padding: 0.25rem;
-                font-size: 90%;
-
-                &:hover {
-                    background-color: $color__green-light;
-                }
-            }
-        }
-
-        .connecting-flight-radio-group,
-        .flight-radio-group {
-            > div {
-                padding: 6px 8px !important;
-                border-radius: 16px !important;
-                background-color: $color__green-light2;
-
-                > div {
-                    color: #807f7f !important;
-
-                    > div:last-child {
-                        height: 22px !important;
-                        width: 22px !important;
-                        margin: 3px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                }
-            }
-
-
-            & > div {
-                padding: 0.25rem;
-                border: 2px solid $color__green-dark;
-            }
-        }
+    input {
+      min-height: 36px;
     }
 
+    button {
+      margin: 1rem 0;
+      background-color: $color__green-dark;
+      color: white;
+    }
+  }
 }
 
 .car-result-container {
@@ -870,16 +850,11 @@ main {
       display: none;
     }
 
-.economy-class-flight-container, .non-stop-flight-container{
-    .chart{
-        .axis{
-            display: none;
-        }
-
-        .chart-version{
-            flex-basis: 100%;
-            text-align: center;
-        }
+    .chart-version {
+      font-size: 1rem;
+      font-weight: normal;
+      font-family: $font__heading;
+      text-align: center;
     }
   }
 }
@@ -1157,263 +1132,83 @@ main {
 // About Us layout End ****************************
 /**************************************************/
 
-.about-us-container {
-    padding: 0;
-    margin: 0;
-  
-    .heading-container {
-      h1 {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-      }
-    }
-  
-    .heading-container {
-      position: relative;
-      text-align: center;
-      .img-container {
-        margin-top: -1rem;
-        img {
-          height: 70vh;
-          width: 100%;
-          object-fit: cover;
-        }
-      }
-      .super-text-container {
-        width: 100%;
-        position: absolute;
-        top: 1rem;
-      }
-      .text-container {
-        margin: auto;
-        max-width: 700px;
-        top: 1rem;
-        h1 {
-          font-size: 1.5rem;
-        }
-        p {
-          margin-top: 1rem;
-          font-size: 1.1rem;
-          display: block;
-        }
-      }
-    }
-  
-    p {
-      margin: 0;
-    }
-  
-    .who-we-are-container,
-    .our-values-container {
-      margin: 1rem 0;
-  
-      h2 {
-        color: $color__green-dark;
-        text-align: center;
-        margin: 0;
-      }
-    }
-  
-    .about-us-container .heading-container,
-    .our-team-container {
-      h1 {
-        color: $color__green-dark;
-        // text-align: center;
-      }
-    }
-  
-    .our-team-container {
-      text-align: center;
-      h3 {
-        margin: 0;
-      }
-  
-      .team-tile-container {
-        margin: 1.5rem 0;
-      }
-    }
-  
-    @media screen and (min-width: 900px) {
-  
-      #our-values-container-id {
-        margin-top: 3rem;
-        div:first-child {
-          text-align: center;
-        }
-        div:nth-of-type(1) {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          h2 {
-            margin-bottom: 2rem;
-          }
-        }
-        img {
-          height: auto;
-          object-fit: cover;
-          width: 60%;
-          max-width: 80%;
-        }
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-  
-      #who-we-are-container-id, #our-values-container-id {
-        margin-top: 3rem;
-        div:first-child {
-          text-align: center;
-        }
-        div:nth-of-type(2) {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          h2 {
-            margin-bottom: 2rem;
-          }
-        }
-        img {
-          height: auto;
-          object-fit: cover;
-          width: 60%;
-          max-width: 80%;
-        }
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-  
-      .text-container {
-        h1 {
-          font-size: 2.5rem !important;
-        }
-      }
-  
-      .our-team-container {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        margin-top: 3rem;
-  
-        h1 {
-          flex-basis: 100%;
-        }
-  
-        .project-manager,
-        .lead-developer,
-        .quality-assurance,
-        .lead-designer {
-          flex-basis: 25%;
-        }
-  
-        .designer {
-          flex-basis: 25%;
-        }
-      }
-    }
-  }
-
-
-
-
 /**************************************************
 // Contact Us layout Start ************************
 /**************************************************/
 
 .contact-us-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 2rem;
+  h1 {
+    text-align: center;
+    flex-basis: 100%;
+  }
 
-    h1{
-        text-align: center;
-        flex-basis: 100%;
+  section {
+    margin-bottom: 4rem;
+  }
+
+  .contact-section1 {
+    padding-top: 1rem;
+
+    .contact-image {
+      height: auto;
+      border-radius: 8%;
+      border-bottom-right-radius: 40%;
+      border: solid 0.275rem coral;
+      padding: 0.3rem;
+      filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
+
+      @media screen and (min-width: 750px) {
+        width: 100%;
+        max-width: 500px;
+      }
+    }
+  }
+
+  .contact-form {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 0;
+
+    input,
+    textarea {
+      padding: 0.5rem;
     }
 
+    input,
+    textarea,
+    button {
+      max-width: 600px;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
     section {
-        margin-bottom: 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+
+      .contact-form {
+        min-width: 350px;
+      }
+
+      .contact-section1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
+  }
 
-    .contact-section1 {
-
-        padding-top: 1rem;
-
-        .contact-image {
-             
-            height: auto;
-            border-radius: 8%;
-            border-bottom-right-radius: 40%;
-            border: solid 0.275rem coral;
-            padding: 0.3rem;
-            filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
-
-            @media screen and (min-width: 750px) {
-                width: 100%;
-                max-width: 500px;
-            }
-        }
-
-    }
-
-    .contact-form {
-        max-width: 600px;
-        margin: auto;
-        margin-top: 0;
-
-        input,
-        textarea {
-            padding: 0.5rem;
-        }
-
-        input,
-        textarea,
-        button {
-            max-width: 600px;
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-    }
-
-    @media screen and (min-width: 750px) {
-        section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-
-            .contact-form {
-                min-width: 350px;
-            }
-
-            .contact-section1 {
-                display: flex;
-                justify-content: center;
-                align-items: center;             
-            }
-        }
-    }
-
-    @media screen and (min-width: 1000px) {
-        Section {
-            .contact-form {
-                min-width: 500px;
-            }
-        }
-
-    }
-
-}
-
-    #contact-button {
-      margin: 1rem 0;
-      min-width: 100%;
-      padding: 0.5rem 1rem;
+  @media screen and (min-width: 1000px) {
+    Section {
+      .contact-form {
+        min-width: 500px;
+      }
     }
   }
 }
-
 
 /**************************************************
 // Contact Us layout End **************************
@@ -1437,29 +1232,28 @@ main {
   }
 
   .impact-section1 {
-    flex-basis: 50%;
+    flex-basis: 35%;
     margin: 0.5rem 0 1rem 0;
     padding-right: 1.5rem;
-    
     p {
       text-align: justify;
     }
   }
 
   #impact-image1 {
-    max-width: 50%;
+    flex-basis: 5%;
     height: auto;
     margin-bottom: 1rem;
   }
 
-//   #impact-image2 {
-//     flex-basis: 40%;
-//   }
+  #impact-image2 {
+    flex-basis: 40%;
+  }
 
   .impact-section2 {
     flex-basis: 100%;
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   h2,
@@ -1467,19 +1261,16 @@ main {
   h4,
   p {
     margin: 0;
-    font-weight: normal;
   }
 
   h4 {
     font-family: $font__heading;
     color: $color__green-dark;
-    margin-top: 0.5rem;
-    font-weight: bold;
   }
 }
 
 .carbon-impact-container {
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 700px) {
     .impact-section1,
     .impact-section2 {
       flex-basis: 100%;
@@ -1490,4 +1281,3 @@ main {
 /**************************************************
 // Carbon Impact layout End ***********************
 /**************************************************/
-

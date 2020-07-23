@@ -7,7 +7,6 @@ export default () => (
     
     <div>
         <div className="wrapper-hero">
-            {console.log(process.env.REACT_APP_CLIENT_ID)}
             <HomeHero />
         </div>
         <HomeFeatures />
