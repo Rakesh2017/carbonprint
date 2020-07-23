@@ -44,6 +44,8 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
             titleWrap: true,
             margin: 15,
             interlacedColor: "#F8F1E4",
+            lineColor: "transparent",
+            tickLength: 0,
             gridColor: "lightgrey",
             suffix: " kg",
         },

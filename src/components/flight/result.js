@@ -6,7 +6,7 @@ import ChartDescription from '../reusable/chart-description.js';
 import Fact from '../reusable/facts.js';
 
 
-const Result = ({ connectingFlight, flightClassOption, takeOff, destination, takeOffAddress, destinationAddress, classType, trip }) => {
+const Result = ({ connectingFlight, flightClassOption, takeOff, destination, takeOffAddress, destinationAddress, classType, trip, parentCallback }) => {
 
     const chartVersion = "Chart 1.0"
     const chartInfo = `Graph illustrates the average carbon released by Aircraft from ${takeOffAddress} to ${destinationAddress} per person. Additionally it shows the one-way vs round trip comparison.`
@@ -78,16 +78,18 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
         let trip_type = '', message = ''
         if (trip === "0") {
             trip_type = "one way trip"
-            message = `Your Carbon footprint for ${trip_type} flight from ${takeOffAddress} to ${destinationAddress} is ${cfp} metric tons or ${cfp * 1000} Kgs`
+            message = `Your Carbon footprint for ${trip_type} flight from ${takeOffAddress} to ${destinationAddress} is ${cfp} metric tons or ${cfp * 1000} Kgs.`
         }
         else {
             trip_type = "round trip"
-            message = `Your Carbon footprint for ${trip_type} flight from ${takeOffAddress} to ${destinationAddress} is ${cfp * 2} metric tons or ${cfp * 1000 * 2} Kgs`
+            message = `Your Carbon footprint for ${trip_type} flight from ${takeOffAddress} to ${destinationAddress} is ${cfp * 2} metric tons or ${cfp * 1000 * 2} Kgs.`
         }
+        // <span className="emphasis"></span>
         // display message for user
 
         // set hook message
         para = message
+        parentCallback(para)
     }
 
 
@@ -97,7 +99,6 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
 
     const options = {
         height: 300,
-        exportEnabled: true,
         animationEnabled: true,
         backgroundColor:"transparent",
         legend: 
@@ -111,6 +112,8 @@ const Result = ({ connectingFlight, flightClassOption, takeOff, destination, tak
             interlacedColor: "#F8F1E4",
             gridColor: "lightgrey",
             suffix: " kg",
+            lineColor: "transparent",
+            tickLength: 0,
         },
         axisX: {
             titleWrap: true,

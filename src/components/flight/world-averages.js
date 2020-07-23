@@ -24,6 +24,8 @@ const WorldAverages = ({ worldChartData, personAvgData }) => {
             interlacedColor: "#F8F1E4",
             gridColor: "lightgrey",
             suffix: " MT",
+            lineColor: "transparent",
+            tickLength: 0,
         },
         axisX: {
             titleWrap: true,
