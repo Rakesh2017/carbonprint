@@ -112,15 +112,13 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
     }
 
     return (
-        <div className="total-result-chart-container">
+        <div className="total-result-chart-container full-width">
             <CanvasJSChart options={options} />
-            <div>
-                <p>
-                    Your total carbon footprint from Food is {addComma(foodY)} Kgs <br />
-                    Your total carbon footprint from Air Travel is {addComma(flightY)} Kgs <br />
-                    Your total carbon footprint from Car Travel is {addComma(travelY)} Kgs <br />
-                    Your Total carbon footprint from Food, Air and travel is {addComma(foodY + flightY + travelY)} Kgs
-                </p>
+            <div className="total-result-info">
+                <p>Your total carbon footprint from Food is <span>{addComma(foodY)} Kgs</span></p>
+                <p>Your total carbon footprint from Air Travel is <span>{addComma(flightY)} Kgs</span></p>
+                <p>Your total carbon footprint from Car Travel is <span>{addComma(travelY)} Kgs</span></p>
+                <p>Your Total carbon footprint from Food, Air and travel is <span>{addComma(foodY + flightY + travelY)} Kgs</span></p>
             </div>
         </div>
     );

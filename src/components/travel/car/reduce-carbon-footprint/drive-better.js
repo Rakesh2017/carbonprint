@@ -2,8 +2,8 @@ import React from 'react'
 
 const DriveBetter = () => {
     return (
-        <div className="reduce-carbon-foot-print drive-better-container">
-            <h2>Maintain your car and drive better</h2>
+        <div className="reduce-carbon-foot-print drive-better-container full-width">
+            <h3>Maintain your car and drive better</h3>
             <p>
                 Nobody likes seeing a car puff black smoke from its tailpipe or leak an oil stain onto the asphalt at a red light. It’s gross! Keep your car tuned and running efficiently.
 
