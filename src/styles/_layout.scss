@@ -1218,7 +1218,7 @@ main {
   }
 
   .impact-section1 {
-    flex-basis: 35%;
+    flex-basis: 50%;
     margin: 0.5rem 0 1rem 0;
     padding-right: 1.5rem;
     p {
@@ -1227,19 +1227,20 @@ main {
   }
 
   #impact-image1 {
-    flex-basis: 5%;
+    max-width: 50%;
     height: auto;
+    border-radius: 8%;
+    border-bottom-right-radius: 40%;
+    border: solid 0.275rem coral;
+    padding: 0.3rem;
+    filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
     margin-bottom: 1rem;
-  }
-
-  #impact-image2 {
-    flex-basis: 40%;
   }
 
   .impact-section2 {
     flex-basis: 100%;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   h2,
@@ -1247,22 +1248,41 @@ main {
   h4,
   p {
     margin: 0;
+    font-weight: normal;
   }
 
   h4 {
     font-family: $font__heading;
     color: $color__green-dark;
+    font-weight: bold;
+    margin-top: 0.5rem;
   }
-}
 
-.carbon-impact-container {
   @media screen and (max-width: 700px) {
     .impact-section1,
     .impact-section2 {
       flex-basis: 100%;
     }
+
   }
+
+
+  @media screen and (max-width: 1000px) {  
+    
+    .impact-section1{
+      flex-basis: 100%;
+    }
+
+    #impact-image1{
+      max-width: 70%;
+      height: auto;
+    }  
+  }
+
+
+
 }
+
 
 /**************************************************
 // Carbon Impact layout End ***********************
