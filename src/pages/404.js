@@ -1,13 +1,10 @@
 import React from 'react';
-import baseUrl from '../database-secrets/secrets.js';
 import { Container, } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 
-export error404 = () => (
+export default() => (
 
-    const error404Url = baseUrl + "/status=404"
-
-   return 
        <Container class="404-container">
         <h1>
             404 Error - Page not found
@@ -15,5 +12,3 @@ export error404 = () => (
         </Container>
    
 );
-
-export default error404;
