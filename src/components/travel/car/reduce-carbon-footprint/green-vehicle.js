@@ -31,14 +31,16 @@ const GreenVehicle = () => {
             titleWrap: true,
             labelAngle: 0,
             interval: 1,
+            lineColor: "transparent",
+            tickLength: 0,
         },
         data: [
             {
                 type: "bar",
                 toolTipContent: "<b><i>{label}</i></b> = <b>{y}</b>Kg CO<sup>2</sup>",
                 dataPoints: [
-                    { y: 11, label: "Car Electric", indexLabel: "~7 times less" },
-                    { y: 80.7, label: "Car Petroleum" },
+                    { y: 11, label: "Car Electric", indexLabel: "11 Kgs, ~7 times less" },
+                    { y: 80.7, label: "Car Petroleum", indexLabel: "80.7 Kgs" },
                 ]
             }
         ]

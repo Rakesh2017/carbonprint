@@ -29,6 +29,7 @@ const Flight = ({ parentCallback }) => {
     let temp = [], tempArr = []
     const [worldChartData, setWorldChartData] = useState()
     const [personAvgData, setPersonAvgData] = useState()
+    const [resultMessage, setResultMessage] = useState('')
 
     /* fetching data */
     function getWorldCarbonFootprint() {
@@ -53,7 +54,7 @@ const Flight = ({ parentCallback }) => {
                     temp = ({
                         label: element.country,
                         y: element.people,
-                        indexLabel: element.people+""
+                        indexLabel: element.people + ""
                     })
                     tempArr.push(temp)
                 });
@@ -112,7 +113,7 @@ const Flight = ({ parentCallback }) => {
     }
 
     useEffect(() => {
-        if(resultLoader) {
+        if (resultLoader) {
             parentCallback({
                 trip_type: trip,
                 takeOff: takeOff,
@@ -160,35 +161,33 @@ const Flight = ({ parentCallback }) => {
                         {/* trip choice */}
                         <RadioTripChoice parentCallback={handleTripChoiceCallback} />
 
-
                     </div>
 
-                    
-                    <p>Your Carbon footprint for one way trip flight from YVR - Vancouver Intl Airport (YVR), Grant McConachie Way, Richmond, BC, Canada to Trontano, Province of Verbano-Cusio-Ossola, Italy is <span className="emphasis">0.79 metric tons or 790 Kgs</span></p>
+                    <p>{resultMessage}</p>
 
-                </div>     
+                </div>
 
             </div>
 
 
-            
-                {/* show result */}
-                {resultLoader && <Result takeOff={takeOff} destination={destination} takeOffAddress={takeOffAddress} destinationAddress={destinationAddress} classType={classType} trip={trip} flightClassOption={flightClassOption} connectingFlight={connectingFlight} />}
 
-                {/* show world averages */}
-                {resultLoader && worldChartData !== undefined && personAvgData !== undefined && <WorldAverages worldChartData={worldChartData} personAvgData={personAvgData} />}
+            {/* show result */}
+            {resultLoader && <Result takeOff={takeOff} destination={destination} takeOffAddress={takeOffAddress} destinationAddress={destinationAddress} classType={classType} trip={trip} flightClassOption={flightClassOption} connectingFlight={connectingFlight} parentCallback={data => setResultMessage(data)} />}
 
-                {/* reduce carbon footprint */}
+            {/* show world averages */}
+            {resultLoader && worldChartData !== undefined && personAvgData !== undefined && <WorldAverages worldChartData={worldChartData} personAvgData={personAvgData} />}
 
-                {resultLoader && <div className="how-to-reduce full-width">
-                    <h2>How to reduce Flight carbon footprint?</h2>
-                </div>}
+            {/* reduce carbon footprint */}
 
-                {/* reduce method 1 */}
-                {resultLoader && <NonStopFlight />}
-                {/* reduce method 2 */}
-                {resultLoader && <EconomyClassFlight />}
-           
+            {resultLoader && <div className="how-to-reduce full-width">
+                <h2>How to reduce Flight carbon footprint?</h2>
+            </div>}
+
+            {/* reduce method 1 */}
+            {resultLoader && <NonStopFlight />}
+            {/* reduce method 2 */}
+            {resultLoader && <EconomyClassFlight />}
+
 
         </Container>
     );
