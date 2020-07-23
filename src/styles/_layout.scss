@@ -562,7 +562,6 @@ main {
   justify-content: flex-end;
 }
 
-
 .carbon-print-food-revealed-container {
   .emphasis {
     font-size: 120%;
@@ -739,7 +738,6 @@ main {
     color: $color__green-light;
     font-size: 110%;
   }
-
   .container-input {
     & > div {
       margin-bottom: 0.6rem;
@@ -774,14 +772,12 @@ main {
         }
       }
     }
-
     .connecting-flight-radio-group,
     .flight-radio-group {
       > div {
         padding: 6px 8px !important;
         border-radius: 16px !important;
         background-color: $color__green-light2;
-
         > div {
           color: #807f7f !important;
 
@@ -1218,7 +1214,7 @@ main {
   }
 
   .impact-section1 {
-    flex-basis: 50%;
+    flex-basis: 35%;
     margin: 0.5rem 0 1rem 0;
     padding-right: 1.5rem;
     p {
@@ -1227,7 +1223,7 @@ main {
   }
 
   #impact-image1 {
-    max-width: 50%;
+    flex-basis: 5%;
     height: auto;
     border-radius: 8%;
     border-bottom-right-radius: 40%;
@@ -1236,11 +1232,10 @@ main {
     filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
     margin-bottom: 1rem;
   }
-
   .impact-section2 {
     flex-basis: 100%;
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   h2,
@@ -1248,7 +1243,6 @@ main {
   h4,
   p {
     margin: 0;
-    font-weight: normal;
   }
 
   h4 {
@@ -1258,6 +1252,7 @@ main {
     margin-top: 0.5rem;
   }
 
+.carbon-impact-container {
   @media screen and (max-width: 700px) {
     .impact-section1,
     .impact-section2 {
