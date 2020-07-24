@@ -30,11 +30,11 @@ main {
   margin-top: -90px;
   padding-top: 90px;
   padding-bottom: 5rem;
-  background-image: url(../images/hero-image-900x600.jpg);
+  background-image: url(../images/hero-image-1380x920.jpg);
   background-image: image-set(
-    url(../images/hero-image-900x600.jpg) 1x,
-    url(../images/hero-image-1920x1278.jpg) 2x,
-    url(../images/hero-image-2560x1703.jpg) 3x
+    url(../images/hero-image-900x600.jpg) 720w,
+    url(../images/hero-image-1380x920.jpg) 1380w,
+    url(../images/hero-image-2200x1467.jpg) 2100w
   );
 
   // <span>Photo by <a href="https://unsplash.com/@alex_andrews?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexander Andrews</a> on <a href="https://unsplash.com/collections/10637370/desktop-backgrounds?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
@@ -887,237 +887,219 @@ main {
 // About Us layout Start **************************
 /**************************************************/
 
+// hero section of page
 .about-us-container {
-  padding: 0;
-  margin: 0;
-  .heading-container {
-    h1 {
-      margin: 0;
-      margin-top: 1rem;
-      padding: 0.5rem;
-      text-align: center;
-      // background-color: $color__green-light;
-    }
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .who-we-are-container,
-  .our-values-container {
-    margin: 1rem 0;
-
-    h2 {
-      color: $color__green-dark;
-      text-align: center;
-      margin: 0;
-    }
-  }
-
-  .about-us-container .heading-container,
-  .our-team-container {
-    h1 {
-      color: $color__green-dark;
-      // text-align: center;
-    }
-  }
-
-  .our-team-container {
-    text-align: center;
-    h3 {
-      margin: 0;
-    }
-
-    .team-tile-container {
-      margin: 1.5rem 0;
-    }
-  }
-
-  @media screen and (min-width: 900px) {
-    .our-team-container {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-
-      h1 {
-        flex-basis: 100%;
-      }
-
-      .project-manager,
-      .lead-developer,
-      .quality-assurance,
-      .lead-designer {
-        flex-basis: 25%;
-      }
-
-      .designer {
-        flex-basis: 25%;
-      }
-    }
-  }
-}
-
-/**************************************************
-// About Us layout End ****************************
-/**************************************************/
-
-.about-us-container {
-  padding: 0;
-  margin: 0;
-
-  .heading-container {
-    h1 {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-  }
 
   .heading-container {
     position: relative;
     text-align: center;
-    .img-container {
+    
+    .img-container {      
       margin-top: -1rem;
+      
       img {
-        height: 70vh;
+        height: 80vh;
         width: 100%;
         object-fit: cover;
       }
     }
+
     .super-text-container {
       width: 100%;
       position: absolute;
       top: 1rem;
     }
+
     .text-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
       margin: auto;
       max-width: 700px;
       top: 1rem;
-      h1 {
-        font-size: 1.5rem;
+    }
+  }
+}
+
+
+// who we are and our values section
+.container-img-float {
+
+  margin-top: 3rem;
+
+  @media screen and (min-width: 1000px) {
+    margin-top: 6rem;
+  }
+
+  .img-float-left {
+    display: none;
+  }
+
+  .img-float {
+    height: 30vh;
+    margin-left: -4px;
+    margin-right: -4px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media screen and (min-width:600px) {
+    
+    .img-float {
+      width: 50%;
+      height: 400px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .img-float-left {
+      display: block;
+      float: left;
+      padding-right: 1rem;
+
+      img {
+        border-radius: 5px;
+        border-bottom-right-radius: 3rem;
       }
-      p {
-        margin-top: 1rem;
-        font-size: 1.1rem;
-        display: block;
+    }
+
+    .img-float-right {
+      display: block;
+      float: right;
+      padding-left: 1rem;
+      
+      img {
+        border-radius: 5px;
+        border-bottom-left-radius: 3rem;
       }
+
     }
+ 
   }
 
-  p {
-    margin: 0;
-  }
-
-  .who-we-are-container,
-  .our-values-container {
-    margin: 1rem 0;
-
-    h2 {
-      color: $color__green-dark;
-      text-align: center;
-      margin: 0;
+  @media screen and (min-width:900px) {
+    .img-float-left {
+      padding-right: 5rem;
     }
-  }
 
-  .about-us-container .heading-container,
-  .our-team-container {
-    h1 {
-      color: $color__green-dark;
-      // text-align: center;
+    .img-float-right{
+      padding-left: 5rem;
     }
+
   }
 
-  .our-team-container {
+  &:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+
+}
+
+
+
+// team section
+
+.our-team-container { 
+
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+
+  h1 {
     text-align: center;
-    h3 {
-      margin: 0;
-    }
-
-    .team-tile-container {
-      margin: 1.5rem 0;
-    }
+    margin-bottom: 2rem;
   }
 
-  @media screen and (min-width: 900px) {
-    #our-values-container-id {
-      margin-top: 3rem;
-      div:first-child {
-        text-align: center;
-      }
-      div:nth-of-type(1) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        h2 {
-          margin-bottom: 2rem;
-        }
-      }
-      img {
-        height: auto;
-        object-fit: cover;
-        width: 60%;
-        max-width: 80%;
-      }
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+  .team-tile-container {
+    padding: 2rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 0;
     }
 
-    #who-we-are-container-id,
-    #our-values-container-id {
-      margin-top: 3rem;
-      div:first-child {
-        text-align: center;
-      }
-      div:nth-of-type(2) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        h2 {
-          margin-bottom: 2rem;
-        }
-      }
-      img {
-        height: auto;
-        object-fit: cover;
-        width: 60%;
-        max-width: 80%;
-      }
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .profile-image {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    .text-container {
-      h1 {
-        font-size: 2.5rem !important;
+    .social-links {
+      text-align: center;
+
+      img[src*="linked"],
+      #github-image,
+      #stack-overflow-image {
+        width: auto;
+        height: 40px;
+        border: none;
+        transition: all 0.4s;
+        filter: none;
       }
+
+      #stack-overflow-image {
+        border-radius: 30%;
+        height: 37px;
+      }
+          
+      img[src*="linked"]:hover, 
+      #github-image:hover {
+        transform: rotate(360deg);
+      }
+
+      #stack-overflow-image:hover {
+        border-radius: 30%;
+        transform: rotate(360deg);
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+@media screen and (min-width: 600px) {
+
+  .about-us-container {
+
+    h1 {
+      flex-basis: 100%;
     }
 
     .our-team-container {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      margin-top: 3rem;
 
-      h1 {
-        flex-basis: 100%;
-      }
-
-      .project-manager,
-      .lead-developer,
-      .quality-assurance,
-      .lead-designer {
-        flex-basis: 25%;
-      }
-
-      .designer {
-        flex-basis: 25%;
+      .team-tile-container {
+       flex-basis: 250px; 
       }
     }
   }
 }
+
+@media screen and (min-width: 900px) { 
+  .about-us-container { 
+    .our-team-container { 
+      .team-tile-container {
+        flex-basis: 400px;
+      }
+    }
+  }
+}
+
+
+
 
 /**************************************************
 // About Us layout End ****************************
@@ -1140,17 +1122,23 @@ main {
   .contact-section1 {
     padding-top: 1rem;
 
-    .contact-image {
-      height: auto;
-      border-radius: 8%;
-      border-bottom-right-radius: 40%;
-      border: solid 0.275rem coral;
-      padding: 0.3rem;
+    .image-wrapper {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 3rem;
       filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
 
       @media screen and (min-width: 750px) {
+          height: 400px;
+          margin-bottom: 0;
+      }
+
+      .contact-image {
         width: 100%;
-        max-width: 500px;
+        height: 100%;
+        object-fit: cover;        
+        border-radius: 5px;
+        border-bottom-right-radius: 3rem;
       }
     }
   }
@@ -1165,12 +1153,21 @@ main {
       padding: 0.5rem;
     }
 
+    textarea {
+      height: 110px;
+    }
+
     input,
     textarea,
     button {
       max-width: 600px;
       width: 100%;
       margin-bottom: 1rem;
+    }
+
+    button {
+      margin-bottom: 0;
+      margin-top: 1rem;
     }
   }
 
@@ -1210,85 +1207,26 @@ main {
 /**************************************************/
 
 .carbon-impact-container {
-  // max-width: 1200px;
-  margin: 0 4rem;
+  margin-bottom: 4rem;
 
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  padding: 1.5rem;
-
-  h1 {
-    flex-basis: 100%;
+  .impact-image {
     text-align: center;
-  }
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 
-  .impact-section1 {
-    flex-basis: 35%;
-    margin: 0.5rem 0 1rem 0;
-    padding-right: 1.5rem;
-    p {
-      text-align: justify;
+    img {
+      border-radius: 5px;
+      filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
     }
   }
 
-  #impact-image1 {
-    flex-basis: 5%;
-    height: auto;
-    border-radius: 8%;
-    border-bottom-right-radius: 40%;
-    border: solid 0.275rem coral;
-    padding: 0.3rem;
-    filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
-    margin-bottom: 1rem;
-  }
+  .impact-section1,
   .impact-section2 {
-    flex-basis: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    max-width: 720px;
+    margin: auto;
   }
-
-  h2,
-  h3,
-  h4,
-  p {
-    margin: 0;
-  }
-
-  h4 {
-    font-family: $font__heading;
-    color: $color__green-dark;
-    font-weight: bold;
-    margin-top: 0.5rem;
-  }
-}
-
-.carbon-impact-container {
-  @media screen and (max-width: 700px) {
-    .impact-section1,
-    .impact-section2 {
-      flex-basis: 100%;
-    }
-
-  }
-
-
-  @media screen and (max-width: 1000px) {  
-    
-    .impact-section1{
-      flex-basis: 100%;
-    }
-
-    #impact-image1{
-      max-width: 70%;
-      height: auto;
-    }  
-  }
-
-
 
 }
-
 
 /**************************************************
 // Carbon Impact layout End ***********************

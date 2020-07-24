@@ -14,12 +14,12 @@ export default () => (
             <section>
 
             <div className="contact-section1">
-
-                <img className="contact-image" alt="contact us" src={Image} />
-{/*                 
-                <p>
+                <div className="image-wrapper">
+                    <img className="contact-image" alt="contact us" src={Image} />
+                </div>                
+                {/* <p>
                     Team Carbon Print is open to any kind of queries you have regarding Carbon Footprint, it's dependency on food and suggestions to reduce your individual carbon impression.
-                </p>          */}
+                </p> */}
             </div>
 
             <div className="contact-form">
