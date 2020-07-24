@@ -103,20 +103,24 @@ const About = () => {
                 {/* who-we-are-container starts  */}
                 <div className="who-we-are-container container-img-float" id="who-we-are-container-id">
                     {/* text container */}
+
                     <div className="img-float img-float-left">
                         <img src={who_we_are} />
                     </div>
                     <div>
                         <h2>Who we are?</h2>
                         <p>
+
                         We are a team of people who are willing to use their skills to bring a sustainable change to the environment by making use of the technology. Being beginners, we have done the research and found out that the environment is most affected by the amount of carbon being produced.
                             Hence, we came up with this website to educate people about carbon footprint and how big of an impact it has on our planet.
                         </p>
+
                     </div>
                     {/* image container */}
                 </div>
 
                 {/* our-values-container starts  */}
+
                 <div id="our-values-container-id" className="container-img-float">
                     <div className="img-float img-float-right">
                         <img src={our_values} />
@@ -126,6 +130,7 @@ const About = () => {
                         <h2>Our Values</h2>
                         <p>
                         Our team holds integrity on the top of values that we posses. Our teaam members have worked hard on getting reliale data to the users which will guide them to bring necessary and appropriate changes in theri life to contribute in reducing carbon impression. Our whole team is very passionate about environmental protection and this website is one off the first initiatives that we have taken to follow our passion and prevent the environmental health from deteriorating further.
+
                         </p>
                     </div>
                 </div>
