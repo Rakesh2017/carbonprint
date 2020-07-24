@@ -879,75 +879,75 @@ main {
 // About Us layout Start **************************
 /**************************************************/
 
-.about-us-container {
-  padding: 0;
-  margin: 0;
-  .heading-container {
-    h1 {
-      margin: 0;
-      padding: 0.5rem;
-      text-align: center;
-      // background-color: $color__green-light;
-    }
-  }
+// .about-us-container {
+//   padding: 0;
+//   margin: 0;
+//   .heading-container {
+//     h1 {
+//       margin: 0;
+//       padding: 0.5rem;
+//       text-align: center;
+//       // background-color: $color__green-light;
+//     }
+//   }
 
-  p {
-    margin: 0;
-  }
+//   p {
+//     margin: 0;
+//   }
 
-  .who-we-are-container,
-  .our-values-container {
-    margin: 1rem 0;
+//   .who-we-are-container,
+//   .our-values-container {
+//     margin: 1rem 0;
 
-    h2 {
-      color: $color__green-dark;
-      text-align: center;
-      margin: 0;
-    }
-  }
+//     h2 {
+//       color: $color__green-dark;
+//       text-align: center;
+//       margin: 0;
+//     }
+//   }
 
-  .about-us-container .heading-container,
-  .our-team-container {
-    h1 {
-      color: $color__green-dark;
-      // text-align: center;
-    }
-  }
+//   .about-us-container .heading-container,
+//   .our-team-container {
+//     h1 {
+//       color: $color__green-dark;
+//       // text-align: center;
+//     }
+//   }
 
-  .our-team-container {
-    text-align: center;
-    h3 {
-      margin: 0;
-    }
+//   .our-team-container {
+//     text-align: center;
+//     h3 {
+//       margin: 0;
+//     }
 
-    .team-tile-container {
-      margin: 1.5rem 0;
-    }
-  }
+//     .team-tile-container {
+//       margin: 1.5rem 0;
+//     }
+//   }
 
-  @media screen and (min-width: 900px) {
-    .our-team-container {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
+//   @media screen and (min-width: 900px) {
+//     .our-team-container {
+//       display: flex;
+//       flex-flow: row wrap;
+//       justify-content: center;
 
-      h1 {
-        flex-basis: 100%;
-      }
+//       h1 {
+//         flex-basis: 100%;
+//       }
 
-      .project-manager,
-      .lead-developer,
-      .quality-assurance,
-      .lead-designer {
-        flex-basis: 25%;
-      }
+//       .project-manager,
+//       .lead-developer,
+//       .quality-assurance,
+//       .lead-designer {
+//         flex-basis: 25%;
+//       }
 
-      .designer {
-        flex-basis: 25%;
-      }
-    }
-  }
-}
+//       .designer {
+//         flex-basis: 25%;
+//       }
+//     }
+//   }
+// }
 
 /**************************************************
 // About Us layout End ****************************
@@ -1011,11 +1011,17 @@ main {
     }
   }
 
+  #who-we-are-container-id, #our-values-container-id {
+    .img-container {
+      text-align: center;
+      padding: 1rem;
+    }
+  }
+
   .about-us-container .heading-container,
   .our-team-container {
     h1 {
       color: $color__green-dark;
-      // text-align: center;
     }
   }
 
