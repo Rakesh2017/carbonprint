@@ -72,10 +72,7 @@ export default function FoodBarChart1({ checkAddBtn, foodProduct, foodList, food
                 <div className="food-chart-section">
                     {FoodDataForVisualization.length > 1 ? <CanvasJSChart options={options} /> : null}
                     {/* chart container */}
-                    <ChartDescription chartNumber ={chartVersion} axisX = {"Food Name"} axisY = {"Carbon Footprint in Kg/Year"}/>
-                </div>
-                <div className="chart-info-section">
-                    <p>{chartInfo}</p>
+                    <ChartDescription chartNumber ={chartVersion} axisX = {"Food Name"} axisY = {"Carbon Footprint in Kg/Year"} chartInfo={chartInfo} />
                 </div>
             </div>
         </div>

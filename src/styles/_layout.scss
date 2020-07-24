@@ -52,7 +52,7 @@ main {
   }
 
   @media screen and (min-width: 800px) {
-    height: 99vh;
+    height: 96vh;
 
     > div {
       height: 100%;
@@ -132,40 +132,55 @@ main {
 
 .home-features-container {
   margin: 2.5rem 0;
-  background-color: $color__green-light2;
-  padding: 4rem;
+  // background-color: $color__green-light2;
+  padding: 2rem;
+  
   h2 {
     text-align: center;
     font-size: $font__size-xxxl;
-    margin: 0;
+    // margin: 0;
   }
 
   .home-features {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 
     .features {
-      flex-basis: 25%;
+      flex-basis: 300px;
       padding: 1.5rem;
       text-align: center;
-      h3 {
-        margin: 0;
+      
+      img {
+        border: 2px solid $color__green-dark;
+        border-radius: 50%;
+        padding: 0.5rem;
+        max-width: 200px;
+        height: auto;
+        filter: grayscale(100%);
+        transition: .5s ease;
+
+        &:hover {
+          filter: grayscale(0);
+        }
       }
+
     }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (min-width: 600px) {
+    .home-features{
+      flex-wrap: nowrap;
+    }
+  }
+  
+  
+  @media screen and (min-width: 800px) {
     .home-features {
-      flex-flow: row wrap;
+      flex-flow: row nowrap;
 
       .features {
-        flex-basis: 100%;
-
-        img {
-          max-width: 50%;
-          height: auto;
-        }
+        flex-basis: 200px;
       }
     }
   }
@@ -616,18 +631,12 @@ main {
 
 @media screen and (min-width: 1000px) {
   .section-column-2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+
 
     .food-chart-section,
     .reduce-carbon-chart-section {
-      flex-shrink: 0;
-      flex-basis: 65%;
-      width: 60%;
-      order: -1;
-      max-width: 620px;
+      max-width: 800px;
+      margin: auto;
     }
 
     .chart-info-section {
@@ -641,8 +650,7 @@ main {
 
 .chart-info-section,
 .explanation-container {
-  border-left: 3px solid $color__green-light;
-  padding-left: 0.5rem;
+  padding: 1rem;
   margin-bottom: 1rem;
   background-color: $color__green-light2;
 
@@ -878,76 +886,76 @@ main {
 /**************************************************
 // About Us layout Start **************************
 /**************************************************/
+.about-us-container {
+  padding: 0;
+  margin: 0;
+  .heading-container {
+    h1 {
+      margin: 0;
+      margin-top: 1rem;
+      padding: 0.5rem;
+      text-align: center;
+      // background-color: $color__green-light;
+    }
+  }
 
-// .about-us-container {
-//   padding: 0;
-//   margin: 0;
-//   .heading-container {
-//     h1 {
-//       margin: 0;
-//       padding: 0.5rem;
-//       text-align: center;
-//       // background-color: $color__green-light;
-//     }
-//   }
+  p {
+    margin: 0;
+  }
 
-//   p {
-//     margin: 0;
-//   }
+  .who-we-are-container,
+  .our-values-container {
+    margin: 1rem 0;
 
-//   .who-we-are-container,
-//   .our-values-container {
-//     margin: 1rem 0;
+    h2 {
+      color: $color__green-dark;
+      text-align: center;
+      margin: 0;
+    }
+  }
 
-//     h2 {
-//       color: $color__green-dark;
-//       text-align: center;
-//       margin: 0;
-//     }
-//   }
+  .about-us-container .heading-container,
+  .our-team-container {
+    h1 {
+      color: $color__green-dark;
+      // text-align: center;
+    }
+  }
 
-//   .about-us-container .heading-container,
-//   .our-team-container {
-//     h1 {
-//       color: $color__green-dark;
-//       // text-align: center;
-//     }
-//   }
+  .our-team-container {
+    text-align: center;
+    h3 {
+      margin: 0;
+    }
 
-//   .our-team-container {
-//     text-align: center;
-//     h3 {
-//       margin: 0;
-//     }
+    .team-tile-container {
+      margin: 1.5rem 0;
+    }
+  }
 
-//     .team-tile-container {
-//       margin: 1.5rem 0;
-//     }
-//   }
+  @media screen and (min-width: 900px) {
+    .our-team-container {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
 
-//   @media screen and (min-width: 900px) {
-//     .our-team-container {
-//       display: flex;
-//       flex-flow: row wrap;
-//       justify-content: center;
+      h1 {
+        flex-basis: 100%;
+      }
 
-//       h1 {
-//         flex-basis: 100%;
-//       }
+      .project-manager,
+      .lead-developer,
+      .quality-assurance,
+      .lead-designer {
+        flex-basis: 25%;
+      }
 
-//       .project-manager,
-//       .lead-developer,
-//       .quality-assurance,
-//       .lead-designer {
-//         flex-basis: 25%;
-//       }
-
-//       .designer {
-//         flex-basis: 25%;
-//       }
-//     }
-//   }
-// }
+      .designer {
+        flex-basis: 25%;
+      }
+    }
+  }
+}
 
 /**************************************************
 // About Us layout End ****************************
