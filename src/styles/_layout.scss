@@ -886,7 +886,6 @@ main {
 /**************************************************
 // About Us layout Start **************************
 /**************************************************/
-
 .about-us-container {
   padding: 0;
   margin: 0;
@@ -1020,11 +1019,17 @@ main {
     }
   }
 
+  #who-we-are-container-id, #our-values-container-id {
+    .img-container {
+      text-align: center;
+      padding: 1rem;
+    }
+  }
+
   .about-us-container .heading-container,
   .our-team-container {
     h1 {
       color: $color__green-dark;
-      // text-align: center;
     }
   }
 
