@@ -7,111 +7,23 @@ img {
 /* Author: Rakesh */
 
 /* Our Team Images */
-
-.about-us-container .our-team-container {
-
-  // background-color: #00000005;
-
-  div img:first-child {
-    max-width: 50%;
+.our-team-container {
+  
+  .profile-image img {
+    max-width: 200px;
     height: auto;
-    border-radius: 10%;
-    border-bottom-right-radius: 40%;
-    border: solid 0.275rem coral;
-    padding: 0.3rem;
+    border-radius: 6%;
+    border-bottom-right-radius: 20%;
+    border: solid 0.2rem coral;
+    padding: 0.25rem;
     filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
   }
-  div:nth-of-type(n + 4) img {
-    border-color: cornflowerblue;
+
+  .team-tile-container:nth-of-type(n + 4){
+    .profile-image {
+      img {
+        border-color: cornflowerblue;
+      }
+    }
   }
-
-  div a img[src*="linked"] {
-    max-width: 13%;
-    height: auto;
-    position: relative;
-    left: -24px;
-    top: 12px;
-    border: none;
-    transition: all 0.4s;
-    filter: none;
-  }
-
-  #github-image {
-    max-width: 12%;
-    height: auto;
-    position: relative;
-    left: -35px;
-    top: 10px;
-    border: none;
-    transition: all 0.4s;
-    filter: none;
-  }
-
-  #stack-overflow-image {
-    max-width: 11%;
-    height: auto;
-    position: relative;
-    left: -45px;
-    top: 10px;
-    border: none;
-    transition: all 0.4s;
-    filter: none;
-    border-radius: 30%;
-  }
-
-  div a img[src*="linked"]:hover, #github-image:hover {
-    transform: rotate(360deg);
-  }
-
-  #stack-overflow-image:hover {
-    border-radius: 30%;
-    transform: rotate(360deg);
-  }
-
-  h1 {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    font-weight: 700;
-  }
-
-  .member-name {
-    margin-top: 1.5rem;
-  }
-
-}
-
-#who-we-are-container-id {
-  img {
-    max-width: 50%;
-    height: auto;
-    border-radius: 10%;
-    border-bottom-right-radius: 40%;
-    border: solid 0.275rem coral;
-    padding: 0.3rem;
-    filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
-  }
-}
-
-#our-values-container-id {
-  img {
-    max-width: 50%;
-    height: auto;
-    border-radius: 10%;
-    border-top-left-radius: 40%;
-    border: solid 0.275rem cornflowerblue;
-    padding: 0.3rem;
-    filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
-  }
-}
-
-/* Contact Us page */
-
-.contact-image {
-  max-width: 70% !important; 
-  height: auto;
-  border-radius: 10%;
-  border-bottom-right-radius: 40%;
-  border: solid 0.275rem coral;
-  padding: 0.3rem;
-  filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
 }

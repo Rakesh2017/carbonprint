@@ -402,7 +402,7 @@ const Food = ({ parentCallback }) => {
                         {/* Add more */}
                         <div className="button-submit">
                             <Button style={{ display: "none" }} id="add-food-item" variant="contained" color="inherit" onClick={addItem}>
-                                Add Item
+                                Add item to view visualizations
                             </Button>
                         </div>
 

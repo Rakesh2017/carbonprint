@@ -7,7 +7,7 @@ const Result = ({ type, average, distance }) => {
     console.log("Result -> type", type)
 
     const chartVersion = "Chart 1.0"
-    const chartInfo = ``
+    const chartInfo = `This Chart illustrates the comparison of carbon footprint release by your yearly car travel to Average Carbon footprint released by typical drivers in EU`
 
     /* formula credit: https://ecoscore.be/en/info/ecoscore/co2 */
     const resultKgs = ((type[0].carbon_per_litre * average * distance / 100000) * 12).toFixed(2)
@@ -31,11 +31,14 @@ const Result = ({ type, average, distance }) => {
             interlacedColor: "#F8F1E4",
             gridColor: "lightgrey",
             suffix: " kg",
+            lineColor: "transparent",
+            tickLength: 0,
         },
         axisX: {
             titleWrap: true,
             labelAngle: 0,
             interval: 1,
+        
         },
         data: [
             {
@@ -59,7 +62,7 @@ const Result = ({ type, average, distance }) => {
             {/* chart */}
             <CanvasJSChart options={options} />
             {/* chart container */}
-            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
+            <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX="Your Carbon footprint VS Typical Average Carbon footprint of drivers in EU" axisY="Carbon footprint" />
 
             <p>
                 Your Average Carbon footprint for Driving a {type[0].label} Car for <span className="emphasis">{numberWithCommas(distance)} km</span> for 1 year is <span className="emphasis">{numberWithCommas(resultKgs)} Kgs or {resultMTS} Metric Tonnes</span>.

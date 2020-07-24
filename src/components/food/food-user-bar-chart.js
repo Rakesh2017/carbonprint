@@ -74,6 +74,8 @@ export default function FoodUserBarChart({ checkAddBtn, foodList }) {
             interlacedColor: "#F8F1E4",
             suffix: " kg",
             gridColor: "lightgrey",
+            lineColor: "transparent",
+            tickLength: 0,
         },
         axisX: {
             titleWrap: true,

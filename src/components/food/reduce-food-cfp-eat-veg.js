@@ -59,6 +59,8 @@ const ReduceFoodCfpEatVeg = () => {
             interlacedColor: "#F8F1E4",
             suffix: " MT",
             gridColor: "lightgrey",
+            lineColor: "transparent",
+            tickLength: 0,
         },
         axisX: {
             titleWrap: true,
@@ -95,7 +97,9 @@ const ReduceFoodCfpEatVeg = () => {
                 {/* Fact container */}
                 <Fact message="Livestock farming produces from 20% to 50% of all man-made greenhouse gas emissions." />
                 <p>
-                    Graph 3.0 chart shows that a meat lover has the highest carbon footprint at 3.3 tons of greenhouse gas emissions. A vegan diet has the lowest carbon footprint at just 1.5 tons carbon. You can reduce your food carbon footprint by a quarter just by cutting down on red meats such as beef and lamb. While, The carbon footprint of a vegetarian diet is about half that of a meat-lover’s diet.
+                    Graph 3.0 chart shows that a meat lover has the highest carbon footprint at 3.3 tons of greenhouse gas emissions. A vegan diet has the lowest carbon footprint at just 1.5 tons carbon. 
+                    <br />
+                    You can reduce your food carbon footprint by a quarter just by cutting down on red meats such as beef and lamb.
                 </p>
             </div>
 

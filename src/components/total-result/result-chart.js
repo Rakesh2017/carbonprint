@@ -91,6 +91,8 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
             interlacedColor: "#F8F1E4",
             gridColor: "lightgrey",
             suffix: " kg",
+            lineColor: "transparent",
+            tickLength: 0,
         },
         axisX: {
             titleWrap: true,

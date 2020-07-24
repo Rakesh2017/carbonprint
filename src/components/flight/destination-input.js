@@ -78,6 +78,7 @@ const DestinationInput = ({ parentCallback }) => {
                 onChange={handleInput}
                 disabled={!ready}
                 placeholder="City/Airport"
+                autoComplete="off"
             />
             {/* We can use the "status" to decide whether we should display the dropdown or not */}
             {status === "OK" && <ul> {renderSuggestions()} </ul>}

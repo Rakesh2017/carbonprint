@@ -125,7 +125,9 @@ const HistoricalCarbonEmissionChart = () => {
             suffix: " ppm",
             titleFontSize: 15,
             labelFontSize:12,
-            gridColor: "lightgrey",
+            gridColor: "#b0bfbcba",
+            lineColor: "transparent",
+            tickLength: 0,
             crosshair: {
                 enabled: true
             },
@@ -147,8 +149,10 @@ const HistoricalCarbonEmissionChart = () => {
             suffix: " °C",
             labelFontSize: 12,
             titleFontSize: 15,
-            thickness: 4  
-            // includeZero: true,
+            thickness: 4,  
+            gridColor: "#b0bfbcba",
+            lineColor: "transparent",
+            tickLength: 0,
         },
         data: [
             {
