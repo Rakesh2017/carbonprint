@@ -84,46 +84,52 @@ const About = () => {
             {/* heading-container may serve as background */}
             {/* heading-container starts */}
             <div className="heading-container">
-                <div className="img-container"> <img src={about_us_image} /> </div>
+                
+                <div className="img-container"> 
+                    <img src={about_us_image} /> 
+                </div>
+                
                 <div className="super-text-container">
                     <div className="text-container">
                         <h1>About Carbon Print</h1>
                         <p>Our mission is to give accessability to everyone to estimate their carbon footprint through their day to day activities. Carbon print is a web platform where an individual can calculate the amount of carbon footprint they produced in relation to their daily activities. </p>
                     </div>
                 </div>
+
             </div>
 
             <Container>
 
                 {/* who-we-are-container starts  */}
-                <div className="who-we-are-container" id="who-we-are-container-id">
+                <div className="who-we-are-container container-img-float" id="who-we-are-container-id">
                     {/* text container */}
-                    <div className="img-container">
+
+                    <div className="img-float img-float-left">
                         <img src={who_we_are} />
                     </div>
                     <div>
                         <h2>Who we are?</h2>
                         <p>
-                            We are a team of people who are willing to use their skills to bring a sustainable change to the environment by making use of the technology. Being beginners, we have done the research and found out that the environment is most affected by the amount of carbon being produced.
+
+                        We are a team of people who are willing to use their skills to bring a sustainable change to the environment by making use of the technology. Being beginners, we have done the research and found out that the environment is most affected by the amount of carbon being produced.
                             Hence, we came up with this website to educate people about carbon footprint and how big of an impact it has on our planet.
-                    </p>
+                        </p>
+
                     </div>
                     {/* image container */}
-                    <div>
-                        {/* apply image here, then delete this comment */}
-                        {/* <img /> */}
-                    </div>
                 </div>
 
                 {/* our-values-container starts  */}
-                <div id="our-values-container-id" className="our-values-container">
-                    <div className="img-container">
+
+                <div id="our-values-container-id" className="container-img-float">
+                    <div className="img-float img-float-right">
                         <img src={our_values} />
                     </div>
+                    
                     <div>
                         <h2>Our Values</h2>
                         <p>
-                            Our team holds integrity on the top of values that we posses. Our teaam members have worked hard on getting reliale data to the users which will guide them to bring necessary and appropriate changes in theri life to contribute in reducing carbon impression. Our whole team is very passionate about environmental protection and this website is one off the first initiatives that we have taken to follow our passion and prevent the environmental health from deteriorating further.
+                        Our team holds integrity on the top of values that we posses. Our teaam members have worked hard on getting reliale data to the users which will guide them to bring necessary and appropriate changes in theri life to contribute in reducing carbon impression. Our whole team is very passionate about environmental protection and this website is one off the first initiatives that we have taken to follow our passion and prevent the environmental health from deteriorating further.
 
                         </p>
                     </div>
@@ -136,11 +142,13 @@ const About = () => {
 
                     {/* Rakesh */}
                     <div className="team-tile-container project-manager">
-                        <div>
+                        <div className="profile-image">
                             <img id="image1" />
-                            <a href="http://linkedin.com/in/rakesh-kumar-aa3135117" target="_blank"> <img src={linked_icon} /> </a>
-                            <a href="https://github.com/Rakesh2017" target="_blank"> <img id="github-image" src={github_image} /> </a>
-                            <a href="https://stackoverflow.com/users/7872344/rakesh-kumar" target="_blank"> <img id="stack-overflow-image" src={stackoverflow_image} /> </a>
+                            <div className="social-links">
+                                <a href="http://linkedin.com/in/rakesh-aa3135117" target="_blank"> <img src={linked_icon} /> </a>
+                                <a href="https://github.com/Rakesh2017" target="_blank"> <img id="github-image" src={github_image} /> </a>
+                                <a href="https://stackoverflow.com/users/7872344/rakesh-kumar" target="_blank"> <img id="stack-overflow-image" src={stackoverflow_image} /> </a>
+                            </div>                            
                         </div>
 
                         <h3 className="member-name" id="manager-name"></h3>
@@ -149,10 +157,13 @@ const About = () => {
 
                     {/* dalbir */}
                     <div className="team-tile-container lead-developer">
-                        <div>
+                        <div className="profile-image">
                             <img id="image2" />
-                            <a href="https://www.linkedin.com/in/dalbir-singh-01815328/" target="_blank"> <img src={linked_icon} /> </a>
-                            <a href="https://github.com/dalbirsrana" target="_blank"> <img id="github-image" src={github_image} /> </a>
+                            <div className="social-links">
+                                <a href="https://www.linkedin.com/in/dalbir-singh-01815328/" target="_blank"> <img src={linked_icon} /> </a>
+                                <a href="https://github.com/dalbirsrana" target="_blank"> <img id="github-image" src={github_image} /> </a>
+                            </div>
+                            
                         </div>
                         <h3 className="member-name" id="lead-developer-name"></h3>
                         <p className="member-designation" id="lead-developer-designation"></p>
@@ -160,9 +171,11 @@ const About = () => {
 
                     {/* Palak */}
                     <div className="team-tile-container developer quality-assurance">
-                        <div>
+                        <div className="profile-image">
                             <img id="image3" />
-                            <a href="https://www.linkedin.com/in/palakdeep-kaur-88a020b7" target="_blank"> <img src={linked_icon} /> </a>
+                            <div className="social-links">
+                                <a href="https://www.linkedin.com/in/palakdeep-kaur-88a020b7" target="_blank"> <img src={linked_icon} /> </a>
+                            </div>
                         </div>
                         <h3 className="member-name" id="qa-name"></h3>
                         <p className="member-designation" id="qa-designation"></p>
@@ -170,9 +183,11 @@ const About = () => {
 
                     {/* Lalit */}
                     <div className="team-tile-container lead-designer designer">
-                        <div>
+                        <div className="profile-image">
                             <img id="image4" />
-                            <a href="linkedin.com/in/lalit-kumar-1467aa1b2" target="_blank"> <img src={linked_icon} /> </a>
+                            <div className="social-links">
+                                <a href="linkedin.com/in/lalit-kumar-1467aa1b2" target="_blank"> <img src={linked_icon} /> </a>
+                            </div>
                         </div>
                         <h3 className="member-name" id="lead-designer-name"></h3>
                         <p className="member-designation" id="lead-designer-designation"></p>
@@ -180,9 +195,12 @@ const About = () => {
 
                     {/* Neha */}
                     <div className="team-tile-container designer">
-                        <div>
+                        <div className="profile-image">
                             <img id="image5" />
-                            <a href="https://www.linkedin.com/in/neha-verma05" target="_blank"> <img src={linked_icon} /> </a>
+                            <div className="social-links">
+                                <a href="https://www.linkedin.com/in/neha-verma05" target="_blank"> <img src={linked_icon} /> </a>
+                            </div>
+                            
                         </div>
                         <h3 className="member-name" id="designer-1-name"></h3>
                         <p className="member-designation" id="designer-1-designation"></p>
@@ -190,9 +208,12 @@ const About = () => {
 
                     {/* Aanchal */}
                     <div className="team-tile-container designer">
-                        <div>
+                        <div className="profile-image">
                             <img id="image6" />
-                            <a href="www.linkedin.com/in/aanchal02" target="_blank"> <img src={linked_icon} /> </a>
+                            <div className="social-links">
+                                <a href="www.linkedin.com/in/aanchal02" target="_blank"> <img src={linked_icon} /> </a>
+                            </div>
+                            
                         </div>
                         <h3 className="member-name" id="designer-2-name"></h3>
                         <p className="member-designation" id="designer-2-designation"></p>
@@ -200,9 +221,12 @@ const About = () => {
 
                     {/* Arsh */}
                     <div className="team-tile-container designer">
-                        <div>
+                        <div className="profile-image">
                             <img id="image7" />
-                            <a href="https://www.linkedin.com/in/arshdeep-kaur-271b351b2/" target="_blank"> <img src={linked_icon} /> </a>
+                            <div className="social-links">
+                                <a href="https://www.linkedin.com/in/arshdeep-kaur-271b351b2/" target="_blank"> <img src={linked_icon} /> </a>
+                            </div>
+                            
                         </div>
                         <h3 className="member-name" id="designer-3-name"></h3>
                         <p className="member-designation" id="designer-3-designation"></p>
@@ -210,9 +234,11 @@ const About = () => {
 
                     {/* Hiril */}
                     <div className="team-tile-container designer">
-                        <div>
+                        <div className="profile-image">
                             <img id="image8" />
-                            <a href="" target="_blank"> <img src={linked_icon} /> </a>
+                            <div className="social-links">
+                                <a href="" target="_blank"> <img src={linked_icon} /> </a>
+                            </div>
                         </div>
                         <h3 className="member-name" id="designer-4-name"></h3>
                         <p className="member-designation" id="designer-4-designation"></p>
