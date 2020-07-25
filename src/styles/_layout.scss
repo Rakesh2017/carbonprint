@@ -42,8 +42,8 @@ main {
   background-position: top;
   background-size: cover;
   min-height: 94vh;
-  color: $color__green-light2;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 50% 100%, 0% 93%);
+  // color: $color__green-light2;
+  // clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 50% 100%, 0% 93%);
 
   h1,
   h2,
@@ -52,7 +52,7 @@ main {
   }
 
   @media screen and (min-width: 800px) {
-    height: 96vh;
+    height: 100vh;
 
     > div {
       height: 100%;
@@ -72,20 +72,27 @@ main {
   }
 
   .hero-button {
-    background-color: transparent;
-    color: white;
+    color: black;
+    background-color: white;
     border: 1px solid white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.5s;
 
     &:hover {
-      color: $color__green-dark;
+      background-color: #13b293b0;
+      color: white;
+      border: 1px solid white;
+      // background-color: white;
     }
   }
 
   .hero-image {
     padding: 0.5rem;
-    background-color: #4242424d;
+    // background-color: #4242424d;
+    background-color: #4c858f61;
     border-radius: 0.5rem;
-    box-shadow: 0 0 6px #636262a2;
+    box-shadow: 0 0 6px #5b9299;
   }
 }
 
@@ -134,7 +141,7 @@ main {
   margin: 2.5rem 0;
   // background-color: $color__green-light2;
   padding: 2rem;
-  
+
   h2 {
     text-align: center;
     font-size: $font__size-xxxl;
@@ -150,7 +157,7 @@ main {
       flex-basis: 300px;
       padding: 1.5rem;
       text-align: center;
-      
+
       img {
         border: 2px solid $color__green-dark;
         border-radius: 50%;
@@ -158,23 +165,21 @@ main {
         max-width: 200px;
         height: auto;
         filter: grayscale(100%);
-        transition: .5s ease;
+        transition: 0.5s ease;
 
         &:hover {
           filter: grayscale(0);
         }
       }
-
     }
   }
 
   @media screen and (min-width: 600px) {
-    .home-features{
+    .home-features {
       flex-wrap: nowrap;
     }
   }
-  
-  
+
   @media screen and (min-width: 800px) {
     .home-features {
       flex-flow: row nowrap;
@@ -631,8 +636,6 @@ main {
 
 @media screen and (min-width: 1000px) {
   .section-column-2 {
-
-
     .food-chart-section,
     .reduce-carbon-chart-section {
       max-width: 800px;
@@ -825,7 +828,6 @@ main {
 // Travel Section
 
 .travel-main-container {
-
   .fieldset-travel > div {
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -846,13 +848,11 @@ main {
   }
 }
 
-
 .emphasis {
   font-size: 120%;
   color: $color__green-light;
   font-weight: bold;
 }
-
 
 // total result
 @media screen and (min-width: 800px) {
@@ -872,16 +872,12 @@ main {
         }
       }
     }
-  }  
+  }
 }
-
 
 /**************************************************
 // Calculator layout End ***************************
 /**************************************************/
-
-
-
 
 /**************************************************
 // About Us layout Start **************************
@@ -890,14 +886,13 @@ main {
 // hero section of page
 
 .about-us-container {
-
   .heading-container {
     position: relative;
     text-align: center;
-    
-    .img-container {      
+
+    .img-container {
       margin-top: -1rem;
-      
+
       img {
         height: 80vh;
         width: 100%;
@@ -921,10 +916,8 @@ main {
   }
 }
 
-
 // who we are and our values section
 .container-img-float {
-
   margin-top: 3rem;
 
   @media screen and (min-width: 1000px) {
@@ -947,8 +940,7 @@ main {
     }
   }
 
-  @media screen and (min-width:600px) {
-    
+  @media screen and (min-width: 600px) {
     .img-float {
       width: 50%;
       height: 400px;
@@ -971,25 +963,22 @@ main {
       display: block;
       float: right;
       padding-left: 1rem;
-      
+
       img {
         border-radius: 5px;
         border-bottom-left-radius: 3rem;
       }
-
     }
- 
   }
 
-  @media screen and (min-width:900px) {
+  @media screen and (min-width: 900px) {
     .img-float-left {
       padding-right: 5rem;
     }
 
-    .img-float-right{
+    .img-float-right {
       padding-left: 5rem;
     }
-
   }
 
   &:after {
@@ -997,14 +986,11 @@ main {
     content: "";
     clear: both;
   }
-
 }
-
 
 // team section
 
-.our-team-container { 
-
+.our-team-container {
   margin-top: 5rem;
   margin-bottom: 2rem;
 
@@ -1048,8 +1034,8 @@ main {
         border-radius: 30%;
         height: 37px;
       }
-          
-      img[src*="linked"]:hover, 
+
+      img[src*="linked"]:hover,
       #github-image:hover {
         transform: rotate(360deg);
       }
@@ -1058,20 +1044,12 @@ main {
         border-radius: 30%;
         transform: rotate(360deg);
       }
-
     }
-
   }
-
 }
 
-
-
-
 @media screen and (min-width: 600px) {
-
   .about-us-container {
-
     h1 {
       flex-basis: 100%;
     }
@@ -1082,24 +1060,21 @@ main {
       justify-content: center;
 
       .team-tile-container {
-       flex-basis: 250px; 
+        flex-basis: 250px;
       }
     }
   }
 }
 
-@media screen and (min-width: 900px) { 
-  .about-us-container { 
-    .our-team-container { 
+@media screen and (min-width: 900px) {
+  .about-us-container {
+    .our-team-container {
       .team-tile-container {
         flex-basis: 400px;
       }
     }
   }
 }
-
-
-
 
 /**************************************************
 // About Us layout End ****************************
@@ -1129,14 +1104,14 @@ main {
       filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
 
       @media screen and (min-width: 750px) {
-          height: 400px;
-          margin-bottom: 0;
+        height: 400px;
+        margin-bottom: 0;
       }
 
       .contact-image {
         width: 100%;
         height: 100%;
-        object-fit: cover;        
+        object-fit: cover;
         border-radius: 5px;
         border-bottom-right-radius: 3rem;
       }
@@ -1225,7 +1200,6 @@ main {
     max-width: 720px;
     margin: auto;
   }
-
 }
 
 /**************************************************
