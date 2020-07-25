@@ -72,7 +72,8 @@ header.header-fixed {
             line-height: 1;
             margin-bottom: 0;
             width: 80px;
-            text-align: center;
+            text-align: left;
+            margin-left: 5px;
             font-size: 1.3rem;
         }
     }
@@ -173,10 +174,12 @@ header.header-fixed {
             left: 0;
             right: 0;
             border-bottom: 10px solid #67bc3944;
+            transition: all 0.3s;
         }
 
         a:hover {
             text-decoration: none;
+            color: white;
         }
 
         a:hover::after {
