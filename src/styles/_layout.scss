@@ -90,9 +90,10 @@ main {
   .hero-image {
     padding: 0.5rem;
     // background-color: #4242424d;
-    background-color: #4c858f61;
+    background-color: #4c858fa6;
     border-radius: 0.5rem;
-    box-shadow: 0 0 6px #5b9299;
+    box-shadow: 0 0 3px #5b9299;
+    filter: drop-shadow(2px 4px 6px #4c858fa6);
   }
 }
 
