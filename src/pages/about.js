@@ -211,7 +211,7 @@ const About = () => {
                         <div className="profile-image">
                             <img id="image6" />
                             <div className="social-links">
-                                <a href="www.linkedin.com/in/aanchal02" target="_blank"> <img src={linked_icon} /> </a>
+                                <a href="https://www.linkedin.com/in/aanchal02" target="_blank"> <img src={linked_icon} /> </a>
                             </div>
                             
                         </div>
