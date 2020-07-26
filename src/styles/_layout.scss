@@ -30,11 +30,11 @@ main {
   margin-top: -90px;
   padding-top: 90px;
   padding-bottom: 5rem;
-  background-image: url(../images/hero-image-1380x920.jpg);
+  background-image: url(../images/hero-image-2000x741.jpg);
   background-image: image-set(
-    url(../images/hero-image-900x600.jpg) 720w,
-    url(../images/hero-image-1380x920.jpg) 1380w,
-    url(../images/hero-image-2200x1467.jpg) 2100w
+    url(../images/hero-image-900x714.jpg) 720w,
+    url(../images/hero-image-2000x741.jpg) 1380w,
+    url(../images/hero-image-3414x1265.jpg) 2200w
   );
 
   // <span>Photo by <a href="https://unsplash.com/@alex_andrews?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexander Andrews</a> on <a href="https://unsplash.com/collections/10637370/desktop-backgrounds?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
@@ -163,14 +163,9 @@ main {
         border: 2px solid $color__green-dark;
         border-radius: 50%;
         padding: 0.5rem;
-        max-width: 200px;
+        max-width: 140px;
         height: auto;
-        filter: grayscale(100%);
         transition: 0.5s ease;
-
-        &:hover {
-          filter: grayscale(0);
-        }
       }
     }
   }
@@ -181,12 +176,12 @@ main {
     }
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1000px) {
     .home-features {
       flex-flow: row nowrap;
 
       .features {
-        flex-basis: 200px;
+        flex-basis: 330px;
       }
     }
   }
