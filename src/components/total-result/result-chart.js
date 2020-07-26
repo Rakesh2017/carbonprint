@@ -2,6 +2,7 @@ import React from 'react';
 import CanvasJSReact from '../../assets/canvasjs.react'
 import GetDistanceBetweenGeoCodes from '../../global-functions/get-distance-between-geo-codes'
 import addComma from '../../global-functions/number-comma.js'
+import github_image from '../../images/github.png'
 
 const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
 
@@ -17,7 +18,7 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
             temp = { y: resultKgs * 1 }
             return temp
         } else {
-            return [{y:0}]
+            return [{ y: 0 }]
         }
     }
 
@@ -49,7 +50,7 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
             }
             return temp
         } else {
-            return [{y:0}]
+            return [{ y: 0 }]
         }
     }
 
@@ -66,7 +67,7 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
             temp = { y: total }
             return temp
         } else {
-            return [{y:0}]
+            return [{ y: 0 }]
         }
     }
 
@@ -116,11 +117,66 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
     return (
         <div className="total-result-chart-container full-width">
             <CanvasJSChart options={options} />
+
+
+
             <div className="total-result-info">
-                <p>Your total carbon footprint from Food is <span>{addComma(foodY)} Kgs</span></p>
+
+                <h2>Your Total Carbon Footprint</h2>
+
+                <p className="total-print">
+                {addComma(foodY + flightY + travelY)} Kgs
+                </p>
+
+                <div className="result-cards-container">
+                    {/* food */}
+                    <div className="food-container card-container">
+                        <div className="title-container">
+                            <img src={github_image} alt="food image" />
+                            <p>
+                                Food
+                        </p>
+                        </div>
+                        <hr />
+                        <div className="sub-result">
+                            <p>{addComma(foodY)} Kgs</p>
+                        </div>
+                    </div>
+
+                    {/* flight */}
+                    <div className="flight-container card-container">
+                        <div className="title-container">
+                            <img src={github_image} alt="food image" />
+                            <p>
+                                Air Flight
+                        </p>
+                        </div>
+                        <hr />
+                        <div className="sub-result">
+                            <p>{addComma(flightY)} Kgs</p>
+                        </div>
+                    </div>
+
+                    {/* travel */}
+                    <div className="travel-container card-container">
+                        <div className="title-container">
+                            <img src={github_image} alt="food image" />
+                            <p>
+                                Car Travel
+                        </p>
+                        </div>
+                        <hr />
+                        <div className="sub-result">
+                            <p>{addComma(travelY)} Kgs</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <p>Your total carbon footprint from Food is <span>{addComma(foodY)} Kgs</span></p>
                 <p>Your total carbon footprint from Air Travel is <span>{addComma(flightY)} Kgs</span></p>
                 <p>Your total carbon footprint from Car Travel is <span>{addComma(travelY)} Kgs</span></p>
                 <p>Your Total carbon footprint from Food, Air and travel is <span>{addComma(foodY + flightY + travelY)} Kgs</span></p>
+           */}
             </div>
         </div>
     );

@@ -12,8 +12,8 @@ img {
   .profile-image img {
     max-width: 170px;
     height: auto;
-    border-radius: 6%;
-    border-bottom-right-radius: 20%;
+    border-radius: 100%;
+    // border-bottom-right-radius: 20%;
     border: solid 0.2rem coral;
     padding: 0.25rem;
     filter: drop-shadow(2px 4px 6px rgb(204, 198, 196));
