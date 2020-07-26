@@ -16,20 +16,20 @@ const homeFeatures = () => (
 
             <div class="features feature1">
                 <Link to ="./calculator">
-                    <img src={Feature1} />
-                    <h3>Footprint Calculator</h3>
+                    <img src={Feature1} alt="carbon footprint calculator" />
+                    <h3>Carbon Footprint Calculator</h3>
                 </Link>
             </div>
     
             <div class="features feature2">
                 <Link to="./carbon-impact">
-                    <img src={Feature2} />
+                    <img src={Feature2} alt="Impact of carbon" />
                     <h3>Impacts of Carbon</h3>
                 </Link>
             </div>
     
             <div class="features feature3">
-                <img src={Feature3} />
+                <img src={Feature3} alt="Reduction Measures" />
                 <h3>Reduction Measures</h3>
             </div>
 

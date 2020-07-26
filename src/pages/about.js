@@ -86,7 +86,7 @@ const About = () => {
             <div className="heading-container">
                 
                 <div className="img-container"> 
-                    <img src={about_us_image} /> 
+                    <img src={about_us_image} alt="about us" /> 
                 </div>
                 
                 <div className="super-text-container">
@@ -105,7 +105,7 @@ const About = () => {
                     {/* text container */}
 
                     <div className="img-float img-float-left">
-                        <img src={who_we_are} />
+                        <img src={who_we_are} alt="who we are" />
                     </div>
                     <div>
                         <h2>Who we are?</h2>
@@ -123,7 +123,7 @@ const About = () => {
 
                 <div id="our-values-container-id" className="container-img-float">
                     <div className="img-float img-float-right">
-                        <img src={our_values} />
+                        <img src={our_values} alt="our values" />
                     </div>
                     
                     <div>
@@ -143,11 +143,11 @@ const About = () => {
                     {/* Rakesh */}
                     <div className="team-tile-container project-manager">
                         <div className="profile-image">
-                            <img id="image1" />
+                            <img id="image1" alt="project manager" />
                             <div className="social-links">
-                                <a href="http://linkedin.com/in/rakesh-aa3135117" target="_blank"> <img src={linked_icon} /> </a>
-                                <a href="https://github.com/Rakesh2017" target="_blank"> <img id="github-image" src={github_image} /> </a>
-                                <a href="https://stackoverflow.com/users/7872344/rakesh-kumar" target="_blank"> <img id="stack-overflow-image" src={stackoverflow_image} /> </a>
+                                <a href="http://linkedin.com/in/rakesh-aa3135117" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
+                                <a href="https://github.com/Rakesh2017" target="_blank"> <img id="github-image" src={github_image} alt="github icon" /> </a>
+                                <a href="https://stackoverflow.com/users/7872344/rakesh-kumar" target="_blank"> <img id="stack-overflow-image" src={stackoverflow_image} alt="stack overflow icon" /> </a>
                             </div>                            
                         </div>
 
@@ -158,10 +158,10 @@ const About = () => {
                     {/* dalbir */}
                     <div className="team-tile-container lead-developer">
                         <div className="profile-image">
-                            <img id="image2" />
+                            <img id="image2" alt="front end developer" />
                             <div className="social-links">
-                                <a href="https://www.linkedin.com/in/dalbir-singh-01815328/" target="_blank"> <img src={linked_icon} /> </a>
-                                <a href="https://github.com/dalbirsrana" target="_blank"> <img id="github-image" src={github_image} /> </a>
+                                <a href="https://www.linkedin.com/in/dalbir-singh-01815328/" target="_blank"> <img src={linked_icon}  alt="linkedin icon" /> </a>
+                                <a href="https://github.com/dalbirsrana" target="_blank"> <img id="github-image" src={github_image} alt="github icon" /> </a>
                             </div>
                             
                         </div>
@@ -172,9 +172,9 @@ const About = () => {
                     {/* Palak */}
                     <div className="team-tile-container developer quality-assurance">
                         <div className="profile-image">
-                            <img id="image3" />
+                            <img id="image3" alt="front end developer" />
                             <div className="social-links">
-                                <a href="https://www.linkedin.com/in/palakdeep-kaur-88a020b7" target="_blank"> <img src={linked_icon} /> </a>
+                                <a href="https://www.linkedin.com/in/palakdeep-kaur-88a020b7" target="_blank"> <img src={linked_icon}  alt="linkedin icon" /> </a>
                             </div>
                         </div>
                         <h3 className="member-name" id="qa-name"></h3>
@@ -184,9 +184,9 @@ const About = () => {
                     {/* Lalit */}
                     <div className="team-tile-container lead-designer designer">
                         <div className="profile-image">
-                            <img id="image4" />
+                            <img id="image4" alt="designer" />
                             <div className="social-links">
-                                <a href="linkedin.com/in/lalit-kumar-1467aa1b2" target="_blank"> <img src={linked_icon} /> </a>
+                                <a href="linkedin.com/in/lalit-kumar-1467aa1b2" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
                             </div>
                         </div>
                         <h3 className="member-name" id="lead-designer-name"></h3>
@@ -196,9 +196,9 @@ const About = () => {
                     {/* Neha */}
                     <div className="team-tile-container designer">
                         <div className="profile-image">
-                            <img id="image5" />
+                            <img id="image5" alt="designer" />
                             <div className="social-links">
-                                <a href="https://www.linkedin.com/in/neha-verma05" target="_blank"> <img src={linked_icon} /> </a>
+                                <a href="https://www.linkedin.com/in/neha-verma05" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
                             </div>
                             
                         </div>
@@ -209,7 +209,7 @@ const About = () => {
                     {/* Aanchal */}
                     <div className="team-tile-container designer">
                         <div className="profile-image">
-                            <img id="image6" />
+                            <img id="image6" alt="designer" />
                             <div className="social-links">
                                 <a href="https://www.linkedin.com/in/aanchal02" target="_blank"> <img src={linked_icon} /> </a>
                             </div>
@@ -222,9 +222,9 @@ const About = () => {
                     {/* Arsh */}
                     <div className="team-tile-container designer">
                         <div className="profile-image">
-                            <img id="image7" />
+                            <img id="image7" alt="designer" />
                             <div className="social-links">
-                                <a href="https://www.linkedin.com/in/arshdeep-kaur-271b351b2/" target="_blank"> <img src={linked_icon} /> </a>
+                                <a href="https://www.linkedin.com/in/arshdeep-kaur-271b351b2/" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
                             </div>
                             
                         </div>
@@ -235,9 +235,9 @@ const About = () => {
                     {/* Hiril */}
                     <div className="team-tile-container designer">
                         <div className="profile-image">
-                            <img id="image8" />
+                            <img id="image8" alt="designer" />
                             <div className="social-links">
-                                <a href="" target="_blank"> <img src={linked_icon} /> </a>
+                                <a href="#" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
                             </div>
                         </div>
                         <h3 className="member-name" id="designer-4-name"></h3>

@@ -15,7 +15,7 @@ const HomeHero = () => (
                 <p>Carbon Print helps you to calculate your carbon emissions produced by food, travelling etc. Calculate your carbon footprint in few minutes.
                 </p>
                 <Link to="/calculator">
-                    <Button variant="contained" className="hero-button">Calculate your Carbon footprint</Button>
+                    <Button variant="contained" className="hero-button" aria-label="Calculate carbon footprint">Calculate your Carbon footprint</Button>
                 </Link>
 
             </div>

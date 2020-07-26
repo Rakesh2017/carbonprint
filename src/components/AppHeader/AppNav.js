@@ -11,7 +11,7 @@ const AppNav = () => (
     <nav className="site-main-nav">
         <div className="nav-wrapper">
             <div className="button-mobile">
-                <button onClick={toggleButton} className="main-nav-button">
+                <button onClick={toggleButton} className="main-nav-button" aria-label="menu button">
                     <i className="menu-icon"></i>
                 </button>
             </div>

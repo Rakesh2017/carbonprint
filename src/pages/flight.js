@@ -10,7 +10,7 @@ import WorldAverages from '../components/flight/world-averages.js'
 import NonStopFlight from '../components/flight/reduce-carbon-footprint/non-stop-flight.js'
 import EconomyClassFlight from '../components/flight/reduce-carbon-footprint/economy-class-flight.js'
 import RadioConnectingFlight from '../components/flight/radio-connecting-flight.js'
-
+import flightIcon from '../images/icons/Flight.png'
 
 const Flight = ({ parentCallback }) => {
     // console.log("PLACE_API_KEY", process.env.PLACE_API_KEY)
@@ -141,7 +141,7 @@ const Flight = ({ parentCallback }) => {
                     {/* Logo Container */}
                     <div className="container-logo">
                         {/* flight logo */}
-                        {/* <img /> logo */}
+                        <img src={ flightIcon } alt="Flight Icon" />
                         {/* <h3>Air Flight</h3> */}
                     </div>
 

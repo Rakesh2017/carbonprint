@@ -34,7 +34,7 @@ export default () => (
             </div>
 
             <div className="impact-image">
-            <img id="impact-image1" src={image1} />
+            <img id="impact-image1" src={image1} alt="Carbon Impact" />
             </div>
 
 
