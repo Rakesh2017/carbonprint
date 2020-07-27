@@ -2,7 +2,6 @@ import React from 'react';
 import CanvasJSReact from '../../assets/canvasjs.react'
 import GetDistanceBetweenGeoCodes from '../../global-functions/get-distance-between-geo-codes'
 import addComma from '../../global-functions/number-comma.js'
-import github_image from '../../images/github.png'
 
 const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
 
@@ -116,13 +115,12 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
 
     return (
         <div className="total-result-chart-container full-width">
+
             <CanvasJSChart options={options} />
-
-
 
             <div className="total-result-info">
 
-                <h2>Your Total Carbon Footprint</h2>
+                <h3>Total Carbon Footprint</h3>
 
                 <p className="total-print">
                 {addComma(foodY + flightY + travelY)} Kgs
@@ -132,7 +130,8 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
                     {/* food */}
                     <div className="food-container card-container">
                         <div className="title-container">
-                            <img src={github_image} alt="food image" />
+                            <i class="fas fa-hamburger"></i>
+                            {/* <img src={github_image} alt="food image" /> */}
                             <p>
                                 Food
                         </p>
@@ -146,7 +145,8 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
                     {/* flight */}
                     <div className="flight-container card-container">
                         <div className="title-container">
-                            <img src={github_image} alt="food image" />
+                            <i class="fas fa-plane"></i>
+                            {/* <img src={github_image} alt="food image" /> */}
                             <p>
                                 Air Flight
                         </p>
@@ -160,7 +160,8 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
                     {/* travel */}
                     <div className="travel-container card-container">
                         <div className="title-container">
-                            <img src={github_image} alt="food image" />
+                            <i class="fas fa-car-side"></i>
+                            {/* <img src={github_image} alt="food image" /> */}
                             <p>
                                 Car Travel
                         </p>

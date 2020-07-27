@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core';
 import Result from '../components/travel/car/result.js'
 import GreenVehicle from '../components/travel/car/reduce-carbon-footprint/green-vehicle.js'
 import DriveBetter from '../components/travel/car/reduce-carbon-footprint/drive-better.js'
-
+import IconTravel from '../images/icons/travel.png'
 
 const Travel = ({parentCallback}) => {
 
@@ -46,7 +46,7 @@ const Travel = ({parentCallback}) => {
                 {/* Logo Container */}
                     <div className="container-logo">
                         {/* Car logo */}
-                        {/* <img /> logo */}
+                        <img src={ IconTravel } alt="travel" />
                         {/* <h3>Car</h3> */}
                     </div>
                     {/* input container */}

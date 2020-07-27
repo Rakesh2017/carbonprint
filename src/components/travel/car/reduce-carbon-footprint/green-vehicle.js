@@ -58,7 +58,7 @@ const GreenVehicle = () => {
             <div class="chart"> 
                 <h3>Electric Vs Petroleum Car Carbon footprint</h3>
                 <CanvasJSChart options={options} />
-                <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} />
+                <ChartDescription chartNumber={chartVersion} chartInfo={chartInfo} axisX={"Carbon footprint"} axisY={"Petroleum Car vs Electric Car"} />
             </div>
         </div>
     );
