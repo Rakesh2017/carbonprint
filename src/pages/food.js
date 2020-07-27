@@ -38,6 +38,7 @@ const Food = ({ parentCallback }) => {
     const [checkAddBtn, setCheckAddBtn] = useState(false)
     // setting carbon footprint reduce message, derived from diet input of user
     let meatPercentage, vegPercentage, fruitPercentage, liquidPercentage
+    let [checkFoodLoaded, setCheckFoodSelected] = useState("true")
 
     let message = ''
 
@@ -81,6 +82,7 @@ const Food = ({ parentCallback }) => {
                         food_type: element.food_type
                     })
                     tempFoodProductOption.push(temp)
+                    setCheckFoodSelected("")
                 });
             })
         setFoodProductOption(tempFoodProductOption)
@@ -387,7 +389,10 @@ const Food = ({ parentCallback }) => {
                             onChange={playFoodProduct}
                             searchable = {false}
                             separator = {true}
+                            dropdownGap = "5"
+                            loading = {checkFoodLoaded}
                         />
+                        
                         {/* input 2 */}
                         <label>How often do you have it?</label>
                         <Select

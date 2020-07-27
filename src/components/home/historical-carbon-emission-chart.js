@@ -88,7 +88,7 @@ const HistoricalCarbonEmissionChart = () => {
             stripLines: [
                 {
                     value: 1980,
-                    opacity: 0.3,
+                    opacity: 0.5,
                     label: "Technology Boom (1980)",
                     labelPlacement: "inside",
                     labelAlign: "near",
@@ -135,7 +135,7 @@ const HistoricalCarbonEmissionChart = () => {
                 {
                     startValue: 320,
                     endValue: 407,
-                    opacity: 0.7,
+                    opacity: 0.8,
                     label: "Drastic increase in recent years",
                     labelPlacement: "inside",
                     labelAlign: "center",
