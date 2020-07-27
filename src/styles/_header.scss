@@ -215,7 +215,8 @@ header.header-fixed {
 // mobile menu
 button.main-nav-button {
     background-color: transparent;
-    border: 2px solid $color__green-light2;
+    // border: 2px solid $color__green-light2;
+    margin-top: 0.3rem;
     display: flex;
     justify-content: center;
     align-items: center;
