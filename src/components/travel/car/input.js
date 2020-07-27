@@ -30,7 +30,7 @@ const Input = ({ parentCallback }) => {
     }
 
     return (
-        <div class="container-input fieldset-travel">
+        <div className="container-input fieldset-travel">
             {/* input 1 */}
             <div>
                 <label>What type of car you have?</label>

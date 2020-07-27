@@ -1,7 +1,5 @@
 ![GitHub Logo](/src/images/github/website_logo.png)
 
-# CARBONPRINT
-
 <!-- # Langara College WMDD Term 3 Project -->
 # Built on ReactJS and NodeJS with ExpressJS Server
 

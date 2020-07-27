@@ -130,7 +130,7 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
                     {/* food */}
                     <div className="food-container card-container">
                         <div className="title-container">
-                            <i class="fas fa-hamburger"></i>
+                            <i className="fas fa-hamburger"></i>
                             {/* <img src={github_image} alt="food image" /> */}
                             <p>
                                 Food
@@ -145,7 +145,7 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
                     {/* flight */}
                     <div className="flight-container card-container">
                         <div className="title-container">
-                            <i class="fas fa-plane"></i>
+                            <i className="fas fa-plane"></i>
                             {/* <img src={github_image} alt="food image" /> */}
                             <p>
                                 Air Flight
@@ -160,7 +160,7 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
                     {/* travel */}
                     <div className="travel-container card-container">
                         <div className="title-container">
-                            <i class="fas fa-car-side"></i>
+                            <i className="fas fa-car-side"></i>
                             {/* <img src={github_image} alt="food image" /> */}
                             <p>
                                 Car Travel

@@ -4,8 +4,7 @@ import ChartDescription from '../reusable/chart-description.js';
 
 
 export default function FoodUserBarChart({ checkAddBtn, foodList }) {
-
-    console.log("working")
+    
     let userCarbonArray = []
     let tempUserCarbonArray = []
 

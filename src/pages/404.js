@@ -1,14 +1,14 @@
 import React from 'react';
 import { Container, } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 
+const PageNotFound = () => (
 
-export default() => (
-
-       <Container class="404-container">
+    <Container class="page-not-found-container">
         <h1>
             404 Error - Page not found
         </h1>
-        </Container>
-   
+    </Container>
+
 );
+
+export default (PageNotFound)

@@ -283,6 +283,7 @@ main {
   h3 {
     text-align: center;
     margin: 0;
+    padding-top: 1rem;
   }
 
   .tab-nav {
@@ -853,7 +854,6 @@ main {
 // total result
 
 .total-result-chart-container {
-
   .total-result-info {
     p {
       span {
@@ -865,7 +865,9 @@ main {
       font-weight: bold;
       font-size: 2rem;
       margin-top: 1rem;
+      text-align: center;
       margin-bottom: 1rem;
+      color: #0d9473;
     }
 
     .result-cards-container {
@@ -886,7 +888,6 @@ main {
             @media screen and (min-width: 420px) {
               display: block;
             }
-
           }
           p {
             margin: auto;
@@ -909,7 +910,7 @@ main {
           }
         }
 
-        padding: .5rem 0.2rem;
+        padding: 0.5rem 0.2rem;
         height: 10rem;
         background-color: white;
         border-radius: 0.7rem;
@@ -918,7 +919,6 @@ main {
         @media screen and (min-width: 450px) {
           padding: 1rem;
         }
-
       }
     }
   }
@@ -1088,11 +1088,15 @@ main {
       margin-top: 0.5rem;
 
       img {
-        height: 32px;
-        vertical-align:middle;
+        height: 36px;
+        vertical-align: middle;
+        transition: all 0.4s;
+      }
+      img:hover {
+        transform: rotate(360deg);
       }
 
-      img[src*="linked"],
+      img[src*="linkedin"],
       #github-image,
       #stack-overflow-image {
         width: auto;
@@ -1100,6 +1104,12 @@ main {
         border: none;
         transition: all 0.4s;
         filter: none;
+        border-radius: 0.9rem;
+      }
+
+      #stack-overflow-image {
+        margin-left: 0.2rem;
+        border-radius: 1rem;
       }
 
       #stack-overflow-image {
@@ -1277,3 +1287,14 @@ main {
 /**************************************************
 // Carbon Impact layout End ***********************
 /**************************************************/
+
+
+.page-not-found-container {
+  display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    justify-items: center;
+    height: 73vh;
+}
