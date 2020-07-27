@@ -163,9 +163,9 @@ const Flight = ({ parentCallback }) => {
 
                     </div>
 
-                    <p>{resultMessage}</p>
-
                 </div>
+
+                <p>{resultMessage}</p>
 
             </div>
 

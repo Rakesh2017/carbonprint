@@ -9,7 +9,7 @@ img {
 /* Our Team Images */
 .our-team-container {
 
-  .profile-image img {
+  .profile-image > img {
     max-width: 170px;
     height: auto;
     border-radius: 100%;
@@ -21,7 +21,7 @@ img {
 
   .team-tile-container:nth-of-type(n + 4){
     .profile-image {
-      img {
+      > img {
         border-color: cornflowerblue;
       }
     }
