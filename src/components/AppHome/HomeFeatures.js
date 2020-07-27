@@ -9,26 +9,26 @@ import {
   } from '@material-ui/core';
 
 const homeFeatures = () => (
-    <Container class="home-features-container">
+    <Container className="home-features-container">
         <h2>Features</h2>
 
-        <div class="home-features">
+        <div className="home-features">
 
-            <div class="features feature1">
+            <div className="features feature1">
                 <Link to ="./calculator">
                     <img src={Feature1} alt="carbon footprint calculator" />
                     <h3>Carbon Footprint Calculator</h3>
                 </Link>
             </div>
     
-            <div class="features feature2">
+            <div className="features feature2">
                 <Link to="./carbon-impact">
                     <img src={Feature2} alt="Impact of carbon" />
                     <h3>Impacts of Carbon</h3>
                 </Link>
             </div>
     
-            <div class="features feature3">
+            <div className="features feature3">
                 <img src={Feature3} alt="Reduction Measures" />
                 <h3>Reduction Measures</h3>
             </div>
