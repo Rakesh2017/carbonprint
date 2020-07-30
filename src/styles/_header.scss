@@ -67,13 +67,14 @@ header.header-fixed {
 
     .site-logo-wrapper {
         display: flex;
+        align-items: flex-end;
 
         h2 {
             line-height: 1;
             margin-bottom: 0;
             width: 80px;
-            text-align: left;
-            margin-left: 5px;
+            text-align: center;
+            margin-left: 0px;
             font-size: 1.3rem;
         }
     }
