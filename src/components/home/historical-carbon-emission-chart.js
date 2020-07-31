@@ -77,8 +77,8 @@ const HistoricalCarbonEmissionChart = () => {
         theme: "dark1",
         lineDashType: "dash",
         toolTip: {
-            shared: true   
-          },
+            shared: true
+        },
         legend: {
             horizontalAlign: "center",
             verticalAlign: "bottom",
@@ -99,7 +99,7 @@ const HistoricalCarbonEmissionChart = () => {
                     lineDashType: "dot"
                 }
             ],
-        
+
             titleFontSize: 15,
             margin: 20,
             valueFormatString: "####",
@@ -109,7 +109,7 @@ const HistoricalCarbonEmissionChart = () => {
             labelMaxWidth: 50,
             labelWrap: false,
             tickLength: 5,
-            prefix: "\t " ,
+            prefix: "\t ",
             suffix: "   ",
             // intervalType: "year",
             labelAngle: 90,
@@ -124,7 +124,7 @@ const HistoricalCarbonEmissionChart = () => {
             prefix: "",
             suffix: " ppm",
             titleFontSize: 15,
-            labelFontSize:12,
+            labelFontSize: 12,
             gridColor: "#b0bfbcba",
             lineColor: "transparent",
             tickLength: 0,
@@ -133,13 +133,14 @@ const HistoricalCarbonEmissionChart = () => {
             },
             stripLines: [
                 {
-                    startValue: 320,
+                    startValue: 340,
                     endValue: 407,
                     opacity: 0.8,
                     label: "Drastic increase in recent years",
                     labelPlacement: "inside",
                     labelAlign: "center",
-                    labelBackgroundColor: "white"
+                    labelBackgroundColor: "white",
+                    opacity: "0.7"
                 }
             ],
             includeZero: true
@@ -149,7 +150,7 @@ const HistoricalCarbonEmissionChart = () => {
             suffix: " °C",
             labelFontSize: 12,
             titleFontSize: 15,
-            thickness: 4,  
+            thickness: 4,
             gridColor: "#b0bfbcba",
             lineColor: "transparent",
             tickLength: 0,
@@ -159,7 +160,8 @@ const HistoricalCarbonEmissionChart = () => {
                 type: "splineArea",
                 showInLegend: true,
                 legendText: "Carbon Emission",
-                toolTipContent: "<i><strong>{x}</strong>Y</i> : <strong>{y}</strong> MT Carbon Footprint", 
+                color: "skyblue",
+                toolTipContent: "<i><strong>{x}</strong>Y</i> : <strong>{y}</strong> MT Carbon Footprint",
                 dataPoints: chartData
             },
             {
@@ -168,7 +170,8 @@ const HistoricalCarbonEmissionChart = () => {
                 showInLegend: true,
                 toolTipContent: "<i><strong>{x}</strong>Y</i> : <strong>{y}</strong> °C",
                 legendText: "Average temperature increase",
-                dataPoints: chartTemperatureData
+                dataPoints: chartTemperatureData,
+                color: "lightcoral"
 
             }
 

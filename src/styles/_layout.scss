@@ -74,9 +74,9 @@ main {
   .hero-button {
     color: black;
     background-color: white;
-    border: 1px solid white;
+    border: 1px solid black;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.925rem;
     transition: all 0.5s;
 
     &:hover {
@@ -1288,13 +1288,12 @@ main {
 // Carbon Impact layout End ***********************
 /**************************************************/
 
-
 .page-not-found-container {
   display: flex;
-    justify-content: center;
-    align-content: center;
-    align-self: center;
-    align-items: center;
-    justify-items: center;
-    height: 73vh;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  align-items: center;
+  justify-items: center;
+  height: 73vh;
 }
