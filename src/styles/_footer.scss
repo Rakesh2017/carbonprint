@@ -1,56 +1,58 @@
 /********* Author: Dalbir Singh  **************/
 /**********************************************/
-// css for footer container 
+// css for footer container
 // to place logo and other navigation column
 /**********************************************/
 
 .site-footer {
-    background-color: $color__background-footer;
-    border-top: 2px solid $color__green-dark2;
+  background-color: $color__background-footer;
+  border-top: 2px solid $color__green-dark2;
 }
 
 .site-footer-container {
-    padding-top: 0.2rem;
-    padding-bottom: 0.5rem;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
 
-    @media screen and (min-width:600px) {
-        flex-flow: row wrap;
-    }
+  @media screen and (min-width: 600px) {
+    flex-flow: row wrap;
+  }
 }
 
 .site-footer-col-2 {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0 0.2rem;
+      padding: 0.25rem 0.5rem;
+    }
+    li:nth-last-child(1) {
+      margin-right: 0;
+      padding-right: 3px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 0.25rem;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 600px) {
     ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-
-        li {
-            margin: 0 0.2rem;
-            padding: 0.25rem 0.5rem;
-        }
-
-        a {
-            text-decoration: underline;
-        }
+      justify-content: flex-end;
     }
-
-    p  {
-        text-align: center;
-        margin-bottom: 0.25rem;
-        margin-top: 0;
-    }
-
-    @media screen and (min-width:600px) {
-        ul {
-            justify-content: flex-end;
-        }
-    }
+  }
 }
-
-    

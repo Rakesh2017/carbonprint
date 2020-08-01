@@ -5,7 +5,7 @@ import Logo from '../../images/Logo.svg';
 const AppFooterLogo = () => (
     <div>
         <Link to="/">
-        <img src={Logo} alt="carbonPrint" height="60px" width="100px" />
+            {/* <img src={Logo} alt="carbonPrint" height="60px" width="100px" /> */}
         </Link>
     </div>
 );
