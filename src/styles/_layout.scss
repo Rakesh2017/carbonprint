@@ -859,7 +859,19 @@ main {
 // total result
 
 .total-result-chart-container {
+
+  .total-result-chart {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
   .total-result-info {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    
+    h3 {
+      padding: 0;
+    }
     p {
       span {
         color: $color__green-light;
@@ -879,50 +891,38 @@ main {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 1rem;
-      max-width: 600px;
+      max-width: 480px;
       margin: auto;
-      .card-container {
+
+      .card-container {        
+        padding: 1rem 0.2rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 4px #0000006e;
+
+        p {
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 0;
+        }
+
         .title-container {
           display: flex;
           align-items: center;
-          flex-direction: row;
-          .fas {
-            width: 20%;
-            display: none;
+          justify-content: flex-start;
+          flex-direction: column;
+          
+          img {
+            max-width: 60px;
+          }
 
-            @media screen and (min-width: 420px) {
-              display: block;
-            }
-          }
-          p {
-            margin: auto;
-            font-weight: bold;
-            line-height: 1;
-          }
         }
 
         .sub-result {
-          text-align: center;
-          height: 5rem;
-          align-items: center;
-          display: flex;
-          justify-content: center;
-
           p {
-            font-weight: bold;
-            font-size: 1.2rem;
             color: #0d9473;
+            font-size: 1.2rem;
           }
-        }
-
-        padding: 0.5rem 0.2rem;
-        height: 10rem;
-        background-color: white;
-        border-radius: 0.7rem;
-        box-shadow: 0 0 6px #0000006e;
-
-        @media screen and (min-width: 450px) {
-          padding: 1rem;
         }
       }
     }
