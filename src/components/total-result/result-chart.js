@@ -3,6 +3,11 @@ import CanvasJSReact from '../../assets/canvasjs.react'
 import GetDistanceBetweenGeoCodes from '../../global-functions/get-distance-between-geo-codes'
 import addComma from '../../global-functions/number-comma.js'
 
+
+import flightIcon from '../../images/icons/Flight.png'
+import IconFood from '../../images/icons/icon-food.png'
+import IconTravel from '../../images/icons/travel.png'
+
 const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
 
     // declarations
@@ -116,12 +121,12 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
     return (
         <div className="total-result-chart-container full-width">
 
-            <CanvasJSChart options={options} />
-
+            <div className="total-result-chart">
+                <CanvasJSChart options={options} />
+            </div>
+            
             <div className="total-result-info">
-
                 <h3>Total Carbon Footprint</h3>
-
                 <p className="total-print">
                 {addComma(foodY + flightY + travelY)} Kgs
                 </p>
@@ -130,13 +135,13 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
                     {/* food */}
                     <div className="food-container card-container">
                         <div className="title-container">
-                            <i className="fas fa-hamburger"></i>
-                            {/* <img src={github_image} alt="food image" /> */}
-                            <p>
-                                Food
+                        <img src={IconFood} alt="food Icon" />
+                        {/* <i className="fas fa-hamburger"></i> */}
+                        {/* <img src={github_image} alt="food image" /> */}
+                        <p>
+                            Food
                         </p>
                         </div>
-                        <hr />
                         <div className="sub-result">
                             <p>{addComma(foodY)} Kgs</p>
                         </div>
@@ -145,13 +150,13 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
                     {/* flight */}
                     <div className="flight-container card-container">
                         <div className="title-container">
-                            <i className="fas fa-plane"></i>
+                            <img src={flightIcon} alt="flight Icon" />
+                            {/* <i className="fas fa-plane"></i> */}
                             {/* <img src={github_image} alt="food image" /> */}
                             <p>
                                 Air Flight
                         </p>
                         </div>
-                        <hr />
                         <div className="sub-result">
                             <p>{addComma(flightY)} Kgs</p>
                         </div>
@@ -160,13 +165,13 @@ const ResultChart = ({ foodCFP, flightCFP, travelCFP }) => {
                     {/* travel */}
                     <div className="travel-container card-container">
                         <div className="title-container">
-                            <i className="fas fa-car-side"></i>
+                            <img src={IconTravel} alt="travel icon" />
+                            {/* <i className="fas fa-car-side"></i> */}
                             {/* <img src={github_image} alt="food image" /> */}
                             <p>
                                 Car Travel
                         </p>
                         </div>
-                        <hr />
                         <div className="sub-result">
                             <p>{addComma(travelY)} Kgs</p>
                         </div>
