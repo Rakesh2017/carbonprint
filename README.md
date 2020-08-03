@@ -1,7 +1,7 @@
 ![GitHub Logo](/src/images/github/website_logo.png)
 
 <!-- # Langara College WMDD Term 3 Project -->
-# Built on ReactJS and NodeJS with ExpressJS Server
+# Built on ReactJS with ExpressJS
 
 <!-- ******* Team Tiger Shark ******* -->
 
