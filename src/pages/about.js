@@ -220,29 +220,29 @@ const About = () => {
                     </div>
 
                     {/* Arsh */}
-                    <div className="team-tile-container designer">
-                        <div className="profile-image">
-                            <img id="image7" alt="designer" />
-                            <div className="social-links">
-                                <a href="https://www.linkedin.com/in/arshdeep-kaur-271b351b2/" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
-                            </div>
+//                     <div className="team-tile-container designer">
+//                         <div className="profile-image">
+//                             <img id="image7" alt="designer" />
+//                             <div className="social-links">
+//                                 <a href="https://www.linkedin.com/in/arshdeep-kaur-271b351b2/" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
+//                             </div>
                             
-                        </div>
-                        <h3 className="member-name" id="designer-3-name"></h3>
-                        <p className="member-designation" id="designer-3-designation"></p>
-                    </div>
+//                         </div>
+//                         <h3 className="member-name" id="designer-3-name"></h3>
+//                         <p className="member-designation" id="designer-3-designation"></p>
+//                     </div>
 
                     {/* Hiril */}
-                    <div className="team-tile-container designer">
-                        <div className="profile-image">
-                            <img id="image8" alt="designer" />
-                            <div className="social-links">
-                                <a href="#" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
-                            </div>
-                        </div>
-                        <h3 className="member-name" id="designer-4-name"></h3>
-                        <p className="member-designation" id="designer-4-designation"></p>
-                    </div>
+//                     <div className="team-tile-container designer">
+//                         <div className="profile-image">
+//                             <img id="image8" alt="designer" />
+//                             <div className="social-links">
+//                                 <a href="#" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
+//                             </div>
+//                         </div>
+//                         <h3 className="member-name" id="designer-4-name"></h3>
+//                         <p className="member-designation" id="designer-4-designation"></p>
+//                     </div>
 
                 </div>
 
