@@ -145,7 +145,7 @@ const About = () => {
                         <div className="profile-image">
                             <img id="image1" alt="project manager" />
                             <div className="social-links">
-                                <a href="http://linkedin.com/in/rakesh-aa3135117" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
+                                <a href="https://www.linkedin.com/in/rakesh07/" target="_blank"> <img src={linked_icon} alt="linkedin icon" /> </a>
                                 <a href="https://github.com/Rakesh2017" target="_blank"> <img id="github-image" src={github_image} alt="github icon" /> </a>
                                 <a href="https://stackoverflow.com/users/7872344/rakesh-kumar" target="_blank"> <img id="stack-overflow-image" src={stackoverflow_image} alt="stack overflow icon" /> </a>
                             </div>                            
