@@ -46,7 +46,8 @@ const Travel = ({parentCallback}) => {
                 {/* Logo Container */}
                     <div className="container-logo">
                         {/* Car logo */}
-                        <img src={ IconTravel } alt="travel" />
+                        <i className="fas fa-car"></i>
+                        {/* <img src={ IconTravel } alt="travel" /> */}
                         {/* <h3>Car</h3> */}
                     </div>
                     {/* input container */}
