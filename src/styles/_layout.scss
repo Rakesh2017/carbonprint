@@ -164,11 +164,14 @@ main {
       padding: 1.5rem;
       text-align: center;
 
-      img {
+      i {
+        font-size: 4rem;
         border: 2px solid $color__green-dark;
+        color: $color__green-dark;
         border-radius: 50%;
-        padding: 0.5rem;
-        max-width: 140px;
+        padding: 1rem;
+        width: 100px;
+        height: 100px;
         height: auto;
         transition: 0.5s ease;
       }
@@ -487,11 +490,16 @@ main {
   align-items: flex-start;
 
   .container-logo {
-    padding-top: 3rem;
+    padding-top: 2.25rem;
     padding-left: 1rem;
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 25%;
+
+    i {
+      color: $color__green-dark;
+      font-size: 3rem;
+    }
 
     img {
       max-width: 100%;
@@ -911,6 +919,11 @@ main {
           align-items: center;
           justify-content: flex-start;
           flex-direction: column;
+
+          i {
+            font-size: 2rem;
+            color: $color__green-dark;
+          }
           
           img {
             max-width: 60px;

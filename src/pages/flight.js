@@ -141,7 +141,8 @@ const Flight = ({ parentCallback }) => {
                     {/* Logo Container */}
                     <div className="container-logo">
                         {/* flight logo */}
-                        <img src={ flightIcon } alt="Flight Icon" />
+                        <i className="fas fa-plane-departure"></i>
+                        {/* <img src={ flightIcon } alt="Flight Icon" /> */}
                         {/* <h3>Air Flight</h3> */}
                     </div>
 

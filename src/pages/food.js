@@ -373,9 +373,8 @@ const Food = ({ parentCallback }) => {
                 <div className="container-logo-input">
                     {/* Logo Container */}
                     <div className="container-logo">
-                        <img src={IconFood} alt="food logo" />
-                        {/* <img /> logo */}
-                        {/* <h3>Food</h3> */}
+                        <i className="fas fa-hamburger"></i>
+                        {/* <img src={IconFood} alt="food logo" /> */}
                     </div>
 
                     {/* input container */}
